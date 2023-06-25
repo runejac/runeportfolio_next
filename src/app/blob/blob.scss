@@ -1,0 +1,58 @@
+/*start of card blob loadStylingMotion*/
+.svg-blob-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.path-blob-card {
+  transform: translate(25%, 6%) scale(3, 0.65);
+  //fill: var(--smokey-black);
+  fill: url(#myGradient);
+  transition: 0.4s;
+}
+/*end of card blob loadStylingMotion*/
+
+/*start of img blob loadStylingMotion*/
+.path-blob-img {
+  transform: translate(0%, 0.45%) scale(0.99);
+  //fill: var(--green);
+  //fill: var(--brown);
+  //fill: #4887cf;
+  //fill: hsl(115, 5%, 47%);
+  fill: hsl(265, 100%, 87%);
+  transition: 0.4s;
+  stroke: #000;
+  -khtml-stroke: #000;
+  -moz-stroke: #000;
+  -webkit-stroke: #000;
+  stroke-width: 8px;
+  -khtml-stroke-width: 8px;
+  -moz-stroke-width: 8px;
+  -webkit-stroke-width: 8px;
+  stroke-linejoin: round;
+  -khtml-stroke-linejoin: round;
+  -moz-stroke-linejoin: round;
+  -webkit-stroke-linejoin: round;
+}
+
+.img-tag-div-container {
+  &:hover {
+    .path-blob-img {
+      transform: translate(30%, 30%) scale(0.3);
+      transition: 0.4s;
+    }
+  }
+}
+
+.svg-blob-img {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 130%;
+  height: 130%;
+  z-index: -1;
+}
+/*end of img blob loadStylingMotion*/
