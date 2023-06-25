@@ -13,6 +13,7 @@ const ImageOfRune = ({ isInView }) => {
       className={"img-tag-div-container"}
       style={utils.loadStylingMotion(isInView, 1)}
     >
+      ok
       <Image
         className={"img-tag-of-rune"}
         src={me}
