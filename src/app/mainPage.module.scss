@@ -1,0 +1,29 @@
+.headerTag {
+  position: fixed !important;
+  display: flex;
+  top: 0;
+  z-index: 7;
+  width: 100%;
+  transition: var(--transition-navbar);
+  -moz-box-align: center;
+  -moz-box-pack: justify;
+  background-color: transparent;
+
+  @media (min-width: 50em) {
+    height: 80px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    -khtml-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.mainTag {
+  margin: 0 auto;
+  max-width: 1600px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

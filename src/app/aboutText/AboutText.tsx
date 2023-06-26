@@ -1,24 +1,18 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./aboutText.scss";
 import { motion, useInView } from "framer-motion";
-import utils from "@/utils/utils";
 import { BiDownArrow } from "react-icons/bi";
 import ImageOfRune from "@/app/imageOfMe/ImageOfMe";
+import { loadStylingMotion } from "@/utils/utils";
 
-const AboutText = () => {
-  const [goToAbout, setGoToAbout] = useState(false);
-  const aboutRef = useRef<null | HTMLDivElement>(null);
+type AboutTextProps = {
+  aboutRef: React.MutableRefObject<null | HTMLDivElement>;
+};
+const AboutText = ({ aboutRef }: AboutTextProps) => {
   const isInView = useInView(aboutRef, {
     once: true,
   });
-
-  useEffect(() => {
-    if (goToAbout && aboutRef.current) {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-      setGoToAbout(true);
-    }
-  }, [goToAbout]);
 
   const arrowIconAnimation = {
     hidden: { opacity: 0 },
@@ -50,13 +44,13 @@ const AboutText = () => {
         id={"about"}
         ref={aboutRef}
         className={"about-and-img-container"}
-        style={utils.loadStylingMotion(isInView, 0.8)}
+        style={loadStylingMotion(isInView, 0.8)}
       >
         <div className={"about-me-container"}>
-          <h2 style={utils.loadStylingMotion(isInView, 0.9)}>
+          <h2 style={loadStylingMotion(isInView, 0.9)}>
             <span>00.</span> About
           </h2>
-          <p style={utils.loadStylingMotion(isInView, 1)}>
+          <p style={loadStylingMotion(isInView, 1)}>
             After several years in various positions in an e-commerce company, I
             realized that I wanted to learn something completely new. I wanted
             to be able to create things from scratch and get the feeling of
@@ -71,7 +65,7 @@ const AboutText = () => {
             signed up for for a bachelor&apos;s degree at a college in Oslo and
             moved there.
           </p>
-          <p style={utils.loadStylingMotion(isInView, 1.1)}>
+          <p style={loadStylingMotion(isInView, 1.1)}>
             It became programming, with special fields in{" "}
             <a
               href={
@@ -95,11 +89,11 @@ const AboutText = () => {
           </p>
           <div className={"tech-div"}>
             <div>
-              <p style={utils.loadStylingMotion(isInView, 1.2)}>
+              <p style={loadStylingMotion(isInView, 1.2)}>
                 Technologies I have been working with lately:
               </p>
               <ul
-                style={utils.loadStylingMotion(isInView, 1.3)}
+                style={loadStylingMotion(isInView, 1.3)}
                 className={"skills-list"}
               >
                 {skills &&

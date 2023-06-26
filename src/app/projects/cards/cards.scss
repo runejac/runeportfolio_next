@@ -1,0 +1,18 @@
+.cards-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 50px;
+
+  @media (min-width: 50em) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    //max-width: 1000px;
+    //gap: 5%;
+  }
+}

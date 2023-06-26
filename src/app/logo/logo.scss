@@ -1,0 +1,32 @@
+.logo-container {
+  display: flex;
+  align-self: center;
+  background-color: transparent;
+  a {
+    background-color: transparent;
+  }
+}
+
+.logo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 15px;
+
+  @media (max-width: 50em) {
+    margin-top: 15px;
+  }
+}
+
+.mainsite-logo > svg path {
+  transition: var(--transition);
+}
+
+.mainsite-logo > svg:hover path {
+  transition: var(--transition);
+  fill: var(--purple);
+}
+
+.mainsite-logo > a {
+  background-color: transparent;
+}

@@ -1,17 +1,21 @@
 import { motion } from "framer-motion";
 import React from "react";
 import "./imageOfRune.scss";
-import "../blob/blob.scss";
-import { BlobImg } from "../blob/BlobCard";
-import utils from "../../utils/utils";
+import "@/app/imageOfMe/blob/blob.scss";
+import { BlobImg } from "@/app/imageOfMe/blob/BlobCard";
+import { loadStylingMotion } from "@/utils/utils";
 import Image from "next/image";
 import me from "../../../public/images/me.png";
 
-const ImageOfRune = ({ isInView }) => {
+type ImageOfRuneProps = {
+  isInView: boolean;
+};
+
+const ImageOfRune = ({ isInView }: ImageOfRuneProps) => {
   return (
     <motion.div
       className={"img-tag-div-container"}
-      style={utils.loadStylingMotion(isInView, 1)}
+      style={loadStylingMotion(isInView, 1)}
     >
       <Image
         className={"img-tag-of-rune"}
