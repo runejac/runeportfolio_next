@@ -1,7 +1,6 @@
 import styles from "./AboutText.module.scss";
 import { motion, useInView } from "framer-motion";
 import { BiDownArrow } from "react-icons/bi";
-import ImageOfRune from "@/components/imageOfMe/ImageOfMe";
 import { loadStylingMotion } from "@/utils/utils";
 
 type AboutTextProps = {
@@ -57,11 +56,11 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
             the same time remind myself where my roots originate from. After
             some consultation and research, I landed on the decision that I
             wanted to learn how to code, how to make things from scratch on
-            behalf of the customer&apos;s requirements. To achieve that I had to
-            leave my comfort zone and move to another city. I find programming
-            an attractive industry with interesting people. I took the plunge. I
-            signed up for for a bachelor&apos;s degree at a college in Oslo and
-            moved there.
+            behalf of the customer requirements. To achieve that I had to leave
+            my comfort zone and move to another city. I find programming an
+            attractive industry with interesting people. I took the plunge. I
+            signed up for for a bachelor's degree at a college in Oslo and moved
+            there.
           </p>
           <p style={loadStylingMotion(isInView, 1.1)}>
             It became programming, with special fields in{" "}
@@ -80,10 +79,10 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
             that will shape my future. It is never too late to choose a new
             profession or learn a new skill. The teamwork that is required in a
             development process is priceless, the people surrounding you with
-            feedback and knowledge are in center of making a great product,
-            I&apos;ve learned. On a individual level; what is more important
-            than anything else is to never stop growing and learning, especially
-            from others that has already made up the wheel.
+            feedback and knowledge are in center of making a great product, I've
+            learned. On a individual level; what is more important than anything
+            else is to never stop growing and learning, especially from others
+            that has already made up the wheel.
           </p>
           <div>
             <div>
