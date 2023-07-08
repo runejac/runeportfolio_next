@@ -51,12 +51,12 @@ export default function MainPage() {
     window.onscroll = function () {
       const currentScrollPos = window.scrollY;
       if (prevScrollpos > currentScrollPos) {
-        const headerTag = document.querySelector("#header-tag");
+        const headerTag = document.querySelector("#header-tag") as HTMLElement;
         if (headerTag) {
           headerTag.style.top = "0";
         }
       } else {
-        const headerTag = document.querySelector("#header-tag");
+        const headerTag = document.querySelector("#header-tag") as HTMLElement;
         if (headerTag) {
           headerTag.style.top = "-100px";
         }
