@@ -11,6 +11,7 @@ import Footer from "@/components/footer/Footer";
 export default function MainPage() {
   const [goToAbout, setGoToAbout] = useState(false);
   const [goToProjects, setGoToProjects] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const aboutRef = useRef<null | HTMLDivElement>(null);
   const projectsRef = useRef<null | HTMLDivElement>(null);
 
@@ -27,9 +28,7 @@ export default function MainPage() {
     }
   }, [goToAbout, aboutRef.current, goToProjects, projectsRef.current]);
 
-  const [showModal, setShowModal] = useState(false);
-
-  let amountNumberFromScreenWidth;
+  let amountNumberFromScreenWidth = 0;
 
   useEffect(() => {
     const checkWidth = () => {

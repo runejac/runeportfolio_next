@@ -4,10 +4,15 @@ import stylesBlob from "../../imageOfMe/blob/Blob.module.scss";
 import { motion, useInView } from "framer-motion";
 import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
 import cardsData from "@/components/projects/cards/CardsData";
+import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 
 export let indexClicked: number;
 
-const CardItem = ({ openModal, projectsRef, amountNumberFromScreenWidth }) => {
+const CardItem = ({
+  openModal,
+  projectsRef,
+  amountNumberFromScreenWidth,
+}: ProjectsTextProps) => {
   const isInView = useInView(projectsRef, {
     amount: amountNumberFromScreenWidth,
     once: true,

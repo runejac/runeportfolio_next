@@ -8,8 +8,13 @@ import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
 
-const Modal = ({ showModal, setShowModal }) => {
-  const modalRef = useRef();
+type ModalProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Modal = ({ showModal, setShowModal }: ModalProps) => {
+  const modalRef = useRef<any>();
 
   const animation = {
     hidden: { y: "-200px", opacity: 0 },
@@ -32,7 +37,7 @@ const Modal = ({ showModal, setShowModal }) => {
     },
   };
 
-  const closeModal = (e) => {
+  const closeModal = (e: React.MouseEvent<HTMLDivElement>) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
@@ -40,7 +45,7 @@ const Modal = ({ showModal, setShowModal }) => {
 
   // Makes Escape key close the modal
   const keyPress = useCallback(
-    (e) => {
+    (e: KeyboardEvent) => {
       if (e.key === "Escape" && showModal) {
         setShowModal(false);
       }

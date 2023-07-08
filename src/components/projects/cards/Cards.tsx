@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "./Cards.module.scss";
-import CardItem from "./CardItem.tsx";
 import { motion, useInView } from "framer-motion";
-import { loadStylingMotion } from "src/utils/utils";
+import { loadStylingMotion } from "@/utils/utils";
+import CardItem from "@/components/projects/cards/CardItem";
+import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 
-const Cards = ({ openModal, projectsRef, amountNumberFromScreenWidth }) => {
+const Cards = ({
+  openModal,
+  projectsRef,
+  amountNumberFromScreenWidth,
+}: ProjectsTextProps) => {
   const isInView = useInView(projectsRef, {
     amount: amountNumberFromScreenWidth,
     once: true,

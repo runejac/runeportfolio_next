@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import { IoClose } from "react-icons/io5";
@@ -6,7 +6,12 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 //import pdfFile from "../../../public/resume/CV_Oliveira.pdf";
 import Link from "next/link";
 
-const Navbar = ({ onClickAbout, onClickProjects }) => {
+type NavbarProps = {
+  onClickAbout: Dispatch<SetStateAction<boolean>>;
+  onClickProjects: Dispatch<SetStateAction<boolean>>;
+};
+
+const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
   const [sidebar, setSidebar] = useState(false);
 
   function showSidebar() {

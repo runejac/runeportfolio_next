@@ -1,14 +1,20 @@
 import React from "react";
 import { useInView } from "framer-motion";
 import styles from "./ProjectsText.module.scss";
-import Cards from "./cards/Cards.jsx";
-import { loadStylingMotion } from "src/utils/utils";
+import { loadStylingMotion } from "@/utils/utils";
+import Cards from "@/components/projects/cards/Cards";
+
+export type ProjectsTextProps = {
+  projectsRef: React.MutableRefObject<HTMLDivElement | null>;
+  openModal: () => void;
+  amountNumberFromScreenWidth: number;
+};
 
 const ProjectsText = ({
   projectsRef,
   openModal,
   amountNumberFromScreenWidth,
-}) => {
+}: ProjectsTextProps) => {
   const isInView = useInView(projectsRef, {
     amount: amountNumberFromScreenWidth,
     once: true,
