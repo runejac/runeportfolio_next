@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Modal.module.scss";
-import cardsData from "../CardsData";
 import { RiGithubLine } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
+import { DataContext } from "@/context/DataContext";
 
 type ModalProps = {
   showModal: boolean;
@@ -14,6 +14,7 @@ type ModalProps = {
 };
 
 const Modal = ({ showModal, setShowModal }: ModalProps) => {
+  const data = useContext(DataContext);
   const modalRef = useRef<any>();
 
   const animation = {
@@ -73,7 +74,7 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
               className={styles.modalWrapper}
               onClick={(e) => e.stopPropagation()}
             >
-              {cardsData.map((cardData, index) => {
+              {data.cardsData.map((cardData, index) => {
                 if (cardData.id === indexClicked) {
                   return (
                     <React.Fragment key={index}>
@@ -85,12 +86,12 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
                       />
                       <div className={styles.modalContent}>
                         <h1>{cardData.appTitle}</h1>
-                        <p>{cardData.content}</p>
-                        <p className={styles.downPaaS}>{cardData.downAtPaaS}</p>
+                        <p>{cardData.appDescription}</p>
+                        {/*<p className={styles.downPaaS}>{cardData.downAtPaaS}</p>*/}
                         <div className={styles.iconContainer}>
                           <a
                             title={"GitHub"}
-                            href={cardData.github}
+                            href={cardData.githubLink}
                             aria-label={"GitHub link"}
                             target={"_blank"}
                           >

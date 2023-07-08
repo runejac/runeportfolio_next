@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { StaticImageData } from "next/image";
 
 export type DataContextProps = {
   introText: {
@@ -8,6 +9,18 @@ export type DataContextProps = {
     p1: string;
     p2: string;
   };
+  cardsData: [
+    {
+      id: number;
+      appTitle: string;
+      appType: string;
+      appDescription: string;
+      techSpecs: string[];
+      githubLink: string;
+      img: StaticImageData;
+      externalLink?: string;
+    }
+  ];
 };
 
 export const DataContext = createContext<DataContextProps>(

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./CardItem.module.scss";
 import stylesBlob from "../../imageOfMe/blob/Blob.module.scss";
 import { motion, useInView } from "framer-motion";
 import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
-import cardsData from "@/components/projects/cards/CardsData";
 import { ProjectsTextProps } from "@/components/projects/ProjectsText";
+import { DataContext } from "@/context/DataContext";
 
 export let indexClicked: number;
 
@@ -13,6 +13,7 @@ const CardItem = ({
   projectsRef,
   amountNumberFromScreenWidth,
 }: ProjectsTextProps) => {
+  const data = useContext(DataContext);
   const isInView = useInView(projectsRef, {
     amount: amountNumberFromScreenWidth,
     once: true,
@@ -29,7 +30,7 @@ const CardItem = ({
     indexClicked = index;
 
     // Adding correct modal clicked on to GA
-    cardsData.forEach((projectName) => {
+    data.cardsData.forEach((projectName) => {
       if (projectName.id === indexClicked) {
         //gaEventTracker(projectName.appTitle);
       }
@@ -49,7 +50,7 @@ const CardItem = ({
 
   return (
     <>
-      {cardsData.map((cardItem, index) => {
+      {data.cardsData.map((cardItem, index) => {
         return (
           <motion.article
             onClick={() => {

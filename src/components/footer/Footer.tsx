@@ -25,7 +25,7 @@ const Footer = () => {
               rel={"noopener noreferrer"}
               aria-label={"open github profile"}
             >
-              <FiGithub className={`${styles.iconLink} ${styles.github}`} />
+              <FiGithub className={`${styles.iconLink} ${styles.githubLink}`} />
             </a>
           </li>
         </ul>
