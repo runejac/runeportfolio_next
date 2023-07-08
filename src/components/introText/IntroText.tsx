@@ -70,28 +70,21 @@ const IntroText = () => {
         initial={"hidden"}
         animate={"showh3"}
       >
-        <h3>Information technology student</h3>
+        <h3>{h3}</h3>
       </motion.div>
       <motion.div
         variants={itemsOpacityAnimation}
         initial={"hidden"}
         animate={"showhp1"}
       >
-        <p>
-          I'm currently in my final year of my bachelor's degree in IT. I like
-          to learn new technologies, I love great teamwork and I am fond of good
-          user experiences.
-        </p>
+        <p>{p1}</p>
       </motion.div>
       <motion.div
         variants={itemsOpacityAnimation}
         initial={"hidden"}
         animate={"showhp2"}
       >
-        <p>
-          During my experience, I have enjoyed working with Vue.js, TypeScript,
-          .NET and developing on mobile platforms with SwiftUI.
-        </p>
+        <p>{p2}</p>
       </motion.div>
     </motion.section>
   );

@@ -21,9 +21,14 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
     },
   };
 
-  const skills = [".NET", "TypeScript", "Vue.js", "Swift", "Ionic", "GraphQL"];
-
-  //const skillsInProgress = ["C#", ".NET", "Swift", "TypeScript", "Vue", "Ionic"];
+  const latelyTechnologiesWorkedWith = [
+    "Vue",
+    "ASP.NET",
+    "C#",
+    "TypeScript",
+    "Next.js",
+    "SCSS",
+  ];
 
   return (
     <>
@@ -93,15 +98,14 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
                 style={loadStylingMotion(isInView, 1.3)}
                 className={styles.skillsList}
               >
-                {skills &&
-                  skills.map((skill, index) => <li key={index}>{skill}</li>)}
+                {latelyTechnologiesWorkedWith &&
+                  latelyTechnologiesWorkedWith.map((skill, index) => (
+                    <li key={index}>{skill}</li>
+                  ))}
               </ul>
             </div>
           </div>
         </div>
-        {/*<div className={styles.imgContainer}>
-          <ImageOfRune isInView={isInView} />
-        </div>*/}
       </motion.section>
     </>
   );
