@@ -12,21 +12,28 @@ export default function MainPage() {
   const [goToAbout, setGoToAbout] = useState(false);
   const [goToProjects, setGoToProjects] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const aboutRef = useRef<null | HTMLDivElement>(null);
-  const projectsRef = useRef<null | HTMLDivElement>(null);
+  const aboutRef = useRef<null | HTMLElement>(null);
+  const projectsRef = useRef<null | HTMLElement>(null);
 
   useEffect(() => {
     if (goToAbout && aboutRef.current) {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+      const targetElement = aboutRef.current;
+      const targetPosition =
+        targetElement.getBoundingClientRect().top + window.pageYOffset;
+      window.scroll({
+        top: targetPosition,
+        behavior: "smooth",
+      });
       setGoToAbout(false);
     }
+
     if (goToProjects && projectsRef.current) {
       projectsRef.current?.scrollIntoView({
         behavior: "smooth",
       });
       setGoToProjects(false);
     }
-  }, [goToAbout, aboutRef.current, goToProjects, projectsRef.current]);
+  }, [goToAbout, goToProjects]);
 
   let amountNumberFromScreenWidth = 0;
 

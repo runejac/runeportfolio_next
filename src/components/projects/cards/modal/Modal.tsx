@@ -7,6 +7,8 @@ import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
 import { DataContext } from "@/context/DataContext";
+import stylesBlob from "@/components/imageOfMe/blob/Blob.module.scss";
+import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
 
 type ModalProps = {
   showModal: boolean;
@@ -59,6 +61,26 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
+  const setCardColor = (index: number) => {
+    let cardColorClass = "";
+    switch (index) {
+      case 0:
+        cardColorClass = stylesBlob.card0;
+        break;
+      case 1:
+        cardColorClass = stylesBlob.card1;
+        break;
+      case 2:
+        cardColorClass = stylesBlob.card2;
+        break;
+      case 3:
+        cardColorClass = stylesBlob.card3;
+        break;
+    }
+
+    return cardColorClass;
+  };
+
   return (
     <AnimatePresence initial={false} mode={"wait"}>
       {showModal ? (
@@ -79,15 +101,19 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
                   return (
                     <React.Fragment key={index}>
                       <Image
-                        style={{ objectFit: "contain" }}
                         className={styles.modalImg}
                         src={cardData.img}
                         alt="image of app"
                       />
+                      {/*<BlobCard
+                        svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(
+                          index
+                        )} `}
+                        cardNumber={index}
+                      />*/}
                       <div className={styles.modalContent}>
                         <h1>{cardData.appTitle}</h1>
                         <p>{cardData.appDescription}</p>
-                        {/*<p className={styles.downPaaS}>{cardData.downAtPaaS}</p>*/}
                         <div className={styles.iconContainer}>
                           <a
                             title={"GitHub"}

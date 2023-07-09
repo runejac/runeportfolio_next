@@ -14,6 +14,7 @@
 }
 
 .modalImg {
+  object-fit: contain;
   height: 350px;
   border-top: var(--border-specs);
   border-right: var(--border-specs);

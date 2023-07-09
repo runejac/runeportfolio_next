@@ -148,8 +148,8 @@ $bp-xl: 73em;*/
   --box-shadow-pink: 8px 8px var(--pink-shadow);
   --box-shadow-modal: 16px 16px #000;
   --box-shadow-icon: 2px 2px #000;
-  --transition: all 0.14s ease-out 0s;
-  --transition-navbar: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition: transform 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  --transition-navbar: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   --sm: 14px;
   --outline: 1px red solid;
 }

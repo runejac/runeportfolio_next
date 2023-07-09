@@ -176,15 +176,12 @@ body {
   overflow: hidden;
   cursor: pointer;
   text-align: left;
+  transform: translate(0, 0);
 
   &:hover {
     box-shadow: none;
+    transform: translate(8px, 8px);
     transition: var(--transition);
-
-    li {
-      color: black;
-      opacity: 1;
-    }
 
     .path-blob-card {
       //fill: url(#myGradient);
@@ -199,11 +196,11 @@ body {
   text-align: center;
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: bold;
     font-family: "Bebas Neue Book", sans-serif;
     background-color: transparent;
-    color: white;
+    color: #000000;
   }
 }
 
@@ -216,13 +213,12 @@ body {
   }
   li {
     width: fit-content;
-    border-radius: 6px;
-    padding: 0.3rem;
-    //background-image: linear-gradient(90deg, #3533f3, #fff);
+    font-weight: lighter;
+    padding-top: 0.8rem;
+    border-bottom: 1px #000000 solid;
     position: relative;
     opacity: 1;
     font-family: "SF Mono", sans-serif;
-    transition: 0.4s;
     background-color: transparent;
     list-style: none;
   }

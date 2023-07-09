@@ -48,6 +48,26 @@ const CardItem = ({
     }),
   };
 
+  const setCardColor = (index: number) => {
+    let cardColorClass = "";
+    switch (index) {
+      case 0:
+        cardColorClass = stylesBlob.card0;
+        break;
+      case 1:
+        cardColorClass = stylesBlob.card1;
+        break;
+      case 2:
+        cardColorClass = stylesBlob.card2;
+        break;
+      case 3:
+        cardColorClass = stylesBlob.card3;
+        break;
+    }
+
+    return cardColorClass;
+  };
+
   return (
     <>
       {data.cardsData.map((cardItem, index) => {
@@ -66,8 +86,8 @@ const CardItem = ({
             custom={index}
           >
             <BlobCard
-              svgClassName={stylesBlob.svgBlobCard}
-              pathClassName={stylesBlob.pathBlobCard}
+              svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
+              cardNumber={index}
             />
             <div>
               <div className={styles.circularBorder}>

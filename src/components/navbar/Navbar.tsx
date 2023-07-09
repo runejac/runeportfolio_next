@@ -51,7 +51,11 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
     <>
       <motion.nav className={styles.navbarContainer}>
         <motion.ol>
-          <Link href={"#"} aria-label={"about section"}>
+          <Link
+            href={"#about"}
+            onClick={() => onClickAbout(true)}
+            aria-label={"about section"}
+          >
             <motion.li
               variants={navBarItemsMotion}
               initial={"hidden"}
@@ -60,7 +64,11 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
               <span>00.</span> ABOUT
             </motion.li>
           </Link>
-          <Link href={"#"} aria-label={"projects section"}>
+          <Link
+            href={"#projects"}
+            onClick={() => onClickProjects(true)}
+            aria-label={"projects section"}
+          >
             <motion.li
               variants={navBarItemsMotion}
               initial={"hidden"}
@@ -119,7 +127,7 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
         <nav className={`${styles.navMenu} ${sidebar ? styles.active : ""}`}>
           <ul className={styles.navMenuItems}>
             <Link
-              href={"#"}
+              href={"#about"}
               aria-label={"about section"}
               onClick={() => {
                 onClickAbout(true);

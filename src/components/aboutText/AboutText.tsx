@@ -4,7 +4,7 @@ import { BiDownArrow } from "react-icons/bi";
 import { loadStylingMotion } from "@/utils/utils";
 
 type AboutTextProps = {
-  aboutRef: React.MutableRefObject<null | HTMLDivElement>;
+  aboutRef: React.MutableRefObject<null | HTMLElement>;
 };
 const AboutText = ({ aboutRef }: AboutTextProps) => {
   const isInView = useInView(aboutRef, {

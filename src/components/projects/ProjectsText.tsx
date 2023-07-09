@@ -5,7 +5,7 @@ import { loadStylingMotion } from "@/utils/utils";
 import Cards from "@/components/projects/cards/Cards";
 
 export type ProjectsTextProps = {
-  projectsRef: React.MutableRefObject<HTMLDivElement | null>;
+  projectsRef: React.MutableRefObject<HTMLElement | null>;
   openModal: () => void;
   amountNumberFromScreenWidth: number;
 };
