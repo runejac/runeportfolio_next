@@ -1,17 +1,11 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-//import pdfFile from "../../../public/resume/CV_Oliveira.pdf";
-import Link from "next/link";
 
-type NavbarProps = {
-  onClickAbout: Dispatch<SetStateAction<boolean>>;
-  onClickProjects: Dispatch<SetStateAction<boolean>>;
-};
-
-const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
+const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
 
   function showSidebar() {
@@ -51,11 +45,7 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
     <>
       <motion.nav className={styles.navbarContainer}>
         <motion.ol>
-          <Link
-            href={"#about"}
-            onClick={() => onClickAbout(true)}
-            aria-label={"about section"}
-          >
+          <Link href={"#about"} scroll={false} aria-label={"about section"}>
             <motion.li
               variants={navBarItemsMotion}
               initial={"hidden"}
@@ -66,7 +56,7 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
           </Link>
           <Link
             href={"#projects"}
-            onClick={() => onClickProjects(true)}
+            scroll={false}
             aria-label={"projects section"}
           >
             <motion.li
@@ -93,7 +83,12 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
               <span>02.</span> HIT ME UP
             </motion.li>
           </Link>
-          {/*<a href={pdfFile} target={"_blank"} rel={"noopener noreferrer"}>
+          <Link
+            className={styles.resume}
+            href={"/CV_Oliveira.pdf"}
+            target={"_blank"}
+            rel={"noopener noreferrer"}
+          >
             <motion.li
               variants={navBarItemsMotion}
               initial={"hidden"}
@@ -102,7 +97,7 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
             >
               Resume
             </motion.li>
-          </a>*/}
+          </Link>
         </motion.ol>
       </motion.nav>
       {sidebar && (
@@ -128,11 +123,9 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
           <ul className={styles.navMenuItems}>
             <Link
               href={"#about"}
+              scroll={false}
               aria-label={"about section"}
-              onClick={() => {
-                onClickAbout(true);
-                showSidebar();
-              }}
+              onClick={() => showSidebar()}
             >
               <li className={styles.navbarChild}>
                 <span>00.</span> About
@@ -140,12 +133,9 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
             </Link>
             <Link
               href={"#projects"}
-              scroll={true}
+              scroll={false}
               aria-label={"projects section"}
-              onClick={() => {
-                onClickProjects(true);
-                showSidebar();
-              }}
+              onClick={() => showSidebar()}
             >
               <li className={styles.navbarChild}>
                 <span>01.</span> Projects
@@ -163,9 +153,13 @@ const Navbar = ({ onClickAbout, onClickProjects }: NavbarProps) => {
                 <span>02.</span> Hit me up
               </li>
             </Link>
-            {/*<a href={pdfFile} target={"_blank"} rel={"noopener noreferrer"}>
+            <Link
+              href={"/CV_Oliveira.pdf"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
               <li className={"navbar-child resume"}>Resume</li>
-            </a>*/}
+            </Link>
             <li className={styles.navbarToggle}>
               <IoClose
                 aria-label={"close menu"}

@@ -6,22 +6,27 @@
     display: flex;
     justify-content: flex-end;
     align-self: center;
-    z-index: 8;
     background-color: transparent;
     transition: var(--transition);
     right: 15%;
 
     ol {
-      background-color: inherit;
+      background: transparent;
+      gap: 2rem;
+      display: flex;
     }
 
     li {
-      display: inline;
+      background: transparent;
+      list-style: none;
       font-size: 1.5rem;
-      margin-inline: 20px;
-      padding: 7px 15px 7px 15px;
-      transition: var(--transition);
-      background-color: inherit;
+      transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:hover {
+        text-shadow: rgba(197, 13, 13, 0.76) 4px 10px;
+        font-family: "Montserrat ExtraBold", sans-serif;
+        transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
     }
 
     .resume {
@@ -34,6 +39,7 @@
     }
 
     a {
+      padding: 0;
       text-decoration: none;
       color: inherit;
       background-color: inherit;

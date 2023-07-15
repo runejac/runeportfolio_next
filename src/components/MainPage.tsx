@@ -9,31 +9,9 @@ import Modal from "@/components/projects/cards/modal/Modal";
 import Footer from "@/components/footer/Footer";
 
 export default function MainPage() {
-  const [goToAbout, setGoToAbout] = useState(false);
-  const [goToProjects, setGoToProjects] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const aboutRef = useRef<null | HTMLElement>(null);
   const projectsRef = useRef<null | HTMLElement>(null);
-
-  useEffect(() => {
-    if (goToAbout && aboutRef.current) {
-      const targetElement = aboutRef.current;
-      const targetPosition =
-        targetElement.getBoundingClientRect().top + window.pageYOffset;
-      window.scroll({
-        top: targetPosition,
-        behavior: "smooth",
-      });
-      setGoToAbout(false);
-    }
-
-    if (goToProjects && projectsRef.current) {
-      projectsRef.current?.scrollIntoView({
-        behavior: "smooth",
-      });
-      setGoToProjects(false);
-    }
-  }, [goToAbout, goToProjects]);
 
   let amountNumberFromScreenWidth = 0;
 
@@ -75,7 +53,7 @@ export default function MainPage() {
     <>
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <header id={"header-tag"} className={styles.headerTag}>
-        <Navbar onClickAbout={setGoToAbout} onClickProjects={setGoToProjects} />
+        <Navbar />
         <Logo />
       </header>
       <main className={styles.mainTag}>

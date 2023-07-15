@@ -8,7 +8,6 @@ import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
 import { DataContext } from "@/context/DataContext";
 import stylesBlob from "@/components/imageOfMe/blob/Blob.module.scss";
-import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
 
 type ModalProps = {
   showModal: boolean;
