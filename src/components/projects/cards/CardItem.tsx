@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
 import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 import { DataContext } from "@/context/DataContext";
+import Image from "next/image";
 
 export let indexClicked: number;
 
@@ -12,6 +13,7 @@ const CardItem = ({
   openModal,
   projectsRef,
   amountNumberFromScreenWidth,
+  isVisible,
 }: ProjectsTextProps) => {
   const data = useContext(DataContext);
   const isInView = useInView(projectsRef, {
@@ -82,17 +84,20 @@ const CardItem = ({
             className={styles.card}
             variants={showOneByOneAnimation}
             initial={"hidden"}
-            animate={isInView ? "show" : ""}
+            animate={isVisible ? "show" : ""}
             custom={index}
           >
             <BlobCard
               svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
               cardNumber={index}
             />
-            <div>
-              <div className={styles.circularBorder}>
-                <h2>{cardItem.appTitle}</h2>
-              </div>
+            <Image
+              className={styles.modalImg}
+              src={cardItem.img}
+              alt="image of app"
+            />
+            <div className={styles.circularBorder}>
+              <h2>{cardItem.appTitle}</h2>
             </div>
             <div className={styles.technologiesContainer}>
               <ul>

@@ -10,7 +10,6 @@ import Footer from "@/components/footer/Footer";
 
 export default function MainPage() {
   const [showModal, setShowModal] = useState(false);
-  const aboutRef = useRef<null | HTMLElement>(null);
   const projectsRef = useRef<null | HTMLElement>(null);
 
   let amountNumberFromScreenWidth = 0;
@@ -58,7 +57,7 @@ export default function MainPage() {
       </header>
       <main className={styles.mainTag}>
         <IntroText />
-        <AboutText aboutRef={aboutRef} />
+        <AboutText />
         <ProjectsText
           amountNumberFromScreenWidth={amountNumberFromScreenWidth}
           projectsRef={projectsRef}

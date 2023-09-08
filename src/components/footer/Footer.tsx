@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div className={styles.designedByContainer}>
         <a
-          href="https://github.com/runejac/RunePortfolio"
+          href="https://github.com/runejac/runeportfolio_next"
           target={"_blank"}
           rel={"noopener noreferrer"}
           aria-label={"open this website's github source code"}

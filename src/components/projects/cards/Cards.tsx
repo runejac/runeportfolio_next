@@ -9,18 +9,15 @@ const Cards = ({
   openModal,
   projectsRef,
   amountNumberFromScreenWidth,
+  isVisible,
 }: ProjectsTextProps) => {
-  const isInView = useInView(projectsRef, {
-    amount: amountNumberFromScreenWidth,
-    once: true,
-  });
-
   return (
     <motion.section
       className={styles.cardsContainer}
-      style={loadStylingMotion(isInView, 0.2)}
+      style={loadStylingMotion(isVisible, 0.2)}
     >
       <CardItem
+        isVisible={isVisible}
         projectsRef={projectsRef}
         amountNumberFromScreenWidth={amountNumberFromScreenWidth}
         openModal={openModal}

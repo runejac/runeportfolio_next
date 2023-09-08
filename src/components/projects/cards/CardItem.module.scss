@@ -205,21 +205,27 @@ body {
 }
 
 .technologies-container {
+  background: transparent;
   ul {
+    background: transparent;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 0.3rem;
     margin-top: 3rem;
   }
   li {
+    font-family: "Fira Code", sans-serif;
     width: fit-content;
-    font-weight: lighter;
-    padding-top: 0.8rem;
-    border-bottom: 1px #000000 solid;
+    font-weight: normal;
+    font-size: 0.8rem;
     position: relative;
     opacity: 1;
-    font-family: "SF Mono", sans-serif;
     background-color: transparent;
     list-style: none;
   }
+}
+
+.modal-img {
+  position: absolute;
+  z-index: -1;
 }

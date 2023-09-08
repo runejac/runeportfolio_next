@@ -1,15 +1,43 @@
 import styles from "./AboutText.module.scss";
-import { motion, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { BiDownArrow } from "react-icons/bi";
 import { loadStylingMotion } from "@/utils/utils";
+import { useEffect, useRef, useState } from "react";
 
-type AboutTextProps = {
-  aboutRef: React.MutableRefObject<null | HTMLElement>;
-};
-const AboutText = ({ aboutRef }: AboutTextProps) => {
-  const isInView = useInView(aboutRef, {
-    once: true,
-  });
+const AboutText = () => {
+  const aboutSectionRef = useRef<null | HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isOnSmallerFormat, setIsOnSmallerFormat] = useState(false);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    setIsOnSmallerFormat(window.innerWidth < 1200);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: isOnSmallerFormat ? 0 : 0.6 } // Trigger when the section is fully visible
+    );
+    if (aboutSectionRef.current) {
+      observer.observe(aboutSectionRef.current);
+    }
+
+    return () => {
+      if (aboutSectionRef.current) {
+        observer.unobserve(aboutSectionRef.current);
+      }
+    };
+  }, [isOnSmallerFormat]);
+
+  useEffect(() => {
+    if (isVisible) {
+      controls.start("visible");
+    }
+  }, [isVisible, controls]);
+
+  useEffect(() => {
+    controls.start("hidden");
+  }, []);
 
   const arrowIconAnimation = {
     hidden: { opacity: 0 },
@@ -19,6 +47,11 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
         delay: 4.8,
       },
     },
+  };
+
+  const sectionAnimation = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
   };
 
   const latelyTechnologiesWorkedWith = [
@@ -32,7 +65,7 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
 
   return (
     <>
-      {!isInView && (
+      {!isVisible && (
         <motion.div
           className={styles.iconScrollContainer}
           variants={arrowIconAnimation}
@@ -44,15 +77,17 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
       )}
       <motion.section
         id={"about"}
-        ref={aboutRef}
+        ref={aboutSectionRef}
+        animate={controls}
+        variants={sectionAnimation}
         className={styles.aboutAndImgContainer}
-        style={loadStylingMotion(isInView, 0.8)}
+        style={loadStylingMotion(isVisible, 0.1)}
       >
         <div className={styles.aboutMeContainer}>
-          <h2 style={loadStylingMotion(isInView, 0.9)}>
+          <h2 style={loadStylingMotion(isVisible, 0.15)}>
             <span>00.</span> About
           </h2>
-          <p style={loadStylingMotion(isInView, 1)}>
+          <p style={loadStylingMotion(isVisible, 0.2)}>
             After several years in various positions in an e-commerce company, I
             realized that I wanted to learn something completely new. I wanted
             to be able to create things from scratch and get the feeling of
@@ -67,7 +102,7 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
             signed up for for a bachelor's degree at a college in Oslo and moved
             there.
           </p>
-          <p style={loadStylingMotion(isInView, 1.1)}>
+          <p style={loadStylingMotion(isVisible, 0.3)}>
             It became programming, with special fields in{" "}
             <a
               href={
@@ -91,11 +126,11 @@ const AboutText = ({ aboutRef }: AboutTextProps) => {
           </p>
           <div>
             <div>
-              <p style={loadStylingMotion(isInView, 1.2)}>
+              <p style={loadStylingMotion(isVisible, 0.35)}>
                 Technologies I have been working with lately:
               </p>
               <ul
-                style={loadStylingMotion(isInView, 1.3)}
+                style={loadStylingMotion(isVisible, 0.4)}
                 className={styles.skillsList}
               >
                 {latelyTechnologiesWorkedWith &&

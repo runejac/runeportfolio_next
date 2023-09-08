@@ -23,7 +23,7 @@
       transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
       &:hover {
-        text-shadow: rgba(197, 13, 13, 0.76) 4px 10px;
+        text-shadow: var(--text-shadow) 4px 10px;
         font-family: "Montserrat ExtraBold", sans-serif;
         transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }

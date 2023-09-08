@@ -30,7 +30,14 @@ export async function getStaticProps() {
       appType: "HYBRID APP",
       img: retroGameMarket,
       githubLink: "https://github.com/runejac/TDS200_h22_exam",
-      techSpecs: ["Vue.js", "Ionic", "Directus", "GraphQL", "Mapbox.js"],
+      techSpecs: [
+        "TypeScript",
+        "Vue.js",
+        "Ionic",
+        "Directus",
+        "GraphQL",
+        "Mapbox.js",
+      ],
       appDescription:
         "The ultimate destination for retro games collections. With a vast selection of used, new, and mint condition games, there's something for every type of gamer. Plus, an interactive map feature helps you connect with sellers near you.",
     },
@@ -41,7 +48,7 @@ export async function getStaticProps() {
       img: reversedImageSearchImg,
       githubLink:
         "https://github.com/runejac/PGR208_EXAM_Reversed_Image_Search",
-      techSpecs: ["Kotlin", "SQLite"],
+      techSpecs: ["Kotlin", "XML", "SQLite"],
       appDescription:
         "On a Android phone, you can either take a photo with the camera or choose an existing image from the phone's storage as input and the app will return results related to the image.",
     },
