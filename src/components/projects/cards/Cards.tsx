@@ -14,7 +14,7 @@ const Cards = ({
   return (
     <motion.section
       className={styles.cardsContainer}
-      style={loadStylingMotion(isVisible, 0.2)}
+      style={loadStylingMotion(isVisible!, 0.2)}
     >
       <CardItem
         isVisible={isVisible}

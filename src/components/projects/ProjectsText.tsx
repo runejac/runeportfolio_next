@@ -8,7 +8,7 @@ export type ProjectsTextProps = {
   projectsRef: React.MutableRefObject<HTMLElement | null>;
   openModal: () => void;
   amountNumberFromScreenWidth: number;
-  isVisible: boolean;
+  isVisible?: boolean;
 };
 
 const ProjectsText = ({
