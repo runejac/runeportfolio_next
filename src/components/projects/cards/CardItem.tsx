@@ -18,12 +18,12 @@ const CardItem = ({
 	const data = useContext(DataContext);
 	const [hoveredCards, setHoveredCards] = useState(Array(data.cardsData.length).fill(false));
 
-	const toggleHover = (index) => {
+	const toggleHover = (index: number) => {
 		const updatedHoveredCards = [...hoveredCards];
 		updatedHoveredCards[index] = !updatedHoveredCards[index];
 		setHoveredCards(updatedHoveredCards);
 	};
-  
+
 
 	const handleClick = (index: number) => {
 		const headerTag = document.querySelector(
