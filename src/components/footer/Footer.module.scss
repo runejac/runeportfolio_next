@@ -1,97 +1,119 @@
+
 .footer-container {
-  border-top: 1px solid black;
-  position: absolute;
-  display: flex;
-  width: 100%;
-  height: 200px;
-  background-color: var(--footer);
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  overflow: hidden;
+	//border-top: 1px solid black;
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-image: linear-gradient(rgb(250, 246, 233), rgba(37, 14, 14, 0.81)),
+	url("../../../public/images/mac-code.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center 75%;
+	//justify-content: space-between;
+	overflow: hidden;
+}
+
+.footer-content {
+	background-color: transparent;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	gap: 1rem;
 }
 
 .social-media-container {
-  background-color: var(--footer);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .footer-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  gap: 2rem;
-  background-color: var(--footer);
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	gap: 2rem;
+	background-color: transparent;
 
-  li {
-    background-color: var(--footer);
-  }
+	li {
+		background-color: transparent;
+	}
 
-  li > a {
-    background-color: var(--footer);
-  }
+	li > a {
+		background-color: transparent;
+	}
 }
 
 .icon-link {
-  font-size: 2rem;
-  background-color: var(--footer);
-  transition: var(--transition);
+	font-size: 2rem;
+	background-color: transparent;
+	transition: var(--transition);
 
-  @media (min-width: 50em) {
-    font-size: 2.5rem;
-  }
+	@media (min-width: 50em) {
+		font-size: 2.5rem;
+	}
 
-  &:hover {
-    transform: translateY(-3px);
-    transition: var(--transition);
-  }
+	&:hover {
+		transform: translateY(-3px);
+		transition: var(--transition);
+	}
 }
 
 .linkedin {
-  //color: var(--linkedin-color);
-  color: black;
+	//color: var(--linkedin-color);
+	color: black;
+	font-size: 2rem;
 }
 
 .github-link {
-  color: black;
+	font-size: 2rem;
+	color: black;
 }
 
 .designed-by-container {
-  background-color: var(--footer);
+	background-color: transparent;
 }
 
 .designed-by-container > a {
-  text-decoration: none;
-  background-color: var(--footer);
-  font-family: "Montserrat Regular", sans-serif;
-  font-size: 0.7rem;
-  position: relative;
-  font-weight: bold;
-  color: #000;
-  transition: var(--transition);
+	background-color: transparent;
+	font-family: "Montserrat Thin", sans-serif;
+	font-size: 0.7rem;
+	position: relative;
+	color: whitesmoke;
+	transition: var(--transition);
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 .copyright-container {
-  background-color: var(--footer);
-  display: flex;
-  flex-direction: column;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
 }
 
 .copyright-container > p {
-  background-color: var(--footer);
-  font-family: "Montserrat Regular", sans-serif;
-  font-size: 0.7rem;
-  position: relative;
-  font-weight: bold;
-  color: #000;
+	background-color: transparent;
+	font-family: "Montserrat Thin", sans-serif;
+	font-size: 0.7rem;
+	position: relative;
+	color: whitesmoke;
 }
 
 @media (min-width: 50em) {
-  .designed-by-container > a:hover {
-    color: var(--blue);
-    transition: var(--transition);
-  }
+	.designed-by-container > a:hover {
+		transition: var(--transition);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer-container {
+		background-size: 230%;
+		background-position: 20% 50%;
+	}
 }

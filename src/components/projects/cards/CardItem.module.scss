@@ -160,72 +160,78 @@ body {
   padding-top: 2em;
 }*/
 .card {
-  border: var(--border-specs);
-  border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -webkit-border-radius: var(--border-radius);
-  -khtml-border-radius: var(--border-radius);
-  transition: var(--transition);
-  min-width: 220px;
-  max-width: 220px;
-  box-shadow: var(--box-shadow);
-  height: 20rem;
-  position: relative;
-  display: inline-block;
-  padding: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  text-align: left;
-  transform: translate(0, 0);
+	border: var(--border-specs);
+	border-radius: var(--border-radius);
+	-moz-border-radius: var(--border-radius);
+	-webkit-border-radius: var(--border-radius);
+	-khtml-border-radius: var(--border-radius);
+	transition: var(--transition);
+	min-width: 220px;
+	max-width: 220px;
+	box-shadow: var(--box-shadow);
+	height: 20rem;
+	position: relative;
+	display: inline-block;
+	padding: 20px;
+	overflow: hidden;
+	cursor: pointer;
+	text-align: left;
+	transform: translate(0, 0);
 
-  &:hover {
-    box-shadow: none;
-    transform: translate(8px, 8px);
-    transition: var(--transition);
+	&:hover {
+		box-shadow: none;
+		transform: translate(8px, 8px);
+		transition: var(--transition);
 
-    .path-blob-card {
-      //fill: url(#myGradient);
-      transform: translate(23%, 3%) scale(3.75);
-    }
-  }
-}
-
-.circular-border {
-  background-color: transparent;
-  position: relative;
-  text-align: center;
-
-  h2 {
-    font-size: 1.9rem;
-    font-weight: bold;
-    font-family: "Bebas Neue Book", sans-serif;
-    background-color: transparent;
-    color: #000000;
-  }
-}
-
-.technologies-container {
-  background: transparent;
-  ul {
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-top: 3rem;
-  }
-  li {
-    font-family: "Fira Code", sans-serif;
-    width: fit-content;
-    font-weight: normal;
-    font-size: 0.8rem;
-    position: relative;
-    opacity: 1;
-    background-color: transparent;
-    list-style: none;
-  }
+		.hover-card-scale-img {
+			transition: var(--transition);
+			transform: scale(1.2);
+		}
+	}
 }
 
 .modal-img {
-  position: absolute;
-  z-index: -1;
+	position: absolute;
+	z-index: -1;
+	transition: var(--transition);
+	transform: scale(1);
 }
+
+
+.circular-border {
+	background-color: transparent;
+	position: relative;
+	text-align: center;
+
+	h2 {
+		font-size: 1.9rem;
+		font-weight: bold;
+		font-family: "Bebas Neue Book", sans-serif;
+		background-color: transparent;
+		color: #000000;
+	}
+}
+
+.technologies-container {
+	background: transparent;
+
+	ul {
+		background: transparent;
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		margin-top: 3rem;
+	}
+
+	li {
+		font-family: "Fira Code", sans-serif;
+		width: fit-content;
+		font-weight: normal;
+		font-size: 0.8rem;
+		position: relative;
+		opacity: 1;
+		background-color: transparent;
+		list-style: none;
+	}
+}
+
