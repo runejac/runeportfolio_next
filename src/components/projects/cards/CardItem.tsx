@@ -35,7 +35,6 @@ const CardItem = ({
 		}
 		indexClicked = index;
 
-		// Adding correct modal clicked on to GA
 		data.cardsData.forEach((projectName) => {
 			if (projectName.id === indexClicked) {
 				//gaEventTracker(projectName.appTitle);
