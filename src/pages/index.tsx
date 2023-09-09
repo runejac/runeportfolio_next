@@ -5,10 +5,14 @@ import retroGameMarket from "../../public/images/retro-game.png";
 import reversedImageSearchImg from "../../public/images/reversedImageSearchImage.png";
 import tidsreisenImg from "../../public/images/tidsreisenImage.png";
 import pizzaPortalImg from "../../public/images/pizza-portal.png";
+import Head from "next/head";
 
 export default function Home({ introText, cardsData }: DataContextProps) {
   return (
     <DataContext.Provider value={{ introText, cardsData }}>
+      <Head>
+        <title>Rune Oliveira</title>
+      </Head>
       <MainPage />
     </DataContext.Provider>
   );
