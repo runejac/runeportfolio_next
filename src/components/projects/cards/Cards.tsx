@@ -9,15 +9,10 @@ const Cards = ({
   openModal,
   projectsRef,
   amountNumberFromScreenWidth,
-  isVisible,
 }: ProjectsTextProps) => {
   return (
-    <motion.section
-      className={styles.cardsContainer}
-      style={loadStylingMotion(isVisible!, 0.2)}
-    >
+    <motion.section className={styles.cardsContainer}>
       <CardItem
-        isVisible={isVisible}
         projectsRef={projectsRef}
         amountNumberFromScreenWidth={amountNumberFromScreenWidth}
         openModal={openModal}

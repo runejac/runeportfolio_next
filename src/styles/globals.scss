@@ -26,6 +26,10 @@
 	text-shadow: var(--blue) 4px 10px;
 }
 
+p {
+	color: var(--text-black)
+}
+
 ::-webkit-scrollbar {
 	width: 0;
 }
@@ -114,12 +118,13 @@
 }
 
 :root {
-	--yellow-background: #faf6e9;
+	/*--yellow-background: #faf6e9;*/
+	--yellow-background: #484848;
 	--selection: #1e1e1e;
 	--green-navbar-hover: #c5efdc;
 	--pink: #dd3988;
 	--pink-shadow: #791f4d;
-	--blue: #3533f3;
+	--blue: #dadada;
 	--brown: #cc8446;
 	--text-shadow: rgba(197, 13, 13, 0.76);
 	--green: #94cc46;
@@ -131,8 +136,8 @@
 
 	--linkedin-color: #0a66c2;
 	--github-color: #f0f6fc;
-	--text-gray: #6f6f6f;
-	--text-black: #000;
+	--text-gray: #ffffff;
+	--text-black: #d9d9d9;
 	--border-radius: 12px;
 	--border-radius-card-color: 8px;
 	--border-radius-modal: 10px;

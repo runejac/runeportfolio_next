@@ -55,37 +55,46 @@ const IntroText = () => {
 
   return (
     <motion.section className={styles.introTextContainer}>
-      <motion.div>
-        <h1>{h1}</h1>
-      </motion.div>
       <motion.div
-        variants={nameOpacityAnimation}
-        initial={"hidden"}
-        animate={"showh2"}
+        drag
+        dragConstraints={{
+          top: -500,
+          left: -500,
+          right: 500,
+          bottom: 500,
+        }}
       >
         <h2>{h2}</h2>
       </motion.div>
       <motion.div
-        variants={itemsOpacityAnimation}
-        initial={"hidden"}
-        animate={"showh3"}
+        drag
+        dragConstraints={{
+          top: -500,
+          left: -500,
+          right: 500,
+          bottom: 500,
+        }}
       >
-        <h3>{h3}</h3>
+        <h3>Passionate developer</h3>
       </motion.div>
       <motion.div
-        variants={itemsOpacityAnimation}
-        initial={"hidden"}
-        animate={"showhp1"}
+        drag
+        dragConstraints={{
+          top: -500,
+          left: -500,
+          right: 500,
+          bottom: 500,
+        }}
       >
-        <p>{p1}</p>
+        <h3>keen interest in accessible, seamless, user-friendly interfaces</h3>
       </motion.div>
-      <motion.div
+      {/*      <motion.div
         variants={itemsOpacityAnimation}
         initial={"hidden"}
         animate={"showhp2"}
       >
         <p>{p2}</p>
-      </motion.div>
+      </motion.div>*/}
     </motion.section>
   );
 };

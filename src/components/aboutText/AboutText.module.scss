@@ -1,146 +1,185 @@
 .about-and-img-container {
-  position: relative;
+	position: relative;
 
-  @media (min-width: 50em) {
-    position: relative;
-    margin-inline: 150px;
-    display: flex;
-    gap: 3rem;
-    flex-direction: row;
-    max-width: 1000px;
-  }
+	@media (min-width: 50em) {
+		position: relative;
+		margin-inline: 150px;
+		display: flex;
+		gap: 3rem;
+		flex-direction: row;
+		max-width: 1000px;
+	}
 }
 
 .about-me-container {
-  display: flex;
-  margin: 20px;
-  gap: 2rem;
-  flex-direction: column;
+	display: flex;
+	margin: 20px;
+	gap: 2rem;
+	flex-direction: column;
 
-  h2 {
-    font-size: 2rem;
-  }
+	h2 {
+		font-size: 2rem;
+		color: var(--text-gray)
+	}
 
-  span {
-    color: var(--blue);
-    background-color: inherit;
-  }
+	span {
+		color: var(--blue);
+		background-color: inherit;
+	}
 
-  p,
-  a {
-    font-family: "Calibre Light", sans-serif;
-    font-size: 1.125rem;
-    text-decoration: none;
-  }
-  a {
-    color: var(--blue);
-  }
+	p,
+	a {
+		font-family: "Calibre Light", sans-serif;
+		font-size: 1.125rem;
+		text-decoration: none;
+	}
 
-  @media all and (min-width: 50em) {
-    position: relative;
-    margin: 0;
-    flex: 3;
+	a {
+		color: var(--blue);
+	}
 
-    p,
-    a {
-      font-size: 1.25rem;
-    }
 
-    // fixme: do I want a line there or not? dunno yet
-    /*    h2 {
-      &:after {
-        content: "";
-        display: block;
-        position: relative;
-        margin-left: 0;
-        top: -23px;
-        width: 300px;
-        height: 1px;
-        background-color: var(--smokey-black);
-        z-index: 0;
-      }
-    }*/
+	@media all and (min-width: 50em) {
+		position: relative;
+		margin: 0;
+		flex: 3;
 
-    a {
-      position: relative;
-      color: var(--blue);
-      text-decoration: none;
+		p,
+		a {
+			font-size: 1.25rem;
+		}
 
-      &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--blue);
-        transform-origin: bottom left;
-        transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
+		// fixme: do I want a line there or not? dunno yet
+		/*    h2 {
+			&:after {
+				content: "";
+				display: block;
+				position: relative;
+				margin-left: 0;
+				top: -23px;
+				width: 300px;
+				height: 1px;
+				background-color: var(--smokey-black);
+				z-index: 0;
+			}
+		}*/
 
-      &:hover:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-    }
-  }
+		a {
+			position: relative;
+			color: #6ab4a9;
+			text-decoration: none;
+
+			&:hover {
+				cursor: pointer;
+				animation-name: highlight;
+				animation-duration: 0.75s;
+				animation-fill-mode: forwards;
+				background-size: 200%;
+				background-image: linear-gradient(to right, rgba(0, 0, 0, 0.19) 50%, transparent 50%),
+				linear-gradient(transparent 30%, #05b496 80%);
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				transform: scaleX(0);
+				height: 1px;
+				bottom: 0;
+				left: 0;
+				background-color: #00ecc6;
+				transform-origin: bottom left;
+				transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
+
+			&:hover:after {
+				transform: scaleX(1);
+				transform-origin: bottom left;
+			}
+		}
+	}
+}
+
+@keyframes highlight {
+	from {
+		background-position: 0;
+	}
+
+	to {
+		background-position: -100%;
+	}
 }
 
 .skills-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
-  grid-gap: 0 10px;
-  padding: 0;
-  margin: 20px 0 0 0;
-  overflow: hidden;
-  list-style: none;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(140px, 200px));
+	grid-gap: 0 10px;
+	padding: 0;
+	margin: 20px 0 0 0;
+	overflow: hidden;
+	list-style: none;
 
-  li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    font-family: "SF Mono", sans-serif;
+	a {
+		color: var(--text-black);
+		font-size: 1rem;
+		position: relative;
+		margin-bottom: 10px;
+		padding: 0.2rem 0.2rem 0.2rem 1.25rem;
+		width: fit-content;
+		font-family: "SF Mono", sans-serif;
 
-    &:before {
-      content: "⠜";
-      position: absolute;
-      left: 0;
-      color: var(--blue);
-      font-size: 1rem;
-      line-height: 22px;
-    }
-  }
+		&:hover {
+			cursor: pointer;
+			animation-name: highlight;
+			animation-duration: 0.75s;
+			animation-fill-mode: forwards;
+			background-size: 200%;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.19) 50%, transparent 50%),
+			linear-gradient(transparent 30%, #05b496 80%);
+		}
+
+		&:before {
+			content: "⠜";
+			padding: 0 0 0 0.1rem;
+			background: transparent;
+			width: fit-content;
+			position: absolute;
+			left: 0;
+			color: #05b496;
+			font-size: 1rem;
+			line-height: 22px;
+		}
+	}
 }
 
 .scroll-icon {
-  font-size: 2rem;
-  color: black;
-  background: transparent;
+	font-size: 2rem;
+	color: black;
+	background: transparent;
 }
 
 .icon-scroll-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: transparent;
-  outline-color: transparent;
-  bottom: 0;
-  margin-bottom: 3rem;
-  animation: floating 2s ease-in-out infinite 4.8s;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: transparent;
+	outline-color: transparent;
+	bottom: 0;
+	margin-bottom: 3rem;
+	animation: floating 2s ease-in-out infinite 4.8s;
 }
 
 @keyframes floating {
-  0% {
-    transform: translate(0, -20px);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 20px);
-    opacity: 0;
-  }
+	0% {
+		transform: translate(0, -20px);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: translate(0, 20px);
+		opacity: 0;
+	}
 }

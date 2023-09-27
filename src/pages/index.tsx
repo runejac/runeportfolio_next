@@ -20,7 +20,9 @@ export async function getStaticProps() {
     h2: "Rune Oliveira.",
     h3: "Developer & consultant",
     p1: "Currently working as a fullstack developer.",
-    p2: "With a passion for frontend development across mobile and web platforms, I bring expertise in various methodologies, a keen interest in UX and UI, and a drive to explore and implement new technologies.",
+    p2:
+      "With a inner flame for frontend development across mobile and web platforms, I bring expertise in various methodologies, " +
+      "a keen interest in UX and UI, and my passion lies in understanding and empathizing with end-users, ensuring that every interface I create is intuitive, enjoyable, and efficient.",
   };
 
   const cardsData = [

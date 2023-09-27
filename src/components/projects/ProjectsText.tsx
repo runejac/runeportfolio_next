@@ -58,16 +58,13 @@ const ProjectsText = ({
     <motion.section
       ref={projectsRef}
       id={"projects"}
-      animate={controls}
-      variants={sectionAnimation}
       className={styles.projectsTextContainer}
-      style={loadStylingMotion(isVisible, 0.1)}
     >
-      <h2 style={loadStylingMotion(isVisible, 0.15)}>
+      <h2>
         <span className={styles.sectionHeading}>01. </span> Projects
       </h2>
 
-      <p style={loadStylingMotion(isVisible, 0.2)}>
+      <p>
         These are some of the projects and exams I have been involved in
         building, which have given me solid experience and knowledge in
         programming and development. These are also the ones I am most proud of
@@ -75,7 +72,6 @@ const ProjectsText = ({
         have met in my studies.
       </p>
       <Cards
-        isVisible={isVisible}
         amountNumberFromScreenWidth={amountNumberFromScreenWidth}
         projectsRef={projectsRef}
         openModal={openModal}
