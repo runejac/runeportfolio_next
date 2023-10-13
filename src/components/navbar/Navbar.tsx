@@ -85,7 +85,7 @@ const Navbar = () => {
           </Link>
           <Link
             className={styles.resume}
-            href={"/CV_Oliveira.pdf"}
+            href={"CV.pdf"}
             target={"_blank"}
             rel={"noopener noreferrer"}
           >
@@ -154,7 +154,7 @@ const Navbar = () => {
               </li>
             </Link>
             <Link
-              href={"/CV_Oliveira.pdf"}
+              href={"CV.pdf"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
