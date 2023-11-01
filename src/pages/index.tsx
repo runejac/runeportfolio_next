@@ -7,9 +7,13 @@ import tidsreisenImg from "../../public/images/tidsreisenImage.png";
 import pizzaPortalImg from "../../public/images/pizza-portal.png";
 import Head from "next/head";
 
-export default function Home({ introText, cardsData }: DataContextProps) {
+export default function Home({
+  introText,
+  cardsData,
+  aboutText2,
+}: DataContextProps) {
   return (
-    <DataContext.Provider value={{ introText, cardsData }}>
+    <DataContext.Provider value={{ introText, cardsData, aboutText2 }}>
       <Head>
         <title>Rune Oliveira</title>
       </Head>
@@ -24,7 +28,7 @@ export async function getStaticProps() {
     h2: "Rune Oliveira.",
     h3: "Developer & consultant",
     p1: "Currently working as a fullstack developer.",
-    p2: "With a passion for frontend development across mobile and web platforms, I bring expertise in various methodologies, a keen interest in UX and UI, and a drive to explore and implement new technologies.",
+    p2: "Driven by a passion for frontend development across mobile and web platforms, I bring a deep expertise in various methodologies, a commitment to user-centric design, and an unwavering drive to explore and embrace new technologies.",
   };
 
   const cardsData = [
@@ -83,7 +87,19 @@ export async function getStaticProps() {
     },
   ];
 
+  const aboutText2 = {
+    p1:
+      "Beginning my journey in e-commerce, I delved deep into the nuances of the industry while working with CPU's and motherboards at Komplett Group. This foundation in tech laid the groundwork for my move to Oslo from Tønsberg, marking a pivot in my career path towards programming and information technology.\n" +
+      "\n",
+    p2:
+      "Currently, I'm passionate about the realms of frontend web and native mobile development. Although I may be a newer face in the developer world, I bring a fresh perspective, fueled by my history in e-commerce. My dedication to learning and mastering the intricacies of these domains is unwavering.\n" +
+      "\n",
+    p3:
+      "With every line of code, I seek to craft seamless user experiences and push the boundaries of what's possible in digital design. Eager to explore new techniques, tools, and methodologies, I'm on a quest to continually evolve as a developer and contribute innovatively to the tech community.\n" +
+      "\n",
+  };
+
   return {
-    props: { introText, cardsData },
+    props: { introText, cardsData, aboutText2 },
   };
 }

@@ -8,6 +8,7 @@
     gap: 3rem;
     flex-direction: row;
     max-width: 1000px;
+    margin-block: 100px;
   }
 }
 
@@ -110,37 +111,5 @@
       font-size: 1rem;
       line-height: 22px;
     }
-  }
-}
-
-.scroll-icon {
-  font-size: 2rem;
-  color: black;
-  background: transparent;
-}
-
-.icon-scroll-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: transparent;
-  outline-color: transparent;
-  bottom: 0;
-  margin-bottom: 3rem;
-  animation: floating 2s ease-in-out infinite 4.8s;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, -20px);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 20px);
-    opacity: 0;
   }
 }

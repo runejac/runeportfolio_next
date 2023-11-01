@@ -4,7 +4,6 @@
   @media (min-width: 50em) {
     position: fixed;
     display: flex;
-    justify-content: flex-end;
     align-self: center;
     background-color: transparent;
     transition: var(--transition);
@@ -17,23 +16,31 @@
     }
 
     li {
+      font-family: "Montserrat Thin", sans-serif;
       background: transparent;
       list-style: none;
       font-size: 1.5rem;
-      transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-      &:hover {
-        text-shadow: var(--text-shadow) 4px 10px;
-        font-family: "Montserrat ExtraBold", sans-serif;
-        transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      &:hover:not(.resume) {
+        font-weight: bolder;
       }
     }
 
     .resume {
-      color: var(--blue);
+      color: black;
+      padding-inline: 0.8rem;
+      outline: 1px solid black;
+      border-radius: 30px;
+      transition: outline-width 0.08s ease-in-out;
+
+      &:hover {
+        outline-width: 4px;
+        transition: outline-width 0.2s ease-out;
+      }
     }
 
     span {
+      font-family: "Montserrat Regular", sans-serif;
       color: var(--blue);
       background-color: inherit;
     }

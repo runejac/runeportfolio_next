@@ -80,11 +80,13 @@ const Navbar = () => {
               initial={"hidden"}
               animate={"show3"}
             >
-              <span>02.</span> HIT ME UP
+              <span>02.</span> CONTACT
             </motion.li>
           </Link>
-          <Link
-            className={styles.resume}
+          <motion.a
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show4"}
             href={"CV.pdf"}
             target={"_blank"}
             rel={"noopener noreferrer"}
@@ -93,11 +95,11 @@ const Navbar = () => {
               variants={navBarItemsMotion}
               initial={"hidden"}
               animate={"show4"}
-              className={"navbar-item resume"}
+              className={`navbar-item ${styles.resume}`}
             >
               Resume
             </motion.li>
-          </Link>
+          </motion.a>
         </motion.ol>
       </motion.nav>
       {sidebar && (
@@ -153,11 +155,7 @@ const Navbar = () => {
                 <span>02.</span> Hit me up
               </li>
             </Link>
-            <Link
-              href={"CV.pdf"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-            >
+            <Link href={"CV.pdf"} target={"_blank"} rel={"noopener noreferrer"}>
               <li className={"navbar-child resume"}>Resume</li>
             </Link>
             <li className={styles.navbarToggle}>

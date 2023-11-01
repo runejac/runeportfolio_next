@@ -57,12 +57,12 @@ export default function MainPage() {
       </header>
       <main className={styles.mainTag}>
         <IntroText />
-        <AboutText />
         <ProjectsText
           amountNumberFromScreenWidth={amountNumberFromScreenWidth}
           projectsRef={projectsRef}
           openModal={openModal}
         />
+        <AboutText />
       </main>
       <Footer />
     </>
