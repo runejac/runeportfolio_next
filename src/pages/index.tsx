@@ -26,9 +26,8 @@ export async function getStaticProps() {
   const introText = {
     h1: "Hi, my name is",
     h2: "Rune Oliveira.",
-    h3: "Developer & consultant",
-    p1: "Currently working as a fullstack developer.",
-    p2: "Driven by a passion for frontend development across mobile and web platforms, I bring a deep expertise in various methodologies, a commitment to user-centric design, and an unwavering drive to explore and embrace new technologies.",
+    h3: "Developer",
+    p1: "Driven by a passion for frontend development across mobile and web platforms, I bring expertise in various methodologies, a commitment to user-centric design, and an unwavering drive to explore and embrace new technologies.",
   };
 
   const cardsData = [

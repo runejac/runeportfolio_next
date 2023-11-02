@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -152,7 +152,7 @@ const Navbar = () => {
               }}
             >
               <li className={styles.navbarChild}>
-                <span>02.</span> Hit me up
+                <span>02.</span> Contact
               </li>
             </Link>
             <Link href={"CV.pdf"} target={"_blank"} rel={"noopener noreferrer"}>

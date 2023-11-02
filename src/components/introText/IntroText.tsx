@@ -5,7 +5,7 @@ import { DataContext } from "@/context/DataContext";
 
 const IntroText = () => {
   const data = useContext(DataContext);
-  const { h1, h2, h3, p1, p2 } = data.introText;
+  const { h1, h2, h3, p1 } = data.introText;
 
   const nameOpacityAnimation = {
     hidden: { opacity: 0 },
@@ -43,14 +43,6 @@ const IntroText = () => {
         ease: "easeOut",
       },
     },
-    showhp2: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 4.4,
-        ease: "easeOut",
-      },
-    },
   };
 
   return (
@@ -78,13 +70,6 @@ const IntroText = () => {
         animate={"showhp1"}
       >
         <p>{p1}</p>
-      </motion.div>
-      <motion.div
-        variants={itemsOpacityAnimation}
-        initial={"hidden"}
-        animate={"showhp2"}
-      >
-        <p>{p2}</p>
       </motion.div>
     </motion.section>
   );
