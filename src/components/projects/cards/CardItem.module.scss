@@ -178,14 +178,22 @@ body {
 	text-align: left;
 	transform: translate(0, 0);
 
+	.technologies-container {
+		li {
+			text-shadow: 0 0 0px #fff,
+			0 0 7px #fff;
+		}
+	}
+
 	&:hover {
 		box-shadow: none;
 		transform: translate(8px, 8px);
 		transition: var(--transition);
 
+
 		.hover-card-scale-img {
 			transition: var(--transition);
-			transform: scale(1.2);
+			transform: translate(-400px, -300px) scale(0.5);
 		}
 	}
 }
@@ -195,6 +203,7 @@ body {
 	z-index: -1;
 	transition: var(--transition);
 	transform: scale(1);
+	border-radius: 10px;
 }
 
 
@@ -204,11 +213,11 @@ body {
 	text-align: center;
 
 	h2 {
-		font-size: 1.9rem;
+		font-size: 2rem;
 		font-weight: bold;
 		font-family: "Bebas Neue Book", sans-serif;
 		background-color: transparent;
-		color: #000000;
+		color: #000;
 	}
 }
 
@@ -221,13 +230,15 @@ body {
 		flex-direction: column;
 		gap: 0.3rem;
 		margin-top: 3rem;
+
 	}
 
 	li {
-		font-family: "Fira Code", sans-serif;
+		color: var(--text-black);
+		font-family: "Fira Code Light", sans-serif;
 		width: fit-content;
 		font-weight: normal;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		position: relative;
 		opacity: 1;
 		background-color: transparent;
@@ -235,3 +246,8 @@ body {
 	}
 }
 
+@keyframes glow {
+	from {
+		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+	}
+}

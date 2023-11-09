@@ -1,5 +1,6 @@
 .about-and-img-container {
 	position: relative;
+	background: transparent;
 
 	@media (min-width: 50em) {
 		position: relative;
@@ -8,6 +9,8 @@
 		gap: 3rem;
 		flex-direction: row;
 		max-width: 1000px;
+		background: transparent;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -16,19 +19,21 @@
 	margin: 20px;
 	gap: 2rem;
 	flex-direction: column;
+	background: transparent;
 
 	h2 {
 		font-size: 2rem;
-		color: var(--text-gray)
+		color: var(--text-gray);
+		background: transparent;
 	}
 
 	span {
 		color: var(--blue);
-		background-color: inherit;
 	}
 
 	p,
 	a {
+		background: transparent;
 		font-family: "Calibre Light", sans-serif;
 		font-size: 1.125rem;
 		text-decoration: none;
@@ -46,7 +51,8 @@
 
 		p,
 		a {
-			font-size: 1.25rem;
+			font-size: 1rem;
+			font-family: "Intel One Mono Medium", sans-serif;
 		}
 
 		// fixme: do I want a line there or not? dunno yet
@@ -110,6 +116,10 @@
 	}
 }
 
+.skills-list-container {
+	background: transparent;
+}
+
 .skills-list {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -118,8 +128,10 @@
 	margin: 20px 0 0 0;
 	overflow: hidden;
 	list-style: none;
+	background: transparent;
 
 	a {
+		background: transparent;
 		color: var(--text-black);
 		font-size: 1rem;
 		position: relative;
@@ -149,37 +161,5 @@
 			font-size: 1rem;
 			line-height: 22px;
 		}
-	}
-}
-
-.scroll-icon {
-	font-size: 2rem;
-	color: black;
-	background: transparent;
-}
-
-.icon-scroll-container {
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	background-color: transparent;
-	outline-color: transparent;
-	bottom: 0;
-	margin-bottom: 3rem;
-	animation: floating 2s ease-in-out infinite 4.8s;
-}
-
-@keyframes floating {
-	0% {
-		transform: translate(0, -20px);
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		transform: translate(0, 20px);
-		opacity: 0;
 	}
 }

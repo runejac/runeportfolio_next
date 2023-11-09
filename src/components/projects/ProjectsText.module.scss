@@ -1,39 +1,71 @@
 .projects-text-container {
-  position: relative;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  margin-inline: 20px;
-  margin-top: 2rem;
+	position: relative;
+	display: flex;
+	gap: 2rem;
+	flex-direction: column;
+	margin-inline: 20px;
+	margin-top: 2rem;
+	background: transparent;
 
-  h2 {
-    font-size: 2rem;
-  }
+	h2 {
+		font-size: 2rem;
+		color: var(--text-gray);
+		background: transparent;
+	}
 
-  p,
-  a {
-    font-family: "Calibre Light", sans-serif;
-    font-size: 1.125rem;
-    text-decoration: none;
-  }
-  a {
-    color: var(--pink);
-  }
+	p,
+	a {
+		font-family: "Intel One Mono Medium", sans-serif;
+		font-size: 1.125rem;
+		text-decoration: none;
+		background: transparent;
+	}
 
-  @media (min-width: 50em) {
-    padding-top: 5rem;
-    flex-direction: column;
-    max-width: 1000px;
-    margin-inline: 150px;
-    margin-block: 100px;
+	a {
+		color: var(--pink);
+	}
 
-    p {
-      font-size: 1.25rem;
-    }
-  }
+	@media (min-width: 50em) {
+		flex-direction: column;
+		max-width: 1000px;
+		margin-bottom: 3rem;
+
+		p {
+			font-size: 1rem;
+		}
+	}
 }
 
-.section-heading {
-  color: var(--blue);
-  background-color: inherit;
+.scroll-icon {
+	font-size: 2rem;
+	color: white;
+	background: transparent;
 }
+
+
+.icon-scroll-container {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: transparent;
+	outline-color: transparent;
+	bottom: 0;
+	margin-bottom: 3rem;
+	animation: floating 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes floating {
+	0% {
+		transform: translate(0, -20px);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: translate(0, 20px);
+		opacity: 0;
+	}
+}
+

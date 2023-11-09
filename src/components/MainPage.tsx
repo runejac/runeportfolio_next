@@ -7,6 +7,7 @@ import Logo from "@/components/logo/Logo";
 import styles from "./MainPage.module.scss";
 import Modal from "@/components/projects/cards/modal/Modal";
 import Footer from "@/components/footer/Footer";
+import Background from "@/components/background/Background";
 
 export default function MainPage() {
   const [showModal, setShowModal] = useState(false);
@@ -53,16 +54,17 @@ export default function MainPage() {
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <header id={"header-tag"} className={styles.headerTag}>
         <Navbar />
-        <Logo />
+        {/*  <Logo />*/}
       </header>
       <main className={styles.mainTag}>
+        <Background />
         <IntroText />
-        <AboutText />
         <ProjectsText
           amountNumberFromScreenWidth={amountNumberFromScreenWidth}
           projectsRef={projectsRef}
           openModal={openModal}
         />
+        <AboutText />
       </main>
       <Footer />
     </>

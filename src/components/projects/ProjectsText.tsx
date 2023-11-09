@@ -1,15 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import styles from "./ProjectsText.module.scss";
-import { loadStylingMotion } from "@/utils/utils";
-import Cards from "@/components/projects/cards/Cards";
-
-export type ProjectsTextProps = {
-  projectsRef: React.MutableRefObject<HTMLElement | null>;
-  openModal: () => void;
-  amountNumberFromScreenWidth: number;
-  isVisible?: boolean;
-};
 
 const ProjectsText = ({
   projectsRef,
@@ -19,6 +10,7 @@ const ProjectsText = ({
   const [isVisible, setIsVisible] = useState(false);
   const [isOnSmallerFormat, setIsOnSmallerFormat] = useState(false);
   const controls = useAnimation();
+  const data = useContext(DataContext);
 
   useEffect(() => {
     setIsOnSmallerFormat(window.innerWidth < 1200);
@@ -29,12 +21,12 @@ const ProjectsText = ({
       { threshold: isOnSmallerFormat ? 0 : 0.6 } // Trigger when the section is fully visible
     );
     if (projectsRef.current) {
-      observer.observe(projectsRef.current);
+      observer.observe(projectsRef.current!);
     }
 
     return () => {
       if (projectsRef.current) {
-        observer.unobserve(projectsRef.current);
+        observer.unobserve(projectsRef.current!);
       }
     };
   }, [isOnSmallerFormat]);
@@ -54,29 +46,54 @@ const ProjectsText = ({
     hidden: { opacity: 0 },
   };
 
-  return (
-    <motion.section
-      ref={projectsRef}
-      id={"projects"}
-      className={styles.projectsTextContainer}
-    >
-      <h2>
-        <span className={styles.sectionHeading}>01. </span> Projects
-      </h2>
+  const arrowIconAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+      },
+    },
+  };
 
-      <p>
-        These are some of the projects and exams I have been involved in
-        building, which have given me solid experience and knowledge in
-        programming and development. These are also the ones I am most proud of
-        and have been involved in creating, with other like-minded students I
-        have met in my studies.
-      </p>
-      <Cards
-        amountNumberFromScreenWidth={amountNumberFromScreenWidth}
-        projectsRef={projectsRef}
-        openModal={openModal}
-      />
-    </motion.section>
+  return (
+    <>
+      {!isVisible && (
+        <motion.div
+          className={styles.iconScrollContainer}
+          variants={arrowIconAnimation}
+          initial={"hidden"}
+          animate={"show"}
+        >
+          <BiDownArrow className={styles.scrollIcon} />
+        </motion.div>
+      )}
+      <motion.section
+        ref={projectsRef}
+        id={"projects"}
+        className={styles.projectsTextContainer}
+      >
+        <h2>{data.projectsText.h2}</h2>
+        <p>{data.projectsText.p1}</p>
+        <Cards
+          amountNumberFromScreenWidth={amountNumberFromScreenWidth}
+          projectsRef={projectsRef}
+          openModal={openModal}
+        />
+      </motion.section>
+    </>
   );
+};
+import { loadStylingMotion } from "@/utils/utils";
+
+import Cards from "@/components/projects/cards/Cards";
+import { BiDownArrow } from "react-icons/bi";
+import { DataContext } from "@/context/DataContext";
+
+export type ProjectsTextProps = {
+  projectsRef: React.MutableRefObject<HTMLElement | null>;
+  openModal: () => void;
+  amountNumberFromScreenWidth: number;
+  isVisible?: boolean;
 };
 export default ProjectsText;

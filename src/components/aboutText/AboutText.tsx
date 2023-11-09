@@ -2,13 +2,14 @@ import styles from "./AboutText.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { BiDownArrow } from "react-icons/bi";
 import { loadStylingMotion } from "@/utils/utils";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { DataContext } from "@/context/DataContext";
 
 const AboutText = () => {
   const aboutSectionRef = useRef<null | HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [isOnSmallerFormat, setIsOnSmallerFormat] = useState(false);
   const controls = useAnimation();
+  const { aboutText } = useContext(DataContext);
 
   /*  useEffect(() => {
 			setIsOnSmallerFormat(window.innerWidth < 1200);
@@ -39,16 +40,6 @@ const AboutText = () => {
 			controls.start("hidden");
 		}, []);*/
 
-  const arrowIconAnimation = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delay: 4.8,
-      },
-    },
-  };
-
   /*  const sectionAnimation = {
 			visible: { opacity: 1 },
 			hidden: { opacity: 0 },
@@ -65,16 +56,6 @@ const AboutText = () => {
 
   return (
     <>
-      {!isVisible && (
-        <motion.div
-          className={styles.iconScrollContainer}
-          variants={arrowIconAnimation}
-          initial={"hidden"}
-          animate={"show"}
-        >
-          <BiDownArrow className={styles.scrollIcon} />
-        </motion.div>
-      )}
       <motion.section
         id={"about"}
         ref={aboutSectionRef}
@@ -87,27 +68,19 @@ const AboutText = () => {
           <h2
           /*style={loadStylingMotion(isVisible, 0.15)}*/
           >
-            <span>00.</span> About
+            About
           </h2>
           <p
           /*style={loadStylingMotion(isVisible, 0.2)}*/
           >
-            I specialize in translating intricate concepts into seamless,
-            user-friendly interfaces, leveraging my enthusiasm for UX and UI
-            design. My dedication to staying updated with the latest trends and
-            advancements in these domains is unwavering, and I actively engage
-            in continuous learning to keep my skills at the forefront of the
-            industry. Furthermore, I harbor a keen interest in the realm of
-            cybersecurity, recognizing its pivotal role in safeguarding the
-            digital landscape. This curiosity drives me to stay informed about
-            the latest developments in security practices and technologies.
+            {aboutText.p1}
           </p>
           <p
           /*
-															style={loadStylingMotion(isVisible, 0.3)}
-									*/
+																																				style={loadStylingMotion(isVisible, 0.3)}
+																														*/
           >
-            It became programming, with special fields in{" "}
+            I'm deeply engaged in programming, with a particular focus on{" "}
             <a
               href={
                 "https://www.kristiania.no/studier/bachelor/informasjonsteknologi-frontend-og-mobilutvikling/"
@@ -115,37 +88,28 @@ const AboutText = () => {
               target={"_blank"}
               aria-label={"open course link"}
             >
-              frontend and mobile development
+              {"{"}frontend and mobile development{"}"}
             </a>
-            {". "} Front end and mobile development suits me very well. I have
-            not looked back once, and I am glad I made that choice. It has
-            turned out to be one of the most important choices in my life, one
-            that will shape my future. It is never too late to choose a new
-            profession or learn a new skill. The teamwork that is required in a
-            development process is priceless, the people surrounding you with
-            feedback and knowledge are in center of making a great product, I've
-            learned. On a individual level; what is more important than anything
-            else is to never stop growing and learning, especially from others
-            that has already made up the wheel.
+            {", "}
+            {aboutText.p2}
           </p>
-          <div>
-            <div>
-              <p
-              /* style={loadStylingMotion(isVisible, 0.35)}*/
-              >
-                Technologies I have been working with lately:
-              </p>
-              <div
-                /*style={loadStylingMotion(isVisible, 0.4)}*/
-                className={styles.skillsList}
-              >
-                {latelyTechnologiesWorkedWith &&
-                  latelyTechnologiesWorkedWith.map((skill, index) => (
-                    <a key={index} href="">
-                      {skill}
-                    </a>
-                  ))}
-              </div>
+          <p>{aboutText.p3}</p>
+          <div className={styles.skillsListContainer}>
+            <p
+            /* style={loadStylingMotion(isVisible, 0.35)}*/
+            >
+              Technologies I have been working with lately:
+            </p>
+            <div
+              /*style={loadStylingMotion(isVisible, 0.4)}*/
+              className={styles.skillsList}
+            >
+              {latelyTechnologiesWorkedWith &&
+                latelyTechnologiesWorkedWith.map((skill, index) => (
+                  <a key={index} href="">
+                    {skill}
+                  </a>
+                ))}
             </div>
           </div>
         </div>

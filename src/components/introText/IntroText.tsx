@@ -55,22 +55,42 @@ const IntroText = () => {
 
   return (
     <motion.section className={styles.introTextContainer}>
-      <motion.div
+      {/*      <motion.div
+        className={styles.nameContainer}
         drag
         dragConstraints={{
-          top: -500,
-          left: -500,
+          top: -50,
+          left: -100,
           right: 500,
           bottom: 500,
         }}
       >
-        <h2>{h2}</h2>
+        <h1>
+          <span className={styles.variable}>let</span>{" "}
+          <span className={styles.variableName}>me</span> = {"{"} name: "{h2}"{" "}
+          {"}"}
+        </h1>
+      </motion.div>*/}
+      <motion.div
+        drag
+        dragConstraints={{
+          top: -50,
+          left: -100,
+          right: 500,
+          bottom: 500,
+        }}
+      >
+        <h2>
+          {"{"}
+          {h2}
+          {"}"}
+        </h2>
       </motion.div>
       <motion.div
         drag
         dragConstraints={{
-          top: -500,
-          left: -500,
+          top: -50,
+          left: -100,
           right: 500,
           bottom: 500,
         }}
@@ -80,13 +100,15 @@ const IntroText = () => {
       <motion.div
         drag
         dragConstraints={{
-          top: -500,
-          left: -500,
+          top: -50,
+          left: -100,
           right: 500,
           bottom: 500,
         }}
       >
-        <h3>keen interest in accessible, seamless, user-friendly interfaces</h3>
+        <h3>
+          keen interest in accessible, seamless, user-friendly interfaces, wow
+        </h3>
       </motion.div>
       {/*      <motion.div
         variants={itemsOpacityAnimation}

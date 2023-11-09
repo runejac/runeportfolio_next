@@ -18,25 +18,25 @@ const Navbar = () => {
     show1: {
       opacity: 1,
       transition: {
-        delay: 4.8,
+        delay: 0.5,
       },
     },
     show2: {
       opacity: 1,
       transition: {
-        delay: 4.9,
+        delay: 0.6,
       },
     },
     show3: {
       opacity: 1,
       transition: {
-        delay: 5,
+        delay: 0.7,
       },
     },
     show4: {
       opacity: 1,
       transition: {
-        delay: 5.1,
+        delay: 0.8,
       },
     },
   };
@@ -51,7 +51,7 @@ const Navbar = () => {
               initial={"hidden"}
               animate={"show1"}
             >
-              <span>00.</span> ABOUT
+              about
             </motion.li>
           </Link>
           <Link
@@ -64,23 +64,7 @@ const Navbar = () => {
               initial={"hidden"}
               animate={"show2"}
             >
-              <span>01.</span> PROJECTS
-            </motion.li>
-          </Link>
-          <Link
-            href={"#"}
-            aria-label={"mail me section"}
-            onClick={(e) => {
-              window.location.href = "mailto:runedanielj@gmail.com";
-              e.preventDefault();
-            }}
-          >
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show3"}
-            >
-              <span>02.</span> HIT ME UP
+              projects
             </motion.li>
           </Link>
           <Link
@@ -92,13 +76,30 @@ const Navbar = () => {
             <motion.li
               variants={navBarItemsMotion}
               initial={"hidden"}
-              animate={"show4"}
+              animate={"show3"}
               className={"navbar-item resume"}
             >
-              Resume
+              resume
             </motion.li>
           </Link>
         </motion.ol>
+        <Link
+          className={styles.hitMeUp}
+          href={"#"}
+          aria-label={"mail me section"}
+          onClick={(e) => {
+            window.location.href = "mailto:runedanielj@gmail.com";
+            e.preventDefault();
+          }}
+        >
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show4"}
+          >
+            email
+          </motion.li>
+        </Link>
       </motion.nav>
       {sidebar && (
         <div
@@ -127,9 +128,7 @@ const Navbar = () => {
               aria-label={"about section"}
               onClick={() => showSidebar()}
             >
-              <li className={styles.navbarChild}>
-                <span>00.</span> About
-              </li>
+              <li className={styles.navbarChild}>About</li>
             </Link>
             <Link
               href={"#projects"}
@@ -137,9 +136,7 @@ const Navbar = () => {
               aria-label={"projects section"}
               onClick={() => showSidebar()}
             >
-              <li className={styles.navbarChild}>
-                <span>01.</span> Projects
-              </li>
+              <li className={styles.navbarChild}>Projects</li>
             </Link>
             <Link
               href={"#"}
@@ -149,16 +146,14 @@ const Navbar = () => {
                 e.preventDefault();
               }}
             >
-              <li className={styles.navbarChild}>
-                <span>02.</span> Hit me up
-              </li>
+              <li className={styles.navbarChild}>HIT ME UP</li>
             </Link>
             <Link
               href={"/CV_Oliveira.pdf"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              <li className={"navbar-child resume"}>Resume</li>
+              <li className={"navbar-child resume"}>RESUME</li>
             </Link>
             <li className={styles.navbarToggle}>
               <IoClose

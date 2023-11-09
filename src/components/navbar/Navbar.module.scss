@@ -1,36 +1,36 @@
 .navbar-container {
 	display: none;
+	width: 100%;
 
 	@media (min-width: 50em) {
 		position: fixed;
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
+		width: 100%;
 		align-self: center;
 		background-color: transparent;
 		transition: var(--transition);
-		right: 15%;
 
 		ol {
 			background: transparent;
-			gap: 2rem;
+			gap: 3rem;
 			display: flex;
 		}
 
 		li {
+			color: var(
+							--text-black
+			);
 			background: transparent;
 			list-style: none;
 			font-size: 1.5rem;
 			transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			font-family: "Intel One Mono Medium", sans-serif;
 
 			&:hover {
-				text-shadow: var(--text-shadow) 4px 10px;
-				font-family: "Montserrat ExtraBold", sans-serif;
+				text-shadow: rgba(0, 255, 170, 0.78) 4px 10px;
 				transition: text-shadow 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 			}
-		}
-
-		.resume {
-			color: var(--text-black);
 		}
 
 		span {
@@ -43,6 +43,12 @@
 			text-decoration: none;
 			color: #fff;
 			background-color: inherit;
+		}
+		.hit-me-up {
+			position: absolute;
+			right: 0;
+			margin-right: 2rem;
+			color: var(--text-black);
 		}
 	}
 }

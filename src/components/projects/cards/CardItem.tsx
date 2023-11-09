@@ -18,12 +18,29 @@ const CardItem = ({
   const [hoveredCards, setHoveredCards] = useState(
     Array(data.cardsData.length).fill(false)
   );
+  const [liGlow, setLiGlow] = useState<string>();
 
   const toggleHover = (index: number) => {
     const updatedHoveredCards = [...hoveredCards];
     updatedHoveredCards[index] = !updatedHoveredCards[index];
     setHoveredCards(updatedHoveredCards);
+
+    switch (index) {
+      case 0:
+        setLiGlow(styles.card0);
+        break;
+      case 1:
+        setLiGlow(styles.card1);
+        break;
+      case 2:
+        setLiGlow(styles.card2);
+        break;
+      case 3:
+        setLiGlow(styles.card3);
+    }
   };
+
+  console.log(liGlow);
 
   const handleClick = (index: number) => {
     const headerTag = document.querySelector(
@@ -34,12 +51,6 @@ const CardItem = ({
       headerTag.style.position = "relative";
     }
     indexClicked = index;
-
-    data.cardsData.forEach((projectName) => {
-      if (projectName.id === indexClicked) {
-        //gaEventTracker(projectName.appTitle);
-      }
-    });
   };
 
   // not getting triggered before isInView is true
@@ -79,7 +90,10 @@ const CardItem = ({
         return (
           <motion.article
             onMouseEnter={() => toggleHover(index)}
-            onMouseLeave={() => toggleHover(index)}
+            onMouseLeave={() => {
+              toggleHover(index);
+              setLiGlow("");
+            }}
             onClick={() => {
               openModal();
               handleClick(index);
@@ -93,13 +107,15 @@ const CardItem = ({
               svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
               cardNumber={index}
             />
-            <Image
-              className={`${styles.modalImg} ${
-                hoveredCards[index] ? styles.hoverCardScaleImg : ""
-              }`}
-              src={cardItem.img}
-              alt="image of app"
-            />
+            {hoveredCards[index] && (
+              <Image
+                className={`${styles.modalImg} ${
+                  hoveredCards[index] ? styles.hoverCardScaleImg : ""
+                }`}
+                src={cardItem.img}
+                alt="image of app"
+              />
+            )}
             <div className={styles.circularBorder}>
               <h2>{cardItem.appTitle}</h2>
             </div>
