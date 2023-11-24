@@ -44,7 +44,7 @@ const AboutText = () => {
 
   const sectionAnimation = {
     visible: { opacity: 1 },
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0 }
   };
 
   const latelyTechnologiesWorkedWith = [
@@ -53,7 +53,7 @@ const AboutText = () => {
     "C#",
     "TypeScript",
     "Next.js",
-    "SCSS",
+    "SCSS"
   ];
 
   return (
@@ -70,6 +70,7 @@ const AboutText = () => {
           <h2 style={loadStylingMotion(isVisible, 0.15)}>
             <span>00.</span> About
           </h2>
+
           <p style={loadStylingMotion(isVisible, 0.2)}>{aboutText2.p1}</p>
           <p style={loadStylingMotion(isVisible, 0.3)}>{aboutText2.p2}</p>
           <p style={loadStylingMotion(isVisible, 0.3)}>{aboutText2.p3}</p>

@@ -11,7 +11,6 @@ import Footer from "@/components/footer/Footer";
 export default function MainPage() {
   const [showModal, setShowModal] = useState(false);
   const projectsRef = useRef<null | HTMLElement>(null);
-
   let amountNumberFromScreenWidth = 0;
 
   useEffect(() => {
@@ -31,7 +30,7 @@ export default function MainPage() {
   // hides navbar when scrolling
   let prevScrollpos = typeof window !== "undefined" ? window.scrollY : 0;
   if (typeof window !== "undefined") {
-    window.onscroll = function () {
+    window.onscroll = function() {
       const currentScrollPos = window.scrollY;
       if (prevScrollpos > currentScrollPos) {
         const headerTag = document.querySelector("#header-tag") as HTMLElement;

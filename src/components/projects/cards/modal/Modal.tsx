@@ -27,16 +27,16 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
         duration: 0.1,
         type: "spring",
         damping: 25,
-        stiffness: 500,
-      },
+        stiffness: 500
+      }
     },
     exit: {
       y: "200px",
       opacity: 0,
       transition: {
-        duration: 0.1,
-      },
-    },
+        duration: 0.1
+      }
+    }
   };
 
   const closeModal = (e: React.MouseEvent<HTMLDivElement>) => {
