@@ -46,12 +46,12 @@ const AboutText = () => {
 		};*/
 
   const latelyTechnologiesWorkedWith = [
-    "Vue.js",
-    "ASP.NET",
-    "C#",
+    "React.js",
+    "Kotlin",
     "TypeScript",
-    "Next.js",
-    "SCSS",
+    "Android",
+    "ASP.NET",
+    "Vue.js"
   ];
 
   return (
@@ -66,20 +66,16 @@ const AboutText = () => {
       >
         <div className={styles.aboutMeContainer}>
           <h2
-          /*style={loadStylingMotion(isVisible, 0.15)}*/
+            /*style={loadStylingMotion(isVisible, 0.15)}*/
           >
-            About
+            about
           </h2>
           <p
-          /*style={loadStylingMotion(isVisible, 0.2)}*/
+            /*style={loadStylingMotion(isVisible, 0.2)}*/
           >
             {aboutText.p1}
           </p>
-          <p
-          /*
-																																				style={loadStylingMotion(isVisible, 0.3)}
-																														*/
-          >
+          <p>
             I'm deeply engaged in programming, with a particular focus on{" "}
             <a
               href={
@@ -88,7 +84,7 @@ const AboutText = () => {
               target={"_blank"}
               aria-label={"open course link"}
             >
-              {"{"}frontend and mobile development{"}"}
+              frontend and mobile development
             </a>
             {", "}
             {aboutText.p2}
@@ -96,7 +92,7 @@ const AboutText = () => {
           <p>{aboutText.p3}</p>
           <div className={styles.skillsListContainer}>
             <p
-            /* style={loadStylingMotion(isVisible, 0.35)}*/
+              /* style={loadStylingMotion(isVisible, 0.35)}*/
             >
               Technologies I have been working with lately:
             </p>

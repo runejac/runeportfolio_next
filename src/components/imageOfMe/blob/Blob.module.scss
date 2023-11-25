@@ -1,4 +1,3 @@
-/*start of card blob loadStylingMotion*/
 .svg-blob-card {
 	position: absolute;
 	top: 0;
@@ -8,70 +7,19 @@
 	z-index: 0;
 }
 
-.card0 {
-	background: linear-gradient(0deg, #d34343, rgba(0, 0, 0, 0));
+.card0, .card1, .card2, .card3 {
+	background: linear-gradient(0deg, var(--main-red), rgba(0, 0, 0, 0));
 }
 
-.card1 {
-	background: linear-gradient(0deg, rgba(54, 54, 150, 0.51), rgba(0, 0, 0, 0));
+/*.card1 {
+	background: linear-gradient(0deg, var(--main-cyan), rgba(0, 0, 0, 0));
 }
 
 .card2 {
-	background: linear-gradient(0deg, rgba(3, 85, 94, 0.47), rgba(0, 0, 0, 0));
+	background: linear-gradient(0deg, #166703, rgba(0, 0, 0, 0));
 }
 
 .card3 {
-	background: linear-gradient(0deg, rgba(70, 57, 0, 0.38), rgba(0, 0, 0, 0));
-}
+	background: linear-gradient(0deg, var(--main-orange), rgba(0, 0, 0, 0));
+}*/
 
-.path-blob-card {
-	transform: translate(25%, 6%) scale(3, 0.65);
-	//fill: var(--smokey-black);
-	fill: url(#myGradient);
-	transition: 0.4s;
-}
-
-/*end of card blob loadStylingMotion*/
-
-/*start of img blob loadStylingMotion*/
-.path-blob-img {
-	transform: translate(0%, 0.45%) scale(0.99);
-	//fill: var(--green);
-	//fill: var(--brown);
-	//fill: #4887cf;
-	//fill: hsl(115, 5%, 47%);
-	fill: hsl(265, 100%, 87%);
-	transition: 0.4s;
-	stroke: #000;
-	-khtml-stroke: #000;
-	-moz-stroke: #000;
-	-webkit-stroke: #000;
-	stroke-width: 8px;
-	-khtml-stroke-width: 8px;
-	-moz-stroke-width: 8px;
-	-webkit-stroke-width: 8px;
-	stroke-linejoin: round;
-	-khtml-stroke-linejoin: round;
-	-moz-stroke-linejoin: round;
-	-webkit-stroke-linejoin: round;
-}
-
-.img-tag-div-container {
-	&:hover {
-		.path-blob-img {
-			transform: translate(30%, 30%) scale(0.3);
-			transition: 0.4s;
-		}
-	}
-}
-
-.svg-blob-img {
-	position: absolute;
-	top: -20px;
-	left: -20px;
-	width: 130%;
-	height: 130%;
-	z-index: -1;
-}
-
-/*end of img blob loadStylingMotion*/

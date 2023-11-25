@@ -16,103 +16,75 @@
 
 .about-me-container {
 	display: flex;
-	margin: 20px;
 	gap: 2rem;
 	flex-direction: column;
-	background: transparent;
+	background: none;
 
 	h2 {
 		font-size: 2rem;
 		color: var(--text-gray);
-		background: transparent;
+		background: none;
 	}
 
 	span {
-		color: var(--blue);
+		color: var(--background);
 	}
 
 	p,
 	a {
 		background: transparent;
-		font-family: "Calibre Light", sans-serif;
+		font-family: "Intel One Mono Medium", sans-serif;
 		font-size: 1.125rem;
 		text-decoration: none;
 	}
 
 	a {
-		color: var(--blue);
+		color: var(--text-light);
+		position: relative;
+		text-decoration: none;
+		display: inline-block;
+		z-index: 0;
+
+		&:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(130deg, var(--main-orange), var(--main-red) 41.07%, var(--main-cyan) 76.05%);
+			z-index: -1;
+			transition: height 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+		}
+
+		&:hover:before {
+			height: 38%;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			left: 0;
+			height: 2px;
+			border-radius: 0 0 2px 2px;
+			background: linear-gradient(130deg, var(--main-orange), var(--main-red) 41.07%, var(--main-cyan) 76.05%);
+		}
 	}
 
 
 	@media all and (min-width: 50em) {
 		position: relative;
-		margin: 0;
-		flex: 3;
 
 		p,
 		a {
-			font-size: 1rem;
-			font-family: "Intel One Mono Medium", sans-serif;
-		}
+			font-size: 1.5rem;
 
-		// fixme: do I want a line there or not? dunno yet
-		/*    h2 {
-			&:after {
-				content: "";
-				display: block;
-				position: relative;
-				margin-left: 0;
-				top: -23px;
-				width: 300px;
-				height: 1px;
-				background-color: var(--smokey-black);
-				z-index: 0;
-			}
-		}*/
-
-		a {
-			position: relative;
-			color: #6ab4a9;
-			text-decoration: none;
-
-			&:hover {
-				cursor: pointer;
-				animation-name: highlight;
-				animation-duration: 0.75s;
-				animation-fill-mode: forwards;
-				background-size: 200%;
-				background-image: linear-gradient(to right, rgba(0, 0, 0, 0.19) 50%, transparent 50%),
-				linear-gradient(transparent 30%, #05b496 80%);
-			}
-
-			&:after {
-				content: "";
-				position: absolute;
-				width: 100%;
-				transform: scaleX(0);
-				height: 1px;
-				bottom: 0;
-				left: 0;
-				background-color: #00ecc6;
-				transform-origin: bottom left;
-				transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-			}
-
-			&:hover:after {
-				transform: scaleX(1);
-				transform-origin: bottom left;
+			&:hover:before {
+				height: 39%;
 			}
 		}
-	}
-}
-
-@keyframes highlight {
-	from {
-		background-position: 0;
-	}
-
-	to {
-		background-position: -100%;
 	}
 }
 
@@ -126,40 +98,44 @@
 	grid-gap: 0 10px;
 	padding: 0;
 	margin: 20px 0 0 0;
-	overflow: hidden;
 	list-style: none;
 	background: transparent;
 
 	a {
-		background: transparent;
-		color: var(--text-black);
-		font-size: 1rem;
 		position: relative;
+		text-decoration: none;
 		margin-bottom: 10px;
-		padding: 0.2rem 0.2rem 0.2rem 1.25rem;
+		display: inline-block;
+		z-index: 0;
 		width: fit-content;
-		font-family: "SF Mono", sans-serif;
-
-		&:hover {
-			cursor: pointer;
-			animation-name: highlight;
-			animation-duration: 0.75s;
-			animation-fill-mode: forwards;
-			background-size: 200%;
-			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.19) 50%, transparent 50%),
-			linear-gradient(transparent 30%, #05b496 80%);
-		}
 
 		&:before {
-			content: "⠜";
 			padding: 0 0 0 0.1rem;
 			background: transparent;
-			width: fit-content;
+			content: "";
 			position: absolute;
+			width: 100%;
+			height: 0;
+			bottom: 0;
 			left: 0;
-			color: #05b496;
-			font-size: 1rem;
-			line-height: 22px;
+			background: linear-gradient(130deg, var(--main-orange), var(--main-red) 41.07%, var(--main-cyan) 76.05%);
+			z-index: -1;
+			transition: height 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+		}
+
+		&:hover:before {
+			height: 38%;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			left: 0;
+			height: 2px;
+			border-radius: 0 0 2px 2px;
+			background: linear-gradient(130deg, var(--main-orange), var(--main-red) 41.07%, var(--main-cyan) 76.05%);
 		}
 	}
 }

@@ -12,7 +12,7 @@ export let indexClicked: number;
 const CardItem = ({
   openModal,
   projectsRef,
-  amountNumberFromScreenWidth,
+  amountNumberFromScreenWidth
 }: ProjectsTextProps) => {
   const data = useContext(DataContext);
   const [hoveredCards, setHoveredCards] = useState(
@@ -59,9 +59,9 @@ const CardItem = ({
     show: (i: number) => ({
       opacity: 1,
       transition: {
-        delay: i * 0.3,
-      },
-    }),
+        delay: i * 0.3
+      }
+    })
   };
 
   const setCardColor = (index: number) => {
@@ -100,6 +100,7 @@ const CardItem = ({
             }}
             aria-label={"open project details window"}
             key={index}
+            tabIndex={index + 4}
             className={styles.card}
             custom={index}
           >

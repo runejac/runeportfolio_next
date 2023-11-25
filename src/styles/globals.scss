@@ -5,7 +5,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	font-family: "Bebas Neue", sans-serif;
+	font-family: "Intel One Mono", sans-serif;
 	font-weight: normal;
 	background: rgba(1, 5, 0, 0.42);
 	-webkit-font-smoothing: antialiased;
@@ -17,17 +17,17 @@
 ::selection {
 	background: var(--text-shadow);
 	color: var(--yellow-background);
-	text-shadow: var(--blue) 4px 10px;
+	text-shadow: var(--background) 4px 10px;
 }
 
 ::-moz-selection {
 	background: var(--text-shadow);
 	color: var(--yellow-background);
-	text-shadow: var(--blue) 4px 10px;
+	text-shadow: var(--background) 4px 10px;
 }
 
 p {
-	color: var(--text-black)
+	color: var(--text-light)
 }
 
 ::-webkit-scrollbar {
@@ -118,13 +118,17 @@ p {
 }
 
 :root {
-	/*--yellow-background: #faf6e9;*/
+	--main-orange: #ff7a18;
+	--main-red: #af002d;
+	--main-cyan: #319197;
+
+
 	--yellow-background: #2c2c2c;
 	--selection: #1e1e1e;
 	--green-navbar-hover: #c5efdc;
 	--pink: #dd3988;
 	--pink-shadow: #791f4d;
-	--blue: #dadada;
+	--background: #dadada;
 	--brown: #cc8446;
 	--text-shadow: rgba(0, 255, 170, 0.78);
 	--green: #94cc46;
@@ -137,7 +141,7 @@ p {
 	--linkedin-color: #0a66c2;
 	--github-color: #f0f6fc;
 	--text-gray: #ffffff;
-	--text-black: #d9d9d9;
+	--text-light: #d9d9d9;
 	--border-radius: 12px;
 	--border-radius-card-color: 8px;
 	--border-radius-modal: 10px;

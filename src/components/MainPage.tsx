@@ -32,7 +32,7 @@ export default function MainPage() {
   // hides navbar when scrolling
   let prevScrollpos = typeof window !== "undefined" ? window.scrollY : 0;
   if (typeof window !== "undefined") {
-    window.onscroll = function () {
+    window.onscroll = function() {
       const currentScrollPos = window.scrollY;
       if (prevScrollpos > currentScrollPos) {
         const headerTag = document.querySelector("#header-tag") as HTMLElement;
@@ -51,20 +51,21 @@ export default function MainPage() {
 
   return (
     <>
+      <Background />
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <header id={"header-tag"} className={styles.headerTag}>
         <Navbar />
-        {/*  <Logo />*/}
       </header>
       <main className={styles.mainTag}>
-        <Background />
         <IntroText />
-        <ProjectsText
-          amountNumberFromScreenWidth={amountNumberFromScreenWidth}
-          projectsRef={projectsRef}
-          openModal={openModal}
-        />
-        <AboutText />
+        <section className={styles.projectsAndAboutSection}>
+          <ProjectsText
+            amountNumberFromScreenWidth={amountNumberFromScreenWidth}
+            projectsRef={projectsRef}
+            openModal={openModal}
+          />
+          <AboutText />
+        </section>
       </main>
       <Footer />
     </>

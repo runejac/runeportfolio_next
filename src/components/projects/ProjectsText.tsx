@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import styles from "./ProjectsText.module.scss";
 
 const ProjectsText = ({
   projectsRef,
   openModal,
-  amountNumberFromScreenWidth,
+  amountNumberFromScreenWidth
 }: ProjectsTextProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOnSmallerFormat, setIsOnSmallerFormat] = useState(false);
@@ -43,7 +43,7 @@ const ProjectsText = ({
 
   const sectionAnimation = {
     visible: { opacity: 1 },
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0 }
   };
 
   const arrowIconAnimation = {
@@ -51,14 +51,14 @@ const ProjectsText = ({
     show: {
       opacity: 1,
       transition: {
-        delay: 1,
-      },
-    },
+        delay: 1
+      }
+    }
   };
 
   return (
     <>
-      {!isVisible && (
+      {/*{!isVisible && (
         <motion.div
           className={styles.iconScrollContainer}
           variants={arrowIconAnimation}
@@ -67,13 +67,13 @@ const ProjectsText = ({
         >
           <BiDownArrow className={styles.scrollIcon} />
         </motion.div>
-      )}
+      )}*/}
       <motion.section
         ref={projectsRef}
         id={"projects"}
         className={styles.projectsTextContainer}
       >
-        <h2>{data.projectsText.h2}</h2>
+        <h2>projects</h2>
         <p>{data.projectsText.p1}</p>
         <Cards
           amountNumberFromScreenWidth={amountNumberFromScreenWidth}
@@ -84,7 +84,6 @@ const ProjectsText = ({
     </>
   );
 };
-import { loadStylingMotion } from "@/utils/utils";
 
 import Cards from "@/components/projects/cards/Cards";
 import { BiDownArrow } from "react-icons/bi";

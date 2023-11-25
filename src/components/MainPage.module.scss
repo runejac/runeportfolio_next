@@ -1,4 +1,4 @@
-.headerTag {
+.header-tag {
 	position: fixed;
 	display: flex;
 	top: 0;
@@ -19,9 +19,16 @@
 	}
 }
 
-.mainTag {
+.main-tag {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.projects-and-about-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
 }

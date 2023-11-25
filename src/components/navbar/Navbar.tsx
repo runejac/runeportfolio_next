@@ -18,27 +18,27 @@ const Navbar = () => {
     show1: {
       opacity: 1,
       transition: {
-        delay: 0.5,
-      },
+        delay: 0.5
+      }
     },
     show2: {
       opacity: 1,
       transition: {
-        delay: 0.6,
-      },
+        delay: 0.6
+      }
     },
     show3: {
       opacity: 1,
       transition: {
-        delay: 0.7,
-      },
+        delay: 0.7
+      }
     },
     show4: {
       opacity: 1,
       transition: {
-        delay: 0.8,
-      },
-    },
+        delay: 0.8
+      }
+    }
   };
 
   return (
@@ -50,6 +50,7 @@ const Navbar = () => {
               variants={navBarItemsMotion}
               initial={"hidden"}
               animate={"show1"}
+              tabIndex={1}
             >
               about
             </motion.li>
@@ -63,6 +64,7 @@ const Navbar = () => {
               variants={navBarItemsMotion}
               initial={"hidden"}
               animate={"show2"}
+              tabIndex={2}
             >
               projects
             </motion.li>
@@ -77,6 +79,7 @@ const Navbar = () => {
               variants={navBarItemsMotion}
               initial={"hidden"}
               animate={"show3"}
+              tabIndex={3}
               className={"navbar-item resume"}
             >
               resume
@@ -96,6 +99,7 @@ const Navbar = () => {
             variants={navBarItemsMotion}
             initial={"hidden"}
             animate={"show4"}
+            tabIndex={4}
           >
             email
           </motion.li>
@@ -128,7 +132,7 @@ const Navbar = () => {
               aria-label={"about section"}
               onClick={() => showSidebar()}
             >
-              <li className={styles.navbarChild}>About</li>
+              <li className={styles.navbarChild}>about</li>
             </Link>
             <Link
               href={"#projects"}
@@ -136,7 +140,7 @@ const Navbar = () => {
               aria-label={"projects section"}
               onClick={() => showSidebar()}
             >
-              <li className={styles.navbarChild}>Projects</li>
+              <li className={styles.navbarChild}>projects</li>
             </Link>
             <Link
               href={"#"}
@@ -146,14 +150,14 @@ const Navbar = () => {
                 e.preventDefault();
               }}
             >
-              <li className={styles.navbarChild}>HIT ME UP</li>
+              <li className={styles.navbarChild}>email</li>
             </Link>
             <Link
               href={"/CV_Oliveira.pdf"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              <li className={"navbar-child resume"}>RESUME</li>
+              <li className={styles.navbarChild}>resume</li>
             </Link>
             <li className={styles.navbarToggle}>
               <IoClose

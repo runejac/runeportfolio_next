@@ -8,13 +8,11 @@ export type DataContextProps = {
     p3: string;
   };
   projectsText: {
-    h2: string;
     p1: string;
   };
   introText: {
     h1: string;
     h2: string;
-    h3: string;
     p1: string;
     p2: string;
   };
