@@ -38,16 +38,37 @@ p {
   width: 0;
 }
 
-/*::-webkit-scrollbar-track {
-  background: #f1f1f1;
+@font-face {
+  font-family: "Intel One Mono";
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Regular.woff")
+      format("woff"),
+    url("../../public/fonts/Intel One Mono/IntelOneMono-Regular.woff2")
+      format("woff2");
 }
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+
+@font-face {
+  font-family: "Intel One Mono Medium";
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff")
+      format("woff"),
+    url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff2")
+      format("woff2");
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}*/
+
+@font-face {
+  font-family: "Intel One Mono Light";
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Light.woff")
+      format("woff"),
+    url("../../public/fonts/Intel One Mono/IntelOneMono-Light.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url("../../public/fonts/SF Mono/sf-mono-regularitalic.woff")
+      format("woff"),
+    url("../../public/fonts/SF Mono/sf-mono-regularitalic.woff2")
+      format("woff2");
+}
 
 @font-face {
   font-family: "Montserrat Light";
