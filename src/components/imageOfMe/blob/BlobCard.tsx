@@ -15,7 +15,7 @@ export const BlobCard = ({ svgClassName, cardNumber }: BlobCardProps) => {
         <filter id="noiseFilter">
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.65"
+            baseFrequency="0"
             numOctaves="3"
             stitchTiles="stitch"
           />

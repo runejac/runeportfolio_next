@@ -3,12 +3,8 @@
 	top: 0;
 	left: 0;
 	height: 100%;
-	filter: contrast(300%) brightness(60%);
+	filter: contrast(300%) brightness(30%);
 	z-index: 0;
-}
-
-.card0, .card1, .card2, .card3 {
-	background: linear-gradient(0deg, var(--main-red), rgba(0, 0, 0, 0));
 }
 
 /*.card1 {

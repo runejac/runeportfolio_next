@@ -5,6 +5,7 @@ export type DataContextProps = {
   aboutText: {
     p1: string;
     p2: string;
+    p2a: string;
     p3: string;
   };
   projectsText: {

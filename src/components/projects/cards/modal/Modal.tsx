@@ -27,16 +27,16 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
         duration: 0.1,
         type: "spring",
         damping: 25,
-        stiffness: 500,
-      },
+        stiffness: 500
+      }
     },
     exit: {
       y: "200px",
       opacity: 0,
       transition: {
-        duration: 0.1,
-      },
-    },
+        duration: 0.1
+      }
+    }
   };
 
   const closeModal = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -59,26 +59,6 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
     document.addEventListener("keydown", keyPress);
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
-
-  const setCardColor = (index: number) => {
-    let cardColorClass = "";
-    switch (index) {
-      case 0:
-        cardColorClass = stylesBlob.card0;
-        break;
-      case 1:
-        cardColorClass = stylesBlob.card1;
-        break;
-      case 2:
-        cardColorClass = stylesBlob.card2;
-        break;
-      case 3:
-        cardColorClass = stylesBlob.card3;
-        break;
-    }
-
-    return cardColorClass;
-  };
 
   return (
     <AnimatePresence initial={false} mode={"wait"}>

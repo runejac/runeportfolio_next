@@ -1,46 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./CardItem.module.scss";
 import stylesBlob from "../../imageOfMe/blob/Blob.module.scss";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
 import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
+import { windowScroll } from "seamless-scroll-polyfill";
 
 export let indexClicked: number;
 
-const CardItem = ({
-  openModal,
-  projectsRef,
-  amountNumberFromScreenWidth
-}: ProjectsTextProps) => {
+const CardItem = ({ openModal, projectsRef }: ProjectsTextProps) => {
   const data = useContext(DataContext);
+  const [isOnSmallDevice, setIsOnSmallDevice] = useState(false);
   const [hoveredCards, setHoveredCards] = useState(
     Array(data.cardsData.length).fill(false)
   );
-  const [liGlow, setLiGlow] = useState<string>();
+
+  useEffect(() => {
+    if (window.innerWidth > 800) setIsOnSmallDevice(false);
+    else if (window.innerWidth <= 799) setIsOnSmallDevice(true);
+  }, [isOnSmallDevice]);
 
   const toggleHover = (index: number) => {
     const updatedHoveredCards = [...hoveredCards];
     updatedHoveredCards[index] = !updatedHoveredCards[index];
     setHoveredCards(updatedHoveredCards);
-
-    switch (index) {
-      case 0:
-        setLiGlow(styles.card0);
-        break;
-      case 1:
-        setLiGlow(styles.card1);
-        break;
-      case 2:
-        setLiGlow(styles.card2);
-        break;
-      case 3:
-        setLiGlow(styles.card3);
-    }
   };
-
-  console.log(liGlow);
 
   const handleClick = (index: number) => {
     const headerTag = document.querySelector(
@@ -51,17 +37,6 @@ const CardItem = ({
       headerTag.style.position = "relative";
     }
     indexClicked = index;
-  };
-
-  // not getting triggered before isInView is true
-  const showOneByOneAnimation = {
-    hidden: { opacity: 0 },
-    show: (i: number) => ({
-      opacity: 1,
-      transition: {
-        delay: i * 0.3
-      }
-    })
   };
 
   const setCardColor = (index: number) => {
@@ -90,17 +65,22 @@ const CardItem = ({
         return (
           <motion.article
             onMouseEnter={() => toggleHover(index)}
-            onMouseLeave={() => {
-              toggleHover(index);
-              setLiGlow("");
-            }}
+            onFocus={() => toggleHover(index)}
+            onBlur={() => setHoveredCards([])}
+            onMouseLeave={() => setHoveredCards([])}
             onClick={() => {
               openModal();
               handleClick(index);
             }}
-            aria-label={"open project details window"}
+            onKeyDown={(event) => {
+              event.key === "Enter" && openModal();
+              handleClick(index);
+            }}
+            title={`Click to open ${cardItem.appTitle} project window`}
+            aria-label={`Click to open ${cardItem.appTitle} project window`}
+            tabIndex={0}
+            role={"button"}
             key={index}
-            tabIndex={index + 4}
             className={styles.card}
             custom={index}
           >
@@ -108,11 +88,16 @@ const CardItem = ({
               svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
               cardNumber={index}
             />
+            {isOnSmallDevice && (
+              <Image
+                className={styles.modalImg}
+                src={cardItem.img}
+                alt="image of app"
+              />
+            )}
             {hoveredCards[index] && (
               <Image
-                className={`${styles.modalImg} ${
-                  hoveredCards[index] ? styles.hoverCardScaleImg : ""
-                }`}
+                className={styles.modalImg}
                 src={cardItem.img}
                 alt="image of app"
               />

@@ -18,92 +18,85 @@ const Navbar = () => {
     show1: {
       opacity: 1,
       transition: {
-        delay: 0.5
-      }
+        delay: 0.5,
+      },
     },
     show2: {
       opacity: 1,
       transition: {
-        delay: 0.6
-      }
+        delay: 0.6,
+      },
     },
     show3: {
       opacity: 1,
       transition: {
-        delay: 0.7
-      }
+        delay: 0.7,
+      },
     },
     show4: {
       opacity: 1,
       transition: {
-        delay: 0.8
-      }
-    }
+        delay: 0.8,
+      },
+    },
   };
 
   return (
     <>
       <motion.nav className={styles.navbarContainer}>
         <motion.ol>
-          <Link href={"#about"} scroll={false} aria-label={"about section"}>
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show1"}
-              tabIndex={1}
-            >
-              about
-            </motion.li>
-          </Link>
-          <Link
-            href={"#projects"}
-            scroll={false}
-            aria-label={"projects section"}
-          >
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show2"}
-              tabIndex={2}
-            >
-              projects
-            </motion.li>
-          </Link>
-          <Link
-            className={styles.resume}
-            href={"/CV_Oliveira.pdf"}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show3"}
-              tabIndex={3}
-              className={"navbar-item resume"}
-            >
-              resume
-            </motion.li>
-          </Link>
-        </motion.ol>
-        <Link
-          className={styles.hitMeUp}
-          href={"#"}
-          aria-label={"mail me section"}
-          onClick={(e) => {
-            window.location.href = "mailto:runedanielj@gmail.com";
-            e.preventDefault();
-          }}
-        >
           <motion.li
             variants={navBarItemsMotion}
             initial={"hidden"}
-            animate={"show4"}
-            tabIndex={4}
+            animate={"show1"}
+            aria-label={"scroll down to about section"}
           >
-            email
+            <Link href={"#about"} scroll={false}>
+              about
+            </Link>
           </motion.li>
-        </Link>
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show2"}
+          >
+            <Link href={"#projects"} scroll={false}>
+              projects
+            </Link>
+          </motion.li>
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show3"}
+            className={"navbar-item resume"}
+          >
+            <Link
+              className={styles.resume}
+              href={"/CV_Oliveira.pdf"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
+              resume
+            </Link>
+          </motion.li>
+        </motion.ol>
+        <motion.li
+          variants={navBarItemsMotion}
+          initial={"hidden"}
+          animate={"show4"}
+        >
+          <Link
+            className={styles.hitMeUp}
+            href={"#"}
+            aria-label={"mail me section"}
+            onClick={(e) => {
+              window.location.href = "mailto:runedanielj@gmail.com";
+              e.preventDefault();
+            }}
+          >
+            contact
+          </Link>
+        </motion.li>
       </motion.nav>
       {sidebar && (
         <div

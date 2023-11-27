@@ -7,14 +7,12 @@ import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 
 const Cards = ({
   openModal,
-  projectsRef,
-  amountNumberFromScreenWidth,
+  projectsRef
 }: ProjectsTextProps) => {
   return (
     <motion.section className={styles.cardsContainer}>
       <CardItem
         projectsRef={projectsRef}
-        amountNumberFromScreenWidth={amountNumberFromScreenWidth}
         openModal={openModal}
       />
     </motion.section>

@@ -5,17 +5,24 @@ import retroGameMarket from "../../public/images/retro-game.png";
 import reversedImageSearchImg from "../../public/images/reversedImageSearchImage.png";
 import tidsreisenImg from "../../public/images/tidsreisenImage.png";
 import pizzaPortalImg from "../../public/images/pizza-portal.png";
+import CustomHead from "@/components/layouts/head/CustomHead";
 
 export default function Home({
   aboutText,
   projectsText,
   introText,
-  cardsData
+  cardsData,
 }: DataContextProps) {
   return (
     <DataContext.Provider
       value={{ aboutText, projectsText, introText, cardsData }}
     >
+      <CustomHead
+        title={"Rune Oliveira"}
+        content={
+          "frontend, developer, rune oliveira, rune daniel jacobsen oliveira, technologist"
+        }
+      />
       <MainPage />
     </DataContext.Provider>
   );
@@ -24,23 +31,19 @@ export default function Home({
 export async function getStaticProps() {
   const introText = {
     h1: "Rune Oliveira",
-    h2: "Developer & consultant",
-    p1: "Currently working as a fullstack developer.",
-    p2:
-      "With a inner flame for frontend development across mobile and web platforms, I bring expertise in various methodologies, " +
-      "a keen interest in UX and UI, and my passion lies in understanding and empathizing with end-users, ensuring that every interface I create is intuitive, enjoyable, and efficient."
   };
 
   const aboutText = {
-    p1: "My adventure started in the e-commerce jungle, messing around with CPUs and motherboards at Komplett Group. That techy stint was my launchpad to pack up and zip from Tønsberg to Oslo, where I took a sharp turn into the coding scene.",
-    p2: "Though I'm relatively new to the field of development, I come equipped with valuable e-commerce experience. I'm committed to understanding and refining the skills necessary in front-end and mobile development.",
-    p3: "As a developer, my focus extends beyond basic functionality. I am dedicated to designing intuitive and engaging user experiences, continually exploring innovative tools and techniques to enhance our interaction with technology. My passion lies in constantly evolving and making impactful advancements in development."
+    p1: "My tech journey started in youth, building desktop computers and exploring the intricacies of hardware and software, from an e-commerce shop where I would later in life become a Purchase Manager on the same components.",
+    p2: "This early interest culminated in my decision to pursue a bachelor's degree in information technology in Oslo, with a specialization in ",
+    p2a: ". I am particularly fascinated by the practical aspects of technology, especially how different systems communicate and connect to create a unified experience for the user.",
+    p3: "Outside of my professional life in technology, I am a person of diverse interests and passions. I have a deep appreciation for nature, often spending my free time engaging in outdoor activities like fly fishing, which allows me to disconnect and find balance. My interest in martial arts, particularly Brazilian jiu-jitsu, reflects my dedication to discipline and continuous self-improvement. I am also an avid fan of board games and skiing, activities that not only offer relaxation but also an opportunity to connect with others and enjoy the spirit of competition and strategy. These hobbies, alongside my tech career, shape who I am – someone who values persistence, strategic thinking, and a deep connection with the natural world.",
   };
 
   const projectsText = {
     p1:
       "Highlighted below are projects I've had the privilege of developing. These endeavors not only honed my programming and development skills but also stand testament to my dedication and craft. I'm especially proud of these collaborations, each borne out of shared passion and synergy with fellow students during my academic journey.\n" +
-      "\n"
+      "\n",
   };
 
   const cardsData = [
@@ -56,10 +59,10 @@ export async function getStaticProps() {
         "Ionic",
         "Directus",
         "GraphQL",
-        "Mapbox.js"
+        "Mapbox.js",
       ],
       appDescription:
-        "The ultimate destination for retro games collections. With a vast selection of used, new, and mint condition games, there's something for every type of gamer. Plus, an interactive map feature helps you connect with sellers near you."
+        "The ultimate destination for retro games collections. With a vast selection of used, new, and mint condition games, there's something for every type of gamer. Plus, an interactive map feature helps you connect with sellers near you.",
     },
     {
       id: 1,
@@ -70,7 +73,7 @@ export async function getStaticProps() {
         "https://github.com/runejac/PGR208_EXAM_Reversed_Image_Search",
       techSpecs: ["Kotlin", "XML", "SQLite"],
       appDescription:
-        "On a Android phone, you can either take a photo with the camera or choose an existing image from the phone's storage as input and the app will return results related to the image."
+        "On a Android phone, you can either take a photo with the camera or choose an existing image from the phone's storage as input and the app will return results related to the image.",
     },
     {
       id: 2,
@@ -83,7 +86,7 @@ export async function getStaticProps() {
       appDescription:
         "A web app requested by Rælingen municipality for primary school pupils. With the intention of learning what a " +
         "cultural trail was and looked like 350 years ago. GPS tracking and QR scanning is two of the main features of this application.",
-      downAtPaaS: "Down due to Heroku's change in pricing plan."
+      downAtPaaS: "Down due to Heroku's change in pricing plan.",
     },
     {
       id: 3,
@@ -95,11 +98,11 @@ export async function getStaticProps() {
       externalLink: "https://runejac.github.io/WebprosjektSolution/index.html",
       techSpecs: ["JavaScript", "Bulma", "Google charts"],
       appDescription:
-        "A portal for the management of a company, to have an overview of turnover, best selling items, manage employees, restaurants and their menus."
-    }
+        "A portal for the management of a company, to have an overview of turnover, best selling items, manage employees, restaurants and their menus.",
+    },
   ];
 
   return {
-    props: { aboutText, projectsText, introText, cardsData }
+    props: { aboutText, projectsText, introText, cardsData },
   };
 }

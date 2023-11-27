@@ -1,120 +1,111 @@
-
 .footer-container {
-	//border-top: 1px solid black;
-	position: absolute;
-	width: 100%;
-	height: 200px;
-	//background-image: linear-gradient(rgb(250, 246, 233), rgba(37, 14, 14, 0.81)),
-	background-image: linear-gradient(#010500, #0105006B),
-	url("../../../public/images/mac-code.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center 75%;
-	//justify-content: space-between;
-	overflow: hidden;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(#010500, #0105006b),
+    url("../../../public/images/mac-code.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center 75%;
+  overflow: hidden;
+  margin-top: 2rem;
 }
 
 .footer-content {
-	//background-color: transparent;
-	display: flex;
-	position: relative;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: flex-start;
-	height: 100%;
-	padding-left: 2rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+  padding-left: 2rem;
 }
 
 .social-media-container {
-	background-color: transparent;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .footer-ul {
-	display: flex;
-	flex-direction: row;
-	list-style: none;
-	gap: 2rem;
-	background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+  background: none;
 
-	li {
-		background-color: transparent;
-	}
+  li {
+    background: none;
+    width: fit-content;
+  }
 
-	li > a {
-		background-color: transparent;
-	}
+  li > a {
+    background: none;
+  }
 }
 
 .icon-link {
-	font-size: 2rem;
-	background-color: transparent;
-	transition: var(--transition);
+  width: fit-content;
+  font-size: 2rem;
+  background-color: transparent;
+  transition: var(--transition);
 
-	@media (min-width: 50em) {
-		font-size: 2.5rem;
-	}
+  @media (min-width: 50em) {
+    font-size: 2.5rem;
+  }
 
-	&:hover {
-		transform: translateY(-3px);
-		transition: var(--transition);
-	}
+  &:hover {
+    transform: translateY(-3px);
+    transition: var(--transition);
+  }
 }
 
+.github-link,
 .linkedin {
-	//color: var(--linkedin-color);
-	color: white;
-	font-size: 2rem;
-}
-
-.github-link {
-	font-size: 2rem;
-	color: white;
+  font-size: 2rem;
 }
 
 .designed-by-container {
-	background-color: transparent;
+  background: none;
 }
 
 .designed-by-container > a {
-	background-color: transparent;
-	font-family: "Intel One Mono Medium", sans-serif;
-	font-size: 0.8rem;
-	position: relative;
-	color: whitesmoke;
-	transition: var(--transition);
+  background-color: transparent;
+  font-family: "Intel One Mono Medium", sans-serif;
+  font-size: 0.8rem;
+  position: relative;
+  color: whitesmoke;
+  transition: var(--transition);
 
-	&:hover {
-		text-decoration: none;
-	}
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .copyright-container {
-	background-color: transparent;
-	display: flex;
-	flex-direction: column;
+  background: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .copyright-container > p {
-	background-color: transparent;
-	font-family: "Intel One Mono Medium", sans-serif;
-	font-size: 0.8rem;
-	position: relative;
-	color: whitesmoke;
+  background: none;
+  font-family: "Intel One Mono Medium", sans-serif;
+  font-size: 0.8rem;
+  position: relative;
+  color: whitesmoke;
 }
 
 @media (min-width: 50em) {
-	.designed-by-container > a:hover {
-		transition: var(--transition);
-	}
+  .designed-by-container > a:hover {
+    transition: var(--transition);
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.footer-container {
-		background-size: 230%;
-		background-position: 20% 50%;
-	}
+  .footer-container {
+    background-size: 230%;
+    background-position: 20% 50%;
+  }
 }
