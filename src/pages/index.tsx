@@ -34,7 +34,7 @@ export async function getStaticProps() {
   };
 
   const aboutText = {
-    p1: "My tech journey started in youth, building desktop computers and exploring the intricacies of hardware and software, from an e-commerce shop where I would later in life become a Purchase Manager on the same components.",
+    p1: "As a child, I was fascinated with technology, building computers using components I bought from an e-commerce shop. This early hobby sparked a deeper interest in technology, which came full circle later in life when I joined that same e-commerce shop as a Purchase Manager, overseeing the procurement of those very components.",
     p2: "This early interest culminated in my decision to pursue a bachelor's degree in information technology in Oslo, with a specialization in ",
     p2a: ". I am particularly fascinated by the practical aspects of technology, especially how different systems communicate and connect to create a unified experience for the user.",
     p3: "Outside of my professional life in technology, I am a person of diverse interests and passions. I have a deep appreciation for nature, often spending my free time engaging in outdoor activities like fly fishing, which allows me to disconnect and find balance. My interest in martial arts, particularly Brazilian jiu-jitsu, reflects my dedication to discipline and continuous self-improvement. I am also an avid fan of board games and skiing, activities that not only offer relaxation but also an opportunity to connect with others and enjoy the spirit of competition and strategy. These hobbies, alongside my tech career, shape who I am – someone who values persistence, strategic thinking, and a deep connection with the natural world.",
