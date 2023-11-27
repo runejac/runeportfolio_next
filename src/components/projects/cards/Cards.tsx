@@ -1,20 +1,15 @@
 import React from "react";
 import styles from "./Cards.module.scss";
-import { motion, useInView } from "framer-motion";
-import { loadStylingMotion } from "@/utils/utils";
+import { motion } from "framer-motion";
 import CardItem from "@/components/projects/cards/CardItem";
-import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 
-const Cards = ({
-  openModal,
-  projectsRef
-}: ProjectsTextProps) => {
+export type CardsProps = {
+  openModal: () => void;
+};
+const Cards = ({ openModal }: CardsProps) => {
   return (
     <motion.section className={styles.cardsContainer}>
-      <CardItem
-        projectsRef={projectsRef}
-        openModal={openModal}
-      />
+      <CardItem openModal={openModal} />
     </motion.section>
   );
 };

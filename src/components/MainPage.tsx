@@ -41,7 +41,7 @@ export default function MainPage() {
         id={"header-tag"}
         style={{
           top: visible ? "0" : "-80px",
-          position: visible ? "sticky" : "fixed",
+          position: visible ? "sticky" : "relative",
         }}
         className={styles.headerTag}
       >

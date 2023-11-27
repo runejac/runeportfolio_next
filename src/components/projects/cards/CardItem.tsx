@@ -3,14 +3,13 @@ import styles from "./CardItem.module.scss";
 import stylesBlob from "../../imageOfMe/blob/Blob.module.scss";
 import { motion } from "framer-motion";
 import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
-import { ProjectsTextProps } from "@/components/projects/ProjectsText";
 import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
-import { windowScroll } from "seamless-scroll-polyfill";
+import { CardsProps } from "@/components/projects/cards/Cards";
 
 export let indexClicked: number;
 
-const CardItem = ({ openModal, projectsRef }: ProjectsTextProps) => {
+const CardItem = ({ openModal }: CardsProps) => {
   const data = useContext(DataContext);
   const [isOnSmallDevice, setIsOnSmallDevice] = useState(false);
   const [hoveredCards, setHoveredCards] = useState(
@@ -103,7 +102,7 @@ const CardItem = ({ openModal, projectsRef }: ProjectsTextProps) => {
               />
             )}
             <div className={styles.circularBorder}>
-              <h2>{cardItem.appTitle}</h2>
+              <h2 className={styles.appTitleH2}>{cardItem.appTitle}</h2>
             </div>
             <div className={styles.technologiesContainer}>
               <ul>

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import styles from "./ProjectsText.module.scss";
 
-
 import Cards from "@/components/projects/cards/Cards";
 import { DataContext } from "@/context/DataContext";
 
@@ -11,10 +10,7 @@ export type ProjectsTextProps = {
   openModal: () => void;
   isVisible?: boolean;
 };
-const ProjectsText = ({
-  projectsRef,
-  openModal
-}: ProjectsTextProps) => {
+const ProjectsText = ({ projectsRef, openModal }: ProjectsTextProps) => {
   const data = useContext(DataContext);
 
   return (
@@ -24,12 +20,9 @@ const ProjectsText = ({
         id={"projects"}
         className={styles.projectsTextContainer}
       >
-        <h2>projects</h2>
+        <h2 className={styles.header2}>projects</h2>
         <p>{data.projectsText.p1}</p>
-        <Cards
-          projectsRef={projectsRef}
-          openModal={openModal}
-        />
+        <Cards openModal={openModal} />
       </motion.section>
     </>
   );

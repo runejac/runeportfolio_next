@@ -55,12 +55,13 @@
   position: relative;
   text-align: center;
   min-height: 70px;
+}
 
-  h2 {
-    font-size: 1.6rem;
-    font-family: "Intel One Mono", sans-serif;
-    text-shadow: 0 0 0 #fff, 0 0 3px #fff;
-  }
+.app-title-h2 {
+  font-size: 1.6rem;
+  font-family: "Intel One Mono", sans-serif;
+  text-shadow: 0 0 0 #fff, 0 0 3px #fff;
+  background: none;
 }
 
 .technologies-container {
