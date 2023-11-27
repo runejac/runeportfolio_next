@@ -3,65 +3,58 @@ import AboutText from "@/components/aboutText/AboutText";
 import { useEffect, useRef, useState } from "react";
 import ProjectsText from "@/components/projects/ProjectsText";
 import Navbar from "@/components/navbar/Navbar";
-import Logo from "@/components/logo/Logo";
 import styles from "./MainPage.module.scss";
 import Modal from "@/components/projects/cards/modal/Modal";
 import Footer from "@/components/footer/Footer";
+import Background from "@/components/background/Background";
 
 export default function MainPage() {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const projectsRef = useRef<null | HTMLElement>(null);
-  let amountNumberFromScreenWidth = 0;
-
-  useEffect(() => {
-    const checkWidth = () => {
-      if (window.innerWidth > 768) amountNumberFromScreenWidth = 1;
-      else if (window.innerWidth <= 768) amountNumberFromScreenWidth = 0;
-    };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", checkWidth);
-    }
-  }, []);
 
   const openModal = () => {
     setShowModal((prevState) => !prevState);
   };
 
-  // hides navbar when scrolling
-  let prevScrollpos = typeof window !== "undefined" ? window.scrollY : 0;
-  if (typeof window !== "undefined") {
-    window.onscroll = function() {
-      const currentScrollPos = window.scrollY;
-      if (prevScrollpos > currentScrollPos) {
-        const headerTag = document.querySelector("#header-tag") as HTMLElement;
-        if (headerTag) {
-          headerTag.style.top = "0";
-        }
-      } else {
-        const headerTag = document.querySelector("#header-tag") as HTMLElement;
-        if (headerTag) {
-          headerTag.style.top = "-100px";
-        }
-      }
-      prevScrollpos = currentScrollPos;
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
-  }
+  }, [prevScrollPos, visible, handleScroll]);
 
   return (
     <>
+      <Background />
       <Modal showModal={showModal} setShowModal={setShowModal} />
-      <header id={"header-tag"} className={styles.headerTag}>
+      <header
+        id={"header-tag"}
+        style={{
+          top: visible ? "0" : "-80px",
+          position: visible ? "sticky" : "relative",
+        }}
+        className={styles.headerTag}
+      >
         <Navbar />
-        <Logo />
       </header>
       <main className={styles.mainTag}>
         <IntroText />
-        <ProjectsText
-          amountNumberFromScreenWidth={amountNumberFromScreenWidth}
-          projectsRef={projectsRef}
-          openModal={openModal}
-        />
-        <AboutText />
+        <section className={styles.projectsAndAboutSection}>
+          <div className={styles.divContainer}>
+            <ProjectsText projectsRef={projectsRef} openModal={openModal} />
+            <AboutText />
+          </div>
+        </section>
       </main>
       <Footer />
     </>

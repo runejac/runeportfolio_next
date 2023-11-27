@@ -5,18 +5,24 @@ import retroGameMarket from "../../public/images/retro-game.png";
 import reversedImageSearchImg from "../../public/images/reversedImageSearchImage.png";
 import tidsreisenImg from "../../public/images/tidsreisenImage.png";
 import pizzaPortalImg from "../../public/images/pizza-portal.png";
-import Head from "next/head";
+import CustomHead from "@/components/layouts/head/CustomHead";
 
 export default function Home({
+  aboutText,
+  projectsText,
   introText,
   cardsData,
-  aboutText2,
 }: DataContextProps) {
   return (
-    <DataContext.Provider value={{ introText, cardsData, aboutText2 }}>
-      <Head>
-        <title>Rune Oliveira</title>
-      </Head>
+    <DataContext.Provider
+      value={{ aboutText, projectsText, introText, cardsData }}
+    >
+      <CustomHead
+        title={"Rune Oliveira"}
+        content={
+          "frontend, developer, rune oliveira, rune daniel jacobsen oliveira, technologist"
+        }
+      />
       <MainPage />
     </DataContext.Provider>
   );
@@ -24,10 +30,18 @@ export default function Home({
 
 export async function getStaticProps() {
   const introText = {
-    h1: "Hi, my name is",
-    h2: "Rune Oliveira.",
-    h3: "Developer",
-    p1: "Driven by a passion for frontend development across mobile and web platforms, I bring expertise in various methodologies, a commitment to user-centric design, and an unwavering drive to explore and embrace new technologies.",
+    h1: "Rune Oliveira",
+  };
+
+  const aboutText = {
+    p1: "As a child, I was fascinated with technology, dedicating countless hours to researching and building computers for both my friends and myself using components I bought online. This early hobby, rooted in research, sparked a deeper interest in technology, which came full circle later in life when I joined that same online store as a Purchase Manager. In this role, I applied my research skills to oversee the procurement of those very components, combining my childhood passion with professional expertise.",
+    p2: "My early fascination with technology led me from Nøtterøy to Oslo to pursue a bachelor's degree in information technology. Specializing in ",
+    p2a: ", I found myself increasingly captivated by the field. I spent countless hours, day and night, eagerly learning about the intricacies of both backend and frontend development. I am particularly fascinated by the practical aspects of technology, especially how different systems communicate and connect to create a unified experience for the user.",
+    p3: "Outside of my professional life in technology, I am a person of diverse interests and passions. I have a deep appreciation for nature, often spending my free time engaging in outdoor activities like fly fishing, which allows me to disconnect and find balance. My interest in martial arts, particularly Brazilian jiu-jitsu, reflects my dedication to discipline and continuous self-improvement. I am also an avid fan of board games and skiing, activities that not only offer relaxation but also an opportunity to connect with others and enjoy the spirit of competition and strategy. These hobbies, alongside my tech career, shape who I am – someone who values persistence, strategic thinking, and a deep connection with the natural world.",
+  };
+
+  const projectsText = {
+    p1: "Here's a look at some of the projects I've really enjoyed working on. Each one has been a great opportunity to sharpen my programming skills and to put my heart and soul into my work. What makes these projects extra special is the collaboration with fellow students during my studies. We shared a passion for what we were doing, and working together brought out the best in all of us.",
   };
 
   const cardsData = [
@@ -61,7 +75,7 @@ export async function getStaticProps() {
     },
     {
       id: 2,
-      appTitle: "Byåa Tidsreisen",
+      appTitle: "Tidsreisen",
       appType: "WEB APP",
       img: tidsreisenImg,
       githubLink: "https://github.com/runejac/PRO201_EXAM_Tidsreisen_Byaaa",
@@ -86,19 +100,7 @@ export async function getStaticProps() {
     },
   ];
 
-  const aboutText2 = {
-    p1:
-      "Beginning my journey in e-commerce, I delved deep into the nuances of the industry while working with CPU's and motherboards at Komplett Group. This foundation in tech laid the groundwork for my move to Oslo from Tønsberg, marking a pivot in my career path towards programming and information technology.\n" +
-      "\n",
-    p2:
-      "Currently, I'm passionate about the realms of frontend web and native mobile development. Although I may be a newer face in the developer world, I bring a fresh perspective, fueled by my history in e-commerce. My dedication to learning and mastering the intricacies of these domains is unwavering.\n" +
-      "\n",
-    p3:
-      "With every line of code, I seek to craft seamless user experiences and push the boundaries of what's possible in digital design. Eager to explore new techniques, tools, and methodologies, I'm on a quest to continually evolve as a developer and contribute innovatively to the tech community.\n" +
-      "\n",
-  };
-
   return {
-    props: { introText, cardsData, aboutText2 },
+    props: { aboutText, projectsText, introText, cardsData },
   };
 }

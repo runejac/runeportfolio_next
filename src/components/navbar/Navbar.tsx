@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -18,25 +18,25 @@ const Navbar = () => {
     show1: {
       opacity: 1,
       transition: {
-        delay: 4.8,
+        delay: 0.5,
       },
     },
     show2: {
       opacity: 1,
       transition: {
-        delay: 4.9,
+        delay: 0.6,
       },
     },
     show3: {
       opacity: 1,
       transition: {
-        delay: 5,
+        delay: 0.7,
       },
     },
     show4: {
       opacity: 1,
       transition: {
-        delay: 5.1,
+        delay: 0.8,
       },
     },
   };
@@ -45,29 +45,48 @@ const Navbar = () => {
     <>
       <motion.nav className={styles.navbarContainer}>
         <motion.ol>
-          <Link href={"#about"} scroll={false} aria-label={"about section"}>
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show1"}
-            >
-              <span>00.</span> ABOUT
-            </motion.li>
-          </Link>
-          <Link
-            href={"#projects"}
-            scroll={false}
-            aria-label={"projects section"}
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show1"}
+            aria-label={"scroll down to about section"}
           >
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show2"}
+            <Link href={"#about"} scroll={false}>
+              about
+            </Link>
+          </motion.li>
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show2"}
+          >
+            <Link href={"#projects"} scroll={false}>
+              projects
+            </Link>
+          </motion.li>
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
+            animate={"show3"}
+            className={"navbar-item resume"}
+          >
+            <Link
+              className={styles.resume}
+              href={"/CV_Oliveira.pdf"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
             >
-              <span>01.</span> PROJECTS
-            </motion.li>
-          </Link>
+              resume
+            </Link>
+          </motion.li>
+        </motion.ol>
+        <motion.li
+          variants={navBarItemsMotion}
+          initial={"hidden"}
+          animate={"show4"}
+        >
           <Link
+            className={styles.hitMeUp}
             href={"#"}
             aria-label={"mail me section"}
             onClick={(e) => {
@@ -75,32 +94,9 @@ const Navbar = () => {
               e.preventDefault();
             }}
           >
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show3"}
-            >
-              <span>02.</span> CONTACT
-            </motion.li>
+            contact
           </Link>
-          <motion.a
-            variants={navBarItemsMotion}
-            initial={"hidden"}
-            animate={"show4"}
-            href={"CV.pdf"}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <motion.li
-              variants={navBarItemsMotion}
-              initial={"hidden"}
-              animate={"show4"}
-              className={`navbar-item ${styles.resume}`}
-            >
-              Resume
-            </motion.li>
-          </motion.a>
-        </motion.ol>
+        </motion.li>
       </motion.nav>
       {sidebar && (
         <div
@@ -129,9 +125,7 @@ const Navbar = () => {
               aria-label={"about section"}
               onClick={() => showSidebar()}
             >
-              <li className={styles.navbarChild}>
-                <span>00.</span> About
-              </li>
+              <li className={styles.navbarChild}>about</li>
             </Link>
             <Link
               href={"#projects"}
@@ -139,9 +133,7 @@ const Navbar = () => {
               aria-label={"projects section"}
               onClick={() => showSidebar()}
             >
-              <li className={styles.navbarChild}>
-                <span>01.</span> Projects
-              </li>
+              <li className={styles.navbarChild}>projects</li>
             </Link>
             <Link
               href={"#"}
@@ -151,12 +143,14 @@ const Navbar = () => {
                 e.preventDefault();
               }}
             >
-              <li className={styles.navbarChild}>
-                <span>02.</span> Contact
-              </li>
+              <li className={styles.navbarChild}>email</li>
             </Link>
-            <Link href={"CV.pdf"} target={"_blank"} rel={"noopener noreferrer"}>
-              <li className={"navbar-child resume"}>Resume</li>
+            <Link
+              href={"/CV_Oliveira.pdf"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
+              <li className={styles.navbarChild}>resume</li>
             </Link>
             <li className={styles.navbarToggle}>
               <IoClose

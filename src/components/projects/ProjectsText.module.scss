@@ -1,6 +1,37 @@
+.projects-text-container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  background: none;
+  margin-bottom: 3rem;
+
+  p,
+  a {
+    font-family: "Intel One Mono Light", sans-serif;
+    font-size: 1.125rem;
+    text-decoration: none;
+    background: transparent;
+  }
+
+  @media (min-width: 50em) {
+    gap: 2rem;
+    margin-bottom: 7rem;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.header2 {
+  font-family: "Intel One Mono", sans-serif;
+  font-size: 2.5rem;
+  background: none;
+}
+
 .scroll-icon {
   font-size: 2rem;
-  color: black;
+  color: white;
   background: transparent;
 }
 
@@ -13,7 +44,7 @@
   outline-color: transparent;
   bottom: 0;
   margin-bottom: 3rem;
-  animation: floating 2s ease-in-out infinite 4.8s;
+  animation: floating 2s ease-in-out infinite 0.5s;
 }
 
 @keyframes floating {
@@ -28,44 +59,4 @@
     transform: translate(0, 20px);
     opacity: 0;
   }
-}
-
-.projects-text-container {
-  position: relative;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  margin-inline: 20px;
-  margin-top: 2rem;
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  p,
-  a {
-    font-family: "Calibre Light", sans-serif;
-    font-size: 1.125rem;
-    text-decoration: none;
-  }
-  a {
-    color: var(--pink);
-  }
-
-  @media (min-width: 50em) {
-    //padding-top: 5rem;
-    flex-direction: column;
-    max-width: 1000px;
-    margin-inline: 150px;
-    //margin-block: 100px;
-
-    p {
-      font-size: 1.25rem;
-    }
-  }
-}
-
-.section-heading {
-  color: var(--blue);
-  background-color: inherit;
 }

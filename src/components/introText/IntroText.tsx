@@ -5,73 +5,23 @@ import { DataContext } from "@/context/DataContext";
 
 const IntroText = () => {
   const data = useContext(DataContext);
-  const { h1, h2, h3, p1 } = data.introText;
-
-  const nameOpacityAnimation = {
-    hidden: { opacity: 0 },
-    showh2: {
-      opacity: 1,
-      transition: {
-        delay: 2.01,
-      },
-    },
-  };
-
-  const itemsOpacityAnimation = {
-    hidden: { y: 20, opacity: 0 },
-    showh1: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.5,
-        ease: "easeOut",
-      },
-    },
-    showh3: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 4.2,
-        ease: "easeOut",
-      },
-    },
-    showhp1: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 4.3,
-        ease: "easeOut",
-      },
-    },
-  };
+  const { h1 } = data.introText;
 
   return (
-    <motion.section className={styles.introTextContainer}>
-      <motion.div>
+    <section className={styles.introTextContainer}>
+      <div>
         <h1>{h1}</h1>
-      </motion.div>
-      <motion.div
-        variants={nameOpacityAnimation}
-        initial={"hidden"}
-        animate={"showh2"}
-      >
-        <h2>{h2}</h2>
-      </motion.div>
-      <motion.div
-        variants={itemsOpacityAnimation}
-        initial={"hidden"}
-        animate={"showh3"}
-      >
-        <h3>{h3}</h3>
-      </motion.div>
-      <motion.div
-        variants={itemsOpacityAnimation}
-        initial={"hidden"}
-        animate={"showhp1"}
-      >
-        <p>{p1}</p>
-      </motion.div>
-    </motion.section>
+      </div>
+      <div>
+        <h2>developer</h2>
+      </div>
+      <div>
+        <h3>
+          Frontend-focused fullstack developer based in Oslo. <br />
+          Fly fishing and brazilian jiu-jitsu is my jam.
+        </h3>
+      </div>
+    </section>
   );
 };
 

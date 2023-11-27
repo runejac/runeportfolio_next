@@ -1,115 +1,153 @@
 .about-and-img-container {
   position: relative;
+  background: none;
 
   @media (min-width: 50em) {
-    position: relative;
-    margin-inline: 150px;
     display: flex;
-    gap: 3rem;
+    margin-bottom: 2rem;
     flex-direction: row;
-    max-width: 1000px;
-    margin-block: 100px;
+    background: none;
   }
 }
 
 .about-me-container {
   display: flex;
-  margin: 20px;
   gap: 2rem;
   flex-direction: column;
+  background: none;
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    background: none;
   }
 
   span {
-    color: var(--blue);
-    background-color: inherit;
+    background: none;
+    font-family: "Intel One Mono", sans-serif;
+    font-size: 1.125rem;
   }
 
   p,
   a {
-    font-family: "Calibre Light", sans-serif;
+    background: none;
+    font-family: "Intel One Mono Light", sans-serif;
     font-size: 1.125rem;
     text-decoration: none;
   }
+
   a {
-    color: var(--blue);
+    position: relative;
+    font-family: "Intel One Mono", sans-serif;
+    text-decoration: none;
+    display: inline;
+    z-index: 0;
+    border-bottom: 2px solid transparent;
+    background-image: linear-gradient(
+      130deg,
+      var(--main-orange),
+      var(--main-red) 41.07%,
+      var(--main-cyan) 76.05%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: bottom;
+    border-radius: 0 0 2px 2px;
+    transition: background-size 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      background-size: 100% 38%; // Increase the thickness on hover
+    }
+
+    // Remove the &:before and &:after pseudo-elements if they are no longer needed
   }
+
+  /*	a {
+			position: relative;
+			text-decoration: none;
+			display: inline;
+			z-index: 0;
+	
+			&:before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 0;
+				bottom: 0;
+				left: 0;
+				background: linear-gradient(130deg, var(--main-orange), var(--main-red) 41.07%, var(--main-cyan) 76.05%);
+				z-index: -1;
+				transition: height 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+			}
+	
+			&:hover:before {
+				height: 38%;
+			}
+	
+			&:after {
+				content: "";
+				position: absolute;
+				top: 100%;
+				width: 100%;
+				left: 0;
+				height: 2px;
+				border-radius: 0 0 2px 2px;
+				background: linear-gradient(130deg, var(--main-orange), var(--main-red) 41.07%, var(--main-cyan) 76.05%);
+			}
+	
+			span {
+				position: relative;
+				display: inline;
+			}
+		}*/
 
   @media all and (min-width: 50em) {
     position: relative;
-    margin: 0;
-    flex: 3;
 
     p,
+    span,
     a {
-      font-size: 1.25rem;
-    }
-
-    // fixme: do I want a line there or not? dunno yet
-    /*    h2 {
-      &:after {
-        content: "";
-        display: block;
-        position: relative;
-        margin-left: 0;
-        top: -23px;
-        width: 300px;
-        height: 1px;
-        background-color: var(--smokey-black);
-        z-index: 0;
-      }
-    }*/
-
-    a {
-      position: relative;
-      color: var(--blue);
-      text-decoration: none;
-
-      &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--blue);
-        transform-origin: bottom left;
-        transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-
-      &:hover:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
+      font-size: 1.5rem;
     }
   }
+}
+
+.skills-list-container {
+  background: transparent;
 }
 
 .skills-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  grid-gap: 0 10px;
+  grid-gap: 0 1rem;
   padding: 0;
   margin: 20px 0 0 0;
-  overflow: hidden;
   list-style: none;
+  background: transparent;
 
-  li {
+  a {
     position: relative;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    font-family: "SF Mono", sans-serif;
+    text-decoration: none;
+    display: inline;
+    z-index: 0;
+    width: fit-content;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    background-image: linear-gradient(
+      130deg,
+      var(--main-orange),
+      var(--main-red) 41.07%,
+      var(--main-cyan) 76.05%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: bottom;
+    border-radius: 0 0 2px 2px;
+    transition: background-size 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    &:before {
-      content: "⠜";
-      position: absolute;
-      left: 0;
-      color: var(--blue);
-      font-size: 1rem;
-      line-height: 22px;
+    &:hover {
+      background-size: 100% 38%; // Increase the thickness on hover
     }
+
+    // Remove the &:before and &:after pseudo-elements if they are no longer needed
   }
 }

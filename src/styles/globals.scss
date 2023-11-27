@@ -1,149 +1,152 @@
 *,
 ::before,
 ::after {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	background: var(--yellow-background);
-	font-family: "Bebas Neue", sans-serif;
-	font-weight: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	line-height: 1.3;
-	scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+* {
+  background: rgba(0, 0, 0, 0.28);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Intel One Mono", sans-serif;
+  font-weight: normal;
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 ::selection {
-	background: var(--text-shadow);
-	color: var(--yellow-background);
-	text-shadow: var(--blue) 4px 10px;
+  background: var(--text-shadow);
+  color: var(--yellow-background);
+  text-shadow: var(--background) 4px 10px;
 }
 
 ::-moz-selection {
-	background: var(--text-shadow);
-	color: var(--yellow-background);
-	text-shadow: var(--blue) 4px 10px;
+  background: var(--text-shadow);
+  color: var(--yellow-background);
+  text-shadow: var(--background) 4px 10px;
+}
+
+p {
+  color: var(--text-light);
 }
 
 ::-webkit-scrollbar {
-	width: 0;
-}
-
-/*::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}*/
-
-@font-face {
-	font-family: "Bebas Neue";
-	src: url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff") format("woff"),
-	url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2");
+  width: 0;
 }
 
 @font-face {
-	font-family: "Bebas Neue Book";
-	src: url("../../public/fonts/BebasNeue/Bebas Neue Book 300.woff") format("woff"),
-	url("../../public/fonts/BebasNeue/Bebas Neue Book 300.woff2") format("woff2");
+  font-family: "Intel One Mono";
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Regular.woff")
+      format("woff"),
+    url("../../public/fonts/Intel One Mono/IntelOneMono-Regular.woff2")
+      format("woff2");
 }
 
 @font-face {
-	font-family: "Bebas Neue";
-	src: url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff") format("woff"),
-	url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2");
+  font-family: "Intel One Mono Medium";
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff")
+      format("woff"),
+    url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff2")
+      format("woff2");
 }
 
 @font-face {
-	font-family: "Bebas Neue";
-	src: url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff") format("woff"),
-	url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2");
+  font-family: "Intel One Mono Light";
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Light.woff")
+      format("woff"),
+    url("../../public/fonts/Intel One Mono/IntelOneMono-Light.woff2")
+      format("woff2");
 }
 
 @font-face {
-	font-family: "Bebas Neue";
-	src: url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff") format("woff"),
-	url("../../public/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2");
+  font-family: "SF Mono";
+  src: url("../../public/fonts/SF Mono/sf-mono-regularitalic.woff")
+      format("woff"),
+    url("../../public/fonts/SF Mono/sf-mono-regularitalic.woff2")
+      format("woff2");
 }
 
 @font-face {
-	font-family: "Montserrat Light";
-	src: url("../../public/fonts/Montserrat/Montserrat-Light.woff") format("woff"),
-	url("../../public/fonts/Montserrat/Montserrat-Light.woff2") format("woff2");
+  font-family: "Montserrat Light";
+  src: url("../../public/fonts/Montserrat/Montserrat-Light.woff") format("woff"),
+    url("../../public/fonts/Montserrat/Montserrat-Light.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Montserrat Thin";
-	src: url("../../public/fonts/Montserrat/Montserrat-Thin.woff") format("woff"),
-	url("../../public/fonts/Montserrat/Montserrat-Thin.woff2") format("woff2");
+  font-family: "Montserrat Thin";
+  src: url("../../public/fonts/Montserrat/Montserrat-Thin.woff") format("woff"),
+    url("../../public/fonts/Montserrat/Montserrat-Thin.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Montserrat Regular";
-	src: url("../../public/fonts/Montserrat/Montserrat-Regular.woff") format("woff"),
-	url("../../public/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
+  font-family: "Montserrat Regular";
+  src: url("../../public/fonts/Montserrat/Montserrat-Regular.woff")
+      format("woff"),
+    url("../../public/fonts/Montserrat/Montserrat-Regular.woff2")
+      format("woff2");
 }
 
 @font-face {
-	font-family: "Montserrat Bold";
-	src: url("../../public/fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
-	url("../../public/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+  font-family: "Montserrat Bold";
+  src: url("../../public/fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
+    url("../../public/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Montserrat SemiBold";
-	src: url("../../public/fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"),
-	url("../../public/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat SemiBold";
+  src: url("../../public/fonts/Montserrat/Montserrat-SemiBold.woff")
+      format("woff"),
+    url("../../public/fonts/Montserrat/Montserrat-SemiBold.woff2")
+      format("woff2");
 }
 
 @font-face {
-	font-family: "Montserrat ExtraBold";
-	src: url("../../public/fonts/Montserrat/Montserrat-ExtraBold.woff") format("woff"),
-	url("../../public/fonts/Montserrat/Montserrat-ExtraBold.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Calibre Light";
-	src: url("../../public/fonts/Calibre/CalibreLight.woff") format("woff"),
-	url("../../public/fonts/Calibre/CalibreLight.woff2") format("woff2");
+  font-family: "Montserrat ExtraBold";
+  src: url("../../public/fonts/Montserrat/Montserrat-ExtraBold.woff")
+      format("woff"),
+    url("../../public/fonts/Montserrat/Montserrat-ExtraBold.woff2")
+      format("woff2");
 }
 
 :root {
-	--yellow-background: #faf6e9;
-	--selection: #1e1e1e;
-	--green-navbar-hover: #c5efdc;
-	--pink: #dd3988;
-	--pink-shadow: #791f4d;
-	--blue: #3533f3;
-	--brown: #cc8446;
-	--text-shadow: rgba(197, 13, 13, 0.76);
-	--green: #94cc46;
-	--mustard: #ccae46;
-	--footer: #c674e5;
+  --main-orange: #ff7a18;
+  --main-red: #af002d;
+  --main-cyan: #319197;
 
-	--smokey-black: hsl(41, 100%, 3%);
-	--smokey-black-active: hsl(41, 100%, 3%);
+  --yellow-background: #2c2c2c;
+  --selection: #1e1e1e;
+  --green-navbar-hover: #c5efdc;
+  --pink: #dd3988;
+  --pink-shadow: #791f4d;
+  --background: #dadada;
+  --brown: #cc8446;
+  --text-shadow: rgba(0, 255, 170, 0.78);
+  --green: #94cc46;
+  --mustard: #ccae46;
+  --footer: #c674e5;
 
-	--linkedin-color: #0a66c2;
-	--github-color: #f0f6fc;
-	--text-gray: #6f6f6f;
-	--text-black: #000;
-	--border-radius: 12px;
-	--border-radius-card-color: 8px;
-	--border-radius-modal: 10px;
-	--border-width: 3px;
-	--border-specs: var(--border-width) solid black;
-	--box-shadow: 8px 8px #000;
-	--box-shadow-pink: 8px 8px var(--pink-shadow);
-	--box-shadow-modal: 16px 16px #000;
-	--box-shadow-icon: 2px 2px #000;
-	--transition: transform 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
-	--transition-navbar: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-	--sm: 14px;
-	--outline: 1px red solid;
+  --smokey-black: hsl(41, 100%, 3%);
+  --smokey-black-active: hsl(41, 100%, 3%);
+
+  --linkedin-color: #0a66c2;
+  --github-color: #f0f6fc;
+  --text-gray: #ffffff;
+  --text-light: #d9d9d9;
+  --border-radius: 12px;
+  --border-radius-card-color: 8px;
+  --border-radius-modal: 10px;
+  --border-width: 3px;
+  --border-specs: var(--border-width) solid black;
+  --box-shadow: 8px 8px #000;
+  --box-shadow-pink: 8px 8px var(--pink-shadow);
+  --box-shadow-modal: 16px 16px #000;
+  --box-shadow-icon: 2px 2px #000;
+  --transition: transform 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  --transition-navbar: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --sm: 14px;
+  --outline: 1px red solid;
 }
