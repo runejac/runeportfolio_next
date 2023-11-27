@@ -34,16 +34,14 @@ export async function getStaticProps() {
   };
 
   const aboutText = {
-    p1: "As a child, I was fascinated with technology, building computers using components I bought from an e-commerce shop. This early hobby sparked a deeper interest in technology, which came full circle later in life when I joined that same e-commerce shop as a Purchase Manager, overseeing the procurement of those very components.",
-    p2: "This early interest culminated in my decision to pursue a bachelor's degree in information technology in Oslo, with a specialization in ",
-    p2a: ". I am particularly fascinated by the practical aspects of technology, especially how different systems communicate and connect to create a unified experience for the user.",
+    p1: "As a child, I was fascinated with technology, dedicating countless hours to researching and building computers for both my friends and myself using components I bought online. This early hobby, rooted in research, sparked a deeper interest in technology, which came full circle later in life when I joined that same online store as a Purchase Manager. In this role, I applied my research skills to oversee the procurement of those very components, combining my childhood passion with professional expertise.",
+    p2: "My early fascination with technology led me from Nøtterøy to Oslo to pursue a bachelor's degree in information technology. Specializing in ",
+    p2a: ", I found myself increasingly captivated by the field. I spent countless hours, day and night, eagerly learning about the intricacies of both backend and frontend development. I am particularly fascinated by the practical aspects of technology, especially how different systems communicate and connect to create a unified experience for the user.",
     p3: "Outside of my professional life in technology, I am a person of diverse interests and passions. I have a deep appreciation for nature, often spending my free time engaging in outdoor activities like fly fishing, which allows me to disconnect and find balance. My interest in martial arts, particularly Brazilian jiu-jitsu, reflects my dedication to discipline and continuous self-improvement. I am also an avid fan of board games and skiing, activities that not only offer relaxation but also an opportunity to connect with others and enjoy the spirit of competition and strategy. These hobbies, alongside my tech career, shape who I am – someone who values persistence, strategic thinking, and a deep connection with the natural world.",
   };
 
   const projectsText = {
-    p1:
-      "Highlighted below are projects I've had the privilege of developing. These endeavors not only honed my programming and development skills but also stand testament to my dedication and craft. I'm especially proud of these collaborations, each borne out of shared passion and synergy with fellow students during my academic journey.\n" +
-      "\n",
+    p1: "Here's a look at some of the projects I've really enjoyed working on. Each one has been a great opportunity to sharpen my programming skills and to put my heart and soul into my work. What makes these projects extra special is the collaboration with fellow students during my studies. We shared a passion for what we were doing, and working together brought out the best in all of us.",
   };
 
   const cardsData = [
