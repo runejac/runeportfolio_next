@@ -29,11 +29,6 @@ export type DataContextProps = {
       externalLink?: string;
     }
   ];
-  aboutText2: {
-    p1: string;
-    p2: string;
-    p3: string;
-  };
 };
 
 export const DataContext = createContext<DataContextProps>(
