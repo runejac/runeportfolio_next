@@ -87,15 +87,17 @@ const CardItem = ({ openModal }: CardsProps) => {
               svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
               cardNumber={index}
             />*/}
-            {isOnSmallDevice && (
+            {!isOnSmallDevice && (
               <Image
-                className={styles.modalImg}
+                className={`${styles.modalImg} ${
+                  hoveredCards[index] ? "" : styles.hideImgOnMount
+                }`}
                 src={cardItem.img}
                 alt="image of app"
                 priority={true}
               />
             )}
-            {hoveredCards[index] && (
+            {isOnSmallDevice && (
               <Image
                 className={styles.modalImg}
                 src={cardItem.img}
