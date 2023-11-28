@@ -67,7 +67,7 @@ const CardItem = ({ openModal }: CardsProps) => {
             onFocus={() => toggleHover(index)}
             onBlur={() => setHoveredCards([])}
             onMouseLeave={() => setHoveredCards([])}
-            onClick={() => {
+            onMouseUp={() => {
               openModal();
               handleClick(index);
             }}

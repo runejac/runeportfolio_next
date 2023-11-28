@@ -18,20 +18,19 @@ export default function MainPage() {
     setShowModal((prevState) => !prevState);
   };
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-    setPrevScrollPos(currentScrollPos);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos, visible, handleScroll]);
+  }, [prevScrollPos, visible]);
 
   return (
     <>
@@ -41,6 +40,7 @@ export default function MainPage() {
         id={"header-tag"}
         style={{
           top: visible ? "0" : "-80px",
+          position: visible ? "sticky" : "relative",
         }}
         className={styles.headerTag}
       >
