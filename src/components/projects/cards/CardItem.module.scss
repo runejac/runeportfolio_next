@@ -20,6 +20,9 @@
   .technologies-container {
     li {
       text-shadow: 0 0 0 #fff, 0 0 2px #fff;
+      /*   text-shadow: 0 0 2px #000, 0 0 2px #000;
+      @media (min-width: 50em) {
+      }*/
     }
   }
 
@@ -28,26 +31,22 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
       0 12px 40px 0 rgba(0, 0, 0, 0.24);
 
-    .modal-img {
-      transform: translate(-120px, -300px) scale(0.8);
-      filter: contrast(200%) brightness(100%);
+    @media (min-width: 50em) {
+      .modal-img {
+        filter: contrast(140%) brightness(60%) blur(4px);
+      }
     }
-
-    //filter: contrast(100%) brightness(200%);
-    /*		box-shadow: var(--box-shadow);
-				transform: translate(-8px, -8px);
-				filter: contrast(100%) brightness(300%);
-				transition: transform 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;*/
   }
 }
 
 .modal-img {
   width: fit-content;
   position: absolute;
+  filter: contrast(140%) brightness(30%) blur(3px);
   z-index: -1;
   transition: var(--transition);
   border-radius: 5px;
-  transform: translate(-320px, -200px) scale(0.7);
+  transform: translate(-120px, -300px) scale(0.8);
 }
 
 .circular-border {
@@ -61,7 +60,11 @@
   font-size: 1.6rem;
   font-family: "Intel One Mono", sans-serif;
   text-shadow: 0 0 0 #fff, 0 0 3px #fff;
+  //text-shadow: 0 0 2px #000, 0 0 2px #000;
   background: none;
+
+  /*@media (min-width: 50em) {
+  }*/
 }
 
 .technologies-container {
@@ -76,8 +79,6 @@
   }
 
   li {
-    color: var(--text-light);
-    font-family: "Fira Code Light", sans-serif;
     width: fit-content;
     font-weight: normal;
     font-size: 1rem;

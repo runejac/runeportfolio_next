@@ -1,6 +1,7 @@
 .header-tag {
   display: flex;
   z-index: 7;
+  position: fixed;
   top: 0;
   width: 100%;
   transition: var(--transition-navbar);

@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./CardItem.module.scss";
-import stylesBlob from "../../imageOfMe/blob/Blob.module.scss";
 import { motion } from "framer-motion";
-import { BlobCard } from "@/components/imageOfMe/blob/BlobCard";
 import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
 import { CardsProps } from "@/components/projects/cards/Cards";
@@ -38,6 +36,7 @@ const CardItem = ({ openModal }: CardsProps) => {
     indexClicked = index;
   };
 
+  /*
   const setCardColor = (index: number) => {
     let cardColorClass = "";
     switch (index) {
@@ -57,6 +56,7 @@ const CardItem = ({ openModal }: CardsProps) => {
 
     return cardColorClass;
   };
+*/
 
   return (
     <>
@@ -83,10 +83,10 @@ const CardItem = ({ openModal }: CardsProps) => {
             className={styles.card}
             custom={index}
           >
-            <BlobCard
+            {/*<BlobCard
               svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
               cardNumber={index}
-            />
+            />*/}
             {isOnSmallDevice && (
               <Image
                 className={styles.modalImg}
