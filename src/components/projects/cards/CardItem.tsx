@@ -92,6 +92,7 @@ const CardItem = ({ openModal }: CardsProps) => {
                 className={styles.modalImg}
                 src={cardItem.img}
                 alt="image of app"
+                priority={true}
               />
             )}
             {hoveredCards[index] && (
@@ -99,6 +100,7 @@ const CardItem = ({ openModal }: CardsProps) => {
                 className={styles.modalImg}
                 src={cardItem.img}
                 alt="image of app"
+                priority={true}
               />
             )}
             <div className={styles.circularBorder}>
