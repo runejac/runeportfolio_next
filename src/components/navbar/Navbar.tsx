@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -48,20 +48,20 @@ const Navbar = () => {
           <motion.li
             variants={navBarItemsMotion}
             initial={"hidden"}
-            animate={"show1"}
-            aria-label={"scroll down to about section"}
+            animate={"show2"}
           >
-            <Link href={"#about"} scroll={false}>
-              about
+            <Link href={"#projects"} scroll={false}>
+              projects
             </Link>
           </motion.li>
           <motion.li
             variants={navBarItemsMotion}
             initial={"hidden"}
-            animate={"show2"}
+            animate={"show1"}
+            aria-label={"scroll down to about section"}
           >
-            <Link href={"#projects"} scroll={false}>
-              projects
+            <Link href={"#about"} scroll={false}>
+              about
             </Link>
           </motion.li>
           <motion.li
@@ -119,39 +119,47 @@ const Navbar = () => {
         </div>
         <nav className={`${styles.navMenu} ${sidebar ? styles.active : ""}`}>
           <ul className={styles.navMenuItems}>
-            <Link
-              href={"#about"}
-              scroll={false}
-              aria-label={"about section"}
-              onClick={() => showSidebar()}
-            >
-              <li className={styles.navbarChild}>about</li>
-            </Link>
-            <Link
-              href={"#projects"}
-              scroll={false}
-              aria-label={"projects section"}
-              onClick={() => showSidebar()}
-            >
-              <li className={styles.navbarChild}>projects</li>
-            </Link>
-            <Link
-              href={"#"}
-              aria-label={"mail me section"}
-              onClick={(e) => {
-                window.location.href = "mailto:runedanielj@gmail.com";
-                e.preventDefault();
-              }}
-            >
-              <li className={styles.navbarChild}>email</li>
-            </Link>
-            <Link
-              href={"/CV_Oliveira.pdf"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-            >
-              <li className={styles.navbarChild}>resume</li>
-            </Link>
+            <li className={styles.navbarChild}>
+              <Link
+                href={"#projects"}
+                scroll={false}
+                aria-label={"projects section"}
+                onClick={() => showSidebar()}
+              >
+                projects
+              </Link>
+            </li>
+            <li className={styles.navbarChild}>
+              <Link
+                href={"#about"}
+                scroll={false}
+                aria-label={"about section"}
+                onClick={() => showSidebar()}
+              >
+                about
+              </Link>
+            </li>
+            <li className={styles.navbarChild}>
+              <Link
+                href={"/CV_Oliveira.pdf"}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+              >
+                resume
+              </Link>
+            </li>
+            <li className={styles.navbarChild}>
+              <Link
+                href={"#"}
+                aria-label={"mail me section"}
+                onClick={(e) => {
+                  window.location.href = "mailto:runedanielj@gmail.com";
+                  e.preventDefault();
+                }}
+              >
+                contact
+              </Link>
+            </li>
             <li className={styles.navbarToggle}>
               <IoClose
                 aria-label={"close menu"}
