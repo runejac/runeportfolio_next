@@ -9,11 +9,11 @@ import { WindowWidthContext } from "@/context/WindowWidthContext";
 export let indexClicked: number;
 
 const CardItem = ({ openModal }: CardsProps) => {
-  const data = useContext(DataContext);
+  const { projectsData } = useContext(DataContext);
   const windowWidth = useContext(WindowWidthContext);
   const [isOnSmallDevice, setIsOnSmallDevice] = useState(false);
   const [hoveredCards, setHoveredCards] = useState(
-    Array(data.cardsData.length).fill(false)
+    Array(projectsData.length).fill(false)
   );
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const CardItem = ({ openModal }: CardsProps) => {
 
   return (
     <>
-      {data.cardsData.map((cardItem, index) => {
+      {projectsData.map((cardItem, index) => {
         return (
           <motion.article
             onMouseEnter={() => toggleHover(index)}
@@ -63,10 +63,6 @@ const CardItem = ({ openModal }: CardsProps) => {
             className={styles.card}
             custom={index}
           >
-            {/*<BlobCard
-              svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(index)} `}
-              cardNumber={index}
-            />*/}
             {!isOnSmallDevice && (
               <Image
                 className={`${styles.modalImg} ${
@@ -75,6 +71,8 @@ const CardItem = ({ openModal }: CardsProps) => {
                 src={cardItem.img}
                 alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
                 priority={true}
+                width={1000}
+                height={1000}
               />
             )}
             {isOnSmallDevice && (
@@ -83,6 +81,8 @@ const CardItem = ({ openModal }: CardsProps) => {
                 src={cardItem.img}
                 alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
                 priority={true}
+                width={1000}
+                height={1000}
               />
             )}
             <div className={styles.circularBorder}>

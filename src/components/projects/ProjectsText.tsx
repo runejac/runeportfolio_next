@@ -10,7 +10,7 @@ export type ProjectsTextProps = {
   openModal: () => void;
 };
 const ProjectsText = ({ projectsRef, openModal }: ProjectsTextProps) => {
-  const data = useContext(DataContext);
+  const { projectsText } = useContext(DataContext);
 
   return (
     <>
@@ -20,7 +20,7 @@ const ProjectsText = ({ projectsRef, openModal }: ProjectsTextProps) => {
         className={styles.projectsTextContainer}
       >
         <h2 className={styles.header2}>projects</h2>
-        <p>{data.projectsText.p1}</p>
+        <p>{projectsText.p1}</p>
         <Cards openModal={openModal} />
       </motion.section>
     </>

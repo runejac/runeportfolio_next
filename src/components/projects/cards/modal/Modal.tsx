@@ -67,7 +67,6 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
     if (showModal && firstFocusableElementRef.current) {
       firstFocusableElementRef.current!.focus();
     }
-    console.log(firstFocusableElementRef.current);
   }, [showModal]);
 
   return (
@@ -87,21 +86,18 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
               open={showModal}
               className={styles.modalWrapper}
             >
-              {data.cardsData.map((cardData, index) => {
+              {data.projectsData.map((cardData, index) => {
                 if (cardData.id === indexClicked) {
                   return (
                     <React.Fragment key={index}>
                       <Image
                         className={styles.modalImg}
                         src={cardData.img}
-                        alt="image of app"
+                        alt={`Image of ${cardData.appTitle} app`}
+                        priority={true}
+                        width={1000}
+                        height={1000}
                       />
-                      {/*<BlobCard
-                        svgClassName={`${stylesBlob.svgBlobCard} ${setCardColor(
-                          index
-                        )} `}
-                        cardNumber={index}
-                      />*/}
                       <div className={styles.modalContent}>
                         <h1>{cardData.appTitle}</h1>
                         <p>{cardData.appDescription}</p>
