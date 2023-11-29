@@ -129,6 +129,10 @@
     display: flex;
     transition: var(--transition);
 
+    &:focus {
+      outline: 1px solid blue;
+    }
+
     &:hover {
       transform: translateY(-3px);
       transition: var(--transition);

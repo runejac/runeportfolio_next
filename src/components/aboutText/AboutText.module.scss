@@ -112,7 +112,13 @@
 }
 
 .skills-list-container {
-  background: transparent;
+  background: none;
+
+  h3 {
+    background: none;
+    font-size: 1.5rem;
+    font-family: "Intel One Mono Light", sans-serif;
+  }
 }
 
 .skills-list {

@@ -8,7 +8,6 @@ import { DataContext } from "@/context/DataContext";
 export type ProjectsTextProps = {
   projectsRef: React.MutableRefObject<HTMLElement | null>;
   openModal: () => void;
-  isVisible?: boolean;
 };
 const ProjectsText = ({ projectsRef, openModal }: ProjectsTextProps) => {
   const data = useContext(DataContext);

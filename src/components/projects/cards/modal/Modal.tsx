@@ -8,6 +8,7 @@ import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
 import { DataContext } from "@/context/DataContext";
 import stylesBlob from "@/components/imageOfMe/blob/Blob.module.scss";
+import Link from "next/link";
 
 type ModalProps = {
   showModal: boolean;
@@ -16,7 +17,10 @@ type ModalProps = {
 
 const Modal = ({ showModal, setShowModal }: ModalProps) => {
   const data = useContext(DataContext);
-  const modalRef = useRef<any>();
+  const modalRef = useRef<HTMLDivElement>(null);
+  const firstFocusableElementRef = useRef<HTMLAnchorElement>(null); // Ref for the first focusable element
+
+  useEffect(() => {}, []);
 
   const animation = {
     hidden: { y: "-200px", opacity: 0 },
@@ -27,16 +31,16 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
         duration: 0.1,
         type: "spring",
         damping: 25,
-        stiffness: 500
-      }
+        stiffness: 500,
+      },
     },
     exit: {
       y: "200px",
       opacity: 0,
       transition: {
-        duration: 0.1
-      }
-    }
+        duration: 0.1,
+      },
+    },
   };
 
   const closeModal = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -60,6 +64,13 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
+  useEffect(() => {
+    if (showModal && firstFocusableElementRef.current) {
+      firstFocusableElementRef.current!.focus();
+    }
+    console.log(firstFocusableElementRef.current);
+  }, [showModal]);
+
   return (
     <AnimatePresence initial={false} mode={"wait"}>
       {showModal ? (
@@ -71,9 +82,11 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
             animate={"show"}
             exit={"exit"}
           >
-            <div
+            <dialog
+              role={"dialog"}
+              aria-modal="true"
+              open={showModal}
               className={styles.modalWrapper}
-              onClick={(e) => e.stopPropagation()}
             >
               {data.cardsData.map((cardData, index) => {
                 if (cardData.id === indexClicked) {
@@ -94,23 +107,24 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
                         <h1>{cardData.appTitle}</h1>
                         <p>{cardData.appDescription}</p>
                         <div className={styles.iconContainer}>
-                          <a
+                          <Link
                             title={"GitHub"}
                             href={cardData.githubLink}
                             aria-label={"GitHub link"}
                             target={"_blank"}
+                            ref={firstFocusableElementRef}
                           >
                             <RiGithubLine className={styles.icon} />
-                          </a>
+                          </Link>
                           {cardData.externalLink && (
-                            <a
+                            <Link
                               title={"Open"}
                               href={cardData.externalLink}
                               aria-label={"External link"}
                               target={"_blank"}
                             >
                               <FiExternalLink className={styles.icon} />
-                            </a>
+                            </Link>
                           )}
                         </div>
                       </div>
@@ -123,7 +137,7 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
                   );
                 }
               })}
-            </div>
+            </dialog>
           </motion.div>
         </div>
       ) : null}

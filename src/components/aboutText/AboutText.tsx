@@ -54,15 +54,8 @@ const AboutText = () => {
           </p>
           <p>{aboutText.p3}</p>
           <div className={styles.skillsListContainer}>
-            <p
-            /* style={loadStylingMotion(isVisible, 0.35)}*/
-            >
-              Technologies I have been working with lately:
-            </p>
-            <div
-              /*style={loadStylingMotion(isVisible, 0.4)}*/
-              className={styles.skillsList}
-            >
+            <h3>Technologies I have been working with lately:</h3>
+            <div className={styles.skillsList}>
               {latelyTechnologiesWorkedWith &&
                 latelyTechnologiesWorkedWith.map((skill, index) => (
                   <a key={index} href={skill.link} target={"_blank"}>

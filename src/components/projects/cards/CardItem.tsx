@@ -73,7 +73,7 @@ const CardItem = ({ openModal }: CardsProps) => {
                   hoveredCards[index] ? "" : styles.hideImgOnMount
                 }`}
                 src={cardItem.img}
-                alt="image of app"
+                alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
                 priority={true}
               />
             )}
@@ -81,7 +81,7 @@ const CardItem = ({ openModal }: CardsProps) => {
               <Image
                 className={styles.modalImg}
                 src={cardItem.img}
-                alt="image of app"
+                alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
                 priority={true}
               />
             )}
