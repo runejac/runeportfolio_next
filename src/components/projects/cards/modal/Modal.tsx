@@ -7,7 +7,6 @@ import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
 import { DataContext } from "@/context/DataContext";
-import stylesBlob from "@/components/imageOfMe/blob/Blob.module.scss";
 import Link from "next/link";
 
 type ModalProps = {
