@@ -4,20 +4,22 @@ import { motion } from "framer-motion";
 import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
 import { CardsProps } from "@/components/projects/cards/Cards";
+import { WindowWidthContext } from "@/context/WindowWidthContext";
 
 export let indexClicked: number;
 
 const CardItem = ({ openModal }: CardsProps) => {
   const data = useContext(DataContext);
+  const windowWidth = useContext(WindowWidthContext);
   const [isOnSmallDevice, setIsOnSmallDevice] = useState(false);
   const [hoveredCards, setHoveredCards] = useState(
     Array(data.cardsData.length).fill(false)
   );
 
   useEffect(() => {
-    if (window.innerWidth > 800) setIsOnSmallDevice(false);
-    else if (window.innerWidth <= 799) setIsOnSmallDevice(true);
-  }, [isOnSmallDevice]);
+    if (windowWidth! > 800) setIsOnSmallDevice(false);
+    else if (windowWidth! <= 799) setIsOnSmallDevice(true);
+  }, [windowWidth]);
 
   const toggleHover = (index: number) => {
     const updatedHoveredCards = [...hoveredCards];
@@ -35,28 +37,6 @@ const CardItem = ({ openModal }: CardsProps) => {
     }
     indexClicked = index;
   };
-
-  /*
-  const setCardColor = (index: number) => {
-    let cardColorClass = "";
-    switch (index) {
-      case 0:
-        cardColorClass = stylesBlob.card0;
-        break;
-      case 1:
-        cardColorClass = stylesBlob.card1;
-        break;
-      case 2:
-        cardColorClass = stylesBlob.card2;
-        break;
-      case 3:
-        cardColorClass = stylesBlob.card3;
-        break;
-    }
-
-    return cardColorClass;
-  };
-*/
 
   return (
     <>

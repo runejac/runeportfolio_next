@@ -1,9 +1,9 @@
 .header-tag {
   display: flex;
+  //position: sticky;
   z-index: 7;
   top: 0;
   width: 100%;
-  transition: var(--transition-navbar);
   -moz-box-align: center;
   -moz-box-pack: justify;
   background: none;

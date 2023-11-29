@@ -6,6 +6,8 @@ import reversedImageSearchImg from "../../public/images/reversedImageSearchImage
 import tidsreisenImg from "../../public/images/tidsreisenImage.png";
 import pizzaPortalImg from "../../public/images/pizza-portal.png";
 import CustomHead from "@/components/layouts/head/CustomHead";
+import { WindowWidthContext } from "@/context/WindowWidthContext";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 export default function Home({
   aboutText,
@@ -13,18 +15,21 @@ export default function Home({
   introText,
   cardsData,
 }: DataContextProps) {
+  const windowWidth = useWindowWidth();
   return (
-    <DataContext.Provider
-      value={{ aboutText, projectsText, introText, cardsData }}
-    >
-      <CustomHead
-        title={"Rune Oliveira"}
-        content={
-          "frontend, developer, rune oliveira, rune daniel jacobsen oliveira, technologist"
-        }
-      />
-      <MainPage />
-    </DataContext.Provider>
+    <WindowWidthContext.Provider value={windowWidth}>
+      <DataContext.Provider
+        value={{ aboutText, projectsText, introText, cardsData }}
+      >
+        <CustomHead
+          title={"Rune Oliveira"}
+          content={
+            "frontend, developer, rune oliveira, rune daniel jacobsen oliveira, technologist"
+          }
+        />
+        <MainPage />
+      </DataContext.Provider>
+    </WindowWidthContext.Provider>
   );
 }
 
