@@ -31,21 +31,23 @@
     @media (min-width: 50em) {
       .modal-img {
         filter: contrast(140%) brightness(60%) blur(4px);
+        //transition: var(--transition);
       }
     }
   }
 }
 
 .hide-img-on-mount {
-  display: none;
+  visibility: hidden;
 }
 
 .modal-img {
   width: fit-content;
   position: absolute;
+  height: auto;
   filter: contrast(140%) brightness(30%) blur(3px);
   z-index: -1;
-  transition: var(--transition);
+  //transition: var(--transition);
   border-radius: 5px;
   transform: translate(-120px, -300px) scale(0.8);
 }

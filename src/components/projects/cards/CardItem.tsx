@@ -5,6 +5,7 @@ import { DataContext } from "@/context/DataContextProvider";
 import Image from "next/image";
 import { CardsProps } from "@/components/projects/cards/Cards";
 import { WindowWidthContext } from "@/context/WindowWidthContext";
+import { track } from "@vercel/analytics";
 
 export let indexClicked: number;
 
@@ -50,10 +51,12 @@ const CardItem = ({ openModal }: CardsProps) => {
             onMouseUp={() => {
               openModal();
               handleClick(index);
+              track(`${cardItem.appTitle} project opened`);
             }}
             onKeyDown={(event) => {
               event.key === "Enter" && openModal();
               handleClick(index);
+              track(`${cardItem.appTitle} project opened with keyboard`);
             }}
             title={`Click to open ${cardItem.appTitle} project window`}
             aria-label={`Click to open ${cardItem.appTitle} project window`}

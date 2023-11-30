@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import { BsLinkedin } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -10,24 +11,28 @@ const Footer = () => {
         <div className={styles.socialMediaContainer}>
           <ul className={styles.footerUl}>
             <li>
-              <a
+              <Link
                 href="https://www.linkedin.com/in/rune-daniel-jacobsen-oliveira/"
                 target={"_blank"}
                 rel={"noopener noreferrer"}
                 aria-label={"open linkedin profile"}
               >
-                <BsLinkedin className={`${styles.iconLink} ${styles.linkedin}`} />
-              </a>
+                <BsLinkedin
+                  className={`${styles.iconLink} ${styles.linkedin}`}
+                />
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://github.com/runejac"
                 target={"_blank"}
                 rel={"noopener noreferrer"}
                 aria-label={"open github profile"}
               >
-                <FiGithub className={`${styles.iconLink} ${styles.githubLink}`} />
-              </a>
+                <FiGithub
+                  className={`${styles.iconLink} ${styles.githubLink}`}
+                />
+              </Link>
             </li>
           </ul>
         </div>
