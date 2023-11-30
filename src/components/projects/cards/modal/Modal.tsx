@@ -94,7 +94,6 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
                         className={styles.modalImg}
                         src={cardData.img}
                         alt={`Image of ${cardData.appTitle} app`}
-                        priority={true}
                         width={1000}
                         height={1000}
                       />

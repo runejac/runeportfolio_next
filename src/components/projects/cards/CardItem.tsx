@@ -73,7 +73,6 @@ const CardItem = ({ openModal }: CardsProps) => {
                 }`}
                 src={cardItem.img}
                 alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
-                priority={true}
                 width={1000}
                 height={1000}
               />
@@ -83,7 +82,6 @@ const CardItem = ({ openModal }: CardsProps) => {
                 className={styles.modalImg}
                 src={cardItem.img}
                 alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
-                priority={true}
                 width={1000}
                 height={1000}
               />
