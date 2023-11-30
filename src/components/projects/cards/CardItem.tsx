@@ -66,26 +66,28 @@ const CardItem = ({ openModal }: CardsProps) => {
             className={styles.card}
             custom={index}
           >
-            {!isOnSmallDevice && (
-              <Image
-                className={`${styles.modalImg} ${
-                  hoveredCards[index] ? "" : styles.hideImgOnMount
-                }`}
-                src={cardItem.img}
-                alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
-                width={1000}
-                height={1000}
-              />
-            )}
-            {isOnSmallDevice && (
-              <Image
-                className={styles.modalImg}
-                src={cardItem.img}
-                alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
-                width={1000}
-                height={1000}
-              />
-            )}
+            <div className={styles.imageWrapper}>
+              {!isOnSmallDevice && (
+                <Image
+                  className={`${styles.modalImg} ${
+                    hoveredCards[index] ? "" : styles.hideImgOnMount
+                  }`}
+                  src={cardItem.img}
+                  alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
+                  width={1000}
+                  height={1000}
+                />
+              )}
+              {isOnSmallDevice && (
+                <Image
+                  className={styles.modalImg}
+                  src={cardItem.img}
+                  alt={`Image of ${cardItem.appTitle} app showing when hovering over card`}
+                  width={1000}
+                  height={1000}
+                />
+              )}
+            </div>
             <div className={styles.circularBorder}>
               <h2 className={styles.appTitleH2}>{cardItem.appTitle}</h2>
             </div>

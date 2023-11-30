@@ -30,8 +30,9 @@
 
     @media (min-width: 50em) {
       .modal-img {
-        filter: contrast(140%) brightness(60%) blur(4px);
-        //transition: var(--transition);
+        filter: contrast(200%) brightness(70%) blur(1px);
+        opacity: 1;
+        transition: opacity 0.17s ease;
       }
     }
   }
@@ -41,15 +42,25 @@
   visibility: hidden;
 }
 
+.image-wrapper {
+  background: none;
+  position: relative;
+  width: 100%;
+}
+
 .modal-img {
-  width: fit-content;
-  position: absolute;
+  position: fixed;
+  width: 100%;
+  opacity: 1;
   height: auto;
-  filter: contrast(140%) brightness(30%) blur(3px);
+  filter: contrast(170%) brightness(40%) blur(1px);
+  transform: translate(120px, 45px) scale(2.5);
   z-index: -1;
-  //transition: var(--transition);
   border-radius: 5px;
-  transform: translate(-120px, -300px) scale(0.8);
+
+  @media (min-width: 50em) {
+    opacity: 0;
+  }
 }
 
 .circular-border {
