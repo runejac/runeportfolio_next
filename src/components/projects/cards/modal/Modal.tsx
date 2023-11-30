@@ -6,7 +6,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
-import { DataContext } from "@/context/DataContext";
+import { DataContext } from "@/context/DataContextProvider";
 import Link from "next/link";
 
 type ModalProps = {

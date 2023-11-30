@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./CardItem.module.scss";
 import { motion } from "framer-motion";
-import { DataContext } from "@/context/DataContext";
+import { DataContext } from "@/context/DataContextProvider";
 import Image from "next/image";
 import { CardsProps } from "@/components/projects/cards/Cards";
 import { WindowWidthContext } from "@/context/WindowWidthContext";

@@ -1,26 +1,13 @@
 import React from "react";
 import MainPage from "@/components/MainPage";
-import { DataContext, DataContextProps } from "@/context/DataContext";
+import DataProvider, { DataContextProps } from "@/context/DataContextProvider";
 import CustomHead from "@/components/layouts/head/CustomHead";
-import { WindowWidthContext } from "@/context/WindowWidthContext";
-import { useWindowWidth } from "@/hooks/useWindowWidth";
-import introText from "../data/introText.json";
-import projectsText from "../data/projectsText.json";
-import projectsData from "../data/projectsData.json";
-import aboutText from "../data/aboutText.json";
+import WindowWidthProvider from "@/context/WindowWidthContext";
 
-export default function Home({
-  introText,
-  projectsText,
-  projectsData,
-  aboutText,
-}: DataContextProps) {
-  const windowWidth = useWindowWidth();
+export default function Home(props: DataContextProps) {
   return (
-    <WindowWidthContext.Provider value={windowWidth}>
-      <DataContext.Provider
-        value={{ introText, projectsText, projectsData, aboutText }}
-      >
+    <WindowWidthProvider>
+      <DataProvider data={props}>
         <CustomHead
           title={"Rune Oliveira"}
           content={
@@ -28,10 +15,15 @@ export default function Home({
           }
         />
         <MainPage />
-      </DataContext.Provider>
-    </WindowWidthContext.Provider>
+      </DataProvider>
+    </WindowWidthProvider>
   );
 }
+
+import introText from "../data/introText.json";
+import projectsText from "../data/projectsText.json";
+import projectsData from "../data/projectsData.json";
+import aboutText from "../data/aboutText.json";
 
 export async function getStaticProps() {
   return {

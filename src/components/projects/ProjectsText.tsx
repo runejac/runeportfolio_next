@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styles from "./ProjectsText.module.scss";
 
 import Cards from "@/components/projects/cards/Cards";
-import { DataContext } from "@/context/DataContext";
+import { DataContext } from "@/context/DataContextProvider";
 
 export type ProjectsTextProps = {
   projectsRef: React.MutableRefObject<HTMLElement | null>;

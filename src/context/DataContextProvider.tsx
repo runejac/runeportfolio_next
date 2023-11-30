@@ -1,5 +1,4 @@
-import { createContext } from "react";
-import { StaticImageData } from "next/image";
+import { createContext, ReactNode } from "react";
 
 export type DataContextProps = {
   introText: {
@@ -31,6 +30,17 @@ export type DataContextProps = {
   };
 };
 
+type DataProviderProps = {
+  children: ReactNode;
+  data: DataContextProps;
+};
+
 export const DataContext = createContext<DataContextProps>(
   {} as DataContextProps
 );
+
+const DataProvider = ({ children, data }: DataProviderProps) => {
+  return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
+};
+
+export default DataProvider;
