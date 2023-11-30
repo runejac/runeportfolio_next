@@ -6,20 +6,15 @@ import { FiExternalLink } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { indexClicked } from "@/components/projects/cards/CardItem";
-import { DataContext } from "@/context/DataContextProvider";
+import { DataContext } from "@/context/DataContext";
 import Link from "next/link";
+import { OpenModalContext } from "@/context/OpenModalContext";
 
-type ModalProps = {
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-const Modal = ({ showModal, setShowModal }: ModalProps) => {
+const Modal = () => {
   const data = useContext(DataContext);
+  const { showModal, setShowModal } = useContext(OpenModalContext);
   const modalRef = useRef<HTMLDivElement>(null);
-  const firstFocusableElementRef = useRef<HTMLAnchorElement>(null); // Ref for the first focusable element
-
-  useEffect(() => {}, []);
+  const firstFocusableElementRef = useRef<HTMLAnchorElement>(null);
 
   const animation = {
     hidden: { y: "-200px", opacity: 0 },

@@ -1,6 +1,6 @@
 import styles from "./IntroText.module.scss";
 import { useContext } from "react";
-import { DataContext } from "@/context/DataContextProvider";
+import { DataContext } from "@/context/DataContext";
 import EasterEgg from "@/components/easterEgg/EasterEgg";
 
 const IntroText = () => {

@@ -1,16 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./ProjectsText.module.scss";
-
 import Cards from "@/components/projects/cards/Cards";
-import { DataContext } from "@/context/DataContextProvider";
+import { DataContext } from "@/context/DataContext";
 
-export type ProjectsTextProps = {
-  projectsRef: React.MutableRefObject<HTMLElement | null>;
-  openModal: () => void;
-};
-const ProjectsText = ({ projectsRef, openModal }: ProjectsTextProps) => {
+const ProjectsText = () => {
   const { projectsText } = useContext(DataContext);
+  const projectsRef = useRef<null | HTMLElement>(null);
 
   return (
     <>
@@ -21,7 +17,7 @@ const ProjectsText = ({ projectsRef, openModal }: ProjectsTextProps) => {
       >
         <h2 className={styles.header2}>projects</h2>
         <p>{projectsText.p1}</p>
-        <Cards openModal={openModal} />
+        <Cards />
       </motion.section>
     </>
   );

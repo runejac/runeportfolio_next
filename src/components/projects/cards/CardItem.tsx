@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./CardItem.module.scss";
 import { motion } from "framer-motion";
-import { DataContext } from "@/context/DataContextProvider";
+import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
-import { CardsProps } from "@/components/projects/cards/Cards";
 import { WindowWidthContext } from "@/context/WindowWidthContext";
 import { track } from "@vercel/analytics";
+import { OpenModalContext } from "@/context/OpenModalContext";
 
 export let indexClicked: number;
 
-const CardItem = ({ openModal }: CardsProps) => {
+const CardItem = () => {
   const { projectsData } = useContext(DataContext);
+  const { openModal } = useContext(OpenModalContext);
   const windowWidth = useContext(WindowWidthContext);
   const [isOnSmallDevice, setIsOnSmallDevice] = useState(false);
   const [hoveredCards, setHoveredCards] = useState(

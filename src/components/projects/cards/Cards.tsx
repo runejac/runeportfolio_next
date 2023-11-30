@@ -3,13 +3,10 @@ import styles from "./Cards.module.scss";
 import { motion } from "framer-motion";
 import CardItem from "@/components/projects/cards/CardItem";
 
-export type CardsProps = {
-  openModal: () => void;
-};
-const Cards = ({ openModal }: CardsProps) => {
+const Cards = () => {
   return (
     <motion.section className={styles.cardsContainer}>
-      <CardItem openModal={openModal} />
+      <CardItem />
     </motion.section>
   );
 };

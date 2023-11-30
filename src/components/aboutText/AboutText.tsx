@@ -1,6 +1,6 @@
 import styles from "./AboutText.module.scss";
 import { useContext, useRef } from "react";
-import { DataContext } from "@/context/DataContextProvider";
+import { DataContext } from "@/context/DataContext";
 
 const AboutText = () => {
   const { aboutText } = useContext(DataContext);
