@@ -8,10 +8,18 @@ type CustomHeadProps = {
 const CustomHead = ({ title, content }: CustomHeadProps) => {
   return (
     <Head>
-      <title>{title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{title}</title>
       <meta name="description" content={content} />
-      <link rel="icon" href="/favicon.ico" />
+      <meta name="image" content="https://runeoliveira.com/og.png" />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={content} />
+      <meta property="og:url" content="https://runeoliveira.com/" />
+      <meta property="og:image" content="https://runeoliveira.com/og.png" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
   );
 };

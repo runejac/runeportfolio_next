@@ -1,16 +1,17 @@
+import CustomHead from "@/components/layouts/head/CustomHead";
 import React from "react";
 import MainPage from "@/components/MainPage";
 import DataProvider, { DataContextProps } from "@/context/DataContext";
-import CustomHead from "@/components/layouts/head/CustomHead";
 import WindowWidthProvider from "@/context/WindowWidthContext";
+import OpenModalProvider from "@/context/OpenModalContext";
 
 export default function Home(props: DataContextProps) {
   return (
     <>
       <CustomHead
-        title={"Rune Oliveira"}
+        title={"Rune Oliveira, developer"}
         content={
-          "Discover Rune Oliveira's work as a Norwegian frontend and fullstack developer. Delve into projects showcasing development skills and personal life."
+          "Rune Oliveira is a Norwegian frontend and fullstack developer. Explore his portfolio of diverse projects and personal adventures."
         }
       />
       <WindowWidthProvider>
@@ -28,7 +29,6 @@ import introText from "../data/introText.json";
 import projectsText from "../data/projectsText.json";
 import projectsData from "../data/projectsData.json";
 import aboutText from "../data/aboutText.json";
-import OpenModalProvider from "@/context/OpenModalContext";
 
 export async function getStaticProps() {
   return {
