@@ -10,7 +10,7 @@ export default function Home(props: DataContextProps) {
       <CustomHead
         title={"Rune Oliveira"}
         content={
-          "frontend, developer, rune oliveira, rune daniel jacobsen oliveira, technologist, norsk utvikler, norsk frontend"
+          "Discover Rune Oliveira's work as a Norwegian frontend and fullstack developer. Delve into projects showcasing development skills and personal life."
         }
       />
       <WindowWidthProvider>
