@@ -43,7 +43,7 @@ const ParticleEffect = () => {
         },
         particles: {
           color: {
-            value: "#319197",
+            value: "#ff00eb",
           },
           links: {
             color: "#ffffff",
@@ -59,7 +59,7 @@ const ParticleEffect = () => {
               default: "bounce",
             },
             random: false,
-            speed: 0.1,
+            speed: 0.5,
             straight: false,
           },
           number: {
@@ -76,7 +76,7 @@ const ParticleEffect = () => {
             type: "circle",
           },
           size: {
-            value: { min: 3, max: 3 },
+            value: { min: 1, max: 3 },
           },
         },
         detectRetina: true,

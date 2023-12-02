@@ -19,15 +19,17 @@
 }
 
 ::selection {
-  background: var(--text-shadow);
-  color: var(--yellow-background);
-  text-shadow: var(--background) 4px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-shadow: var(--background) 2px 6px, var(--background) 1px 3px,
+    var(--background) 4px 8px;
 }
 
 ::-moz-selection {
-  background: var(--text-shadow);
-  color: var(--yellow-background);
-  text-shadow: var(--background) 4px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-shadow: var(--background) 2px 6px, var(--background) 1px 3px,
+    var(--background) 4px 8px;
 }
 
 p {

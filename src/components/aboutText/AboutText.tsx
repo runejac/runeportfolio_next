@@ -30,43 +30,41 @@ const AboutText = () => {
   ];
 
   return (
-    <>
-      <section
-        id={"about"}
-        ref={aboutSectionRef}
-        className={styles.aboutAndImgContainer}
-      >
-        <div className={styles.aboutMeContainer}>
-          <h2>about</h2>
-          <p>{aboutText.p1}</p>
-          <p>
-            {aboutText.p2}
-            <a
-              href={
-                "https://www.kristiania.no/studier/bachelor/informasjonsteknologi-frontend-og-mobilutvikling/"
-              }
-              target={"_blank"}
-              aria-label={"open course link"}
-            >
-              <span>frontend and mobile development</span>
-            </a>
-            {aboutText.p2a}
-          </p>
-          <p>{aboutText.p3}</p>
-          <div className={styles.skillsListContainer}>
-            <h3>Technologies I have been working with lately:</h3>
-            <div className={styles.skillsList}>
-              {latelyTechnologiesWorkedWith &&
-                latelyTechnologiesWorkedWith.map((skill, index) => (
-                  <a key={index} href={skill.link} target={"_blank"}>
-                    {skill.name}
-                  </a>
-                ))}
-            </div>
+    <section
+      id={"about"}
+      ref={aboutSectionRef}
+      className={styles.aboutAndImgContainer}
+    >
+      <div className={styles.aboutMeContainer}>
+        <h2>about</h2>
+        <p>{aboutText.p1}</p>
+        <p>
+          {aboutText.p2}
+          <a
+            href={
+              "https://www.kristiania.no/studier/bachelor/informasjonsteknologi-frontend-og-mobilutvikling/"
+            }
+            target={"_blank"}
+            aria-label={"open course link"}
+          >
+            <span>frontend and mobile development</span>
+          </a>
+          {aboutText.p2a}
+        </p>
+        <p>{aboutText.p3}</p>
+        <div className={styles.skillsListContainer}>
+          <h3>Technologies I have been working with lately:</h3>
+          <div className={styles.skillsList}>
+            {latelyTechnologiesWorkedWith &&
+              latelyTechnologiesWorkedWith.map((skill, index) => (
+                <a key={index} href={skill.link} target={"_blank"}>
+                  {skill.name}
+                </a>
+              ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

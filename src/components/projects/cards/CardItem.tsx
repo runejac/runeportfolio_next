@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./CardItem.module.scss";
-import { motion } from "framer-motion";
 import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
 import { WindowWidthContext } from "@/context/WindowWidthContext";
@@ -44,7 +43,7 @@ const CardItem = () => {
     <>
       {projectsData.map((cardItem, index) => {
         return (
-          <motion.article
+          <article
             onMouseEnter={() => toggleHover(index)}
             onFocus={() => toggleHover(index)}
             onBlur={() => setHoveredCards([])}
@@ -65,7 +64,6 @@ const CardItem = () => {
             role={"button"}
             key={index}
             className={styles.card}
-            custom={index}
           >
             <div className={styles.imageWrapper}>
               {!isOnSmallDevice && (
@@ -99,7 +97,7 @@ const CardItem = () => {
                 })}
               </ul>
             </div>
-          </motion.article>
+          </article>
         );
       })}
     </>

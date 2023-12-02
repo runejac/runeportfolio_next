@@ -12,30 +12,28 @@ const EasterEgg = () => {
   const easterEggMessages = [
     "Woah, easter EGG found, 1/9 points so far",
     "Nice, you found it again! 2/9 points.",
-    "Ok, now you have to stop, or? 3/5 points.",
-    "You're getting close to the end now. 4/5 points.",
-    "Nope, still not here. 4/5 points.",
-    "Nope, try something different... 4/5 points.",
-    "Nope, still not here. 4/5 points.",
+    "Ok, now you have to stop, or do you want to continue? 3/5 points.",
+    "You're getting close to the end now, soon empty of points here. 4/5 points.",
+    "Nope, big nope 4/5 points.",
+    "Nope, you got it right in front of you. 4/5 points.",
+    "Nope. 4/5 points.",
     "Nope, a hint was shown in the first message. 4/5 points.",
-    "Nope, still not here. 4/5 points.",
     "Nope, try something different... 4/5 points.",
-    "Nope, still not here. 4/5 points.",
-    "Nope, still not here. 4/5 points.",
-    "Nope, try something different... 4/5 points.",
-    "Nope, still not here. 4/5 points.",
-    "Nope, still not here. 4/5 points.",
+    "Nope. 4/5 points.",
+    "Nope, try something different... In front of you. 4/5 points.",
+    "Nope. 4/5 points.",
+    "Nope, probably a couple of centimeters away from you. 4/5 points.",
     "Nope, try something different... 4/5 points.",
     "Nope, a hint was shown in the very first message. ⌨️ 4/5 points.",
-    "Nope, still not here. 4/5 points.",
+    "Nope, did you come up with something now? 4/5 points.",
     "⌨️⌨️⌨️ 🍳 4/5 points.",
-    "Nope, try something different... 4/5 points.",
+    "That was a nice hint, wasn't it? 4/5 points.",
     "Restarting...",
   ];
   const handleClick = () => {
     let message = easterEggMessages[clickCount % easterEggMessages.length];
 
-    if (clickCount === 20) {
+    if (clickCount === 18) {
       setClickCount(0);
       message = easterEggMessages[clickCount % easterEggMessages.length];
     }
