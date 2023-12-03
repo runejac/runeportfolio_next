@@ -4,8 +4,31 @@ import Cards from "@/components/projects/cards/Cards";
 import { DataContext } from "@/context/DataContext";
 
 const ProjectsText = () => {
-  const { projectsText } = useContext(DataContext);
+  //const { projectsText } = useContext(DataContext);
   const projectsRef = useRef<null | HTMLElement>(null);
+
+  const latelyTechnologiesWorkedWith = [
+    {
+      name: "React.js",
+      link: "https://react.dev/",
+    },
+    {
+      name: "Vue.js",
+      link: "https://vuejs.org/",
+    },
+    {
+      name: "TypeScript",
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      name: "Jetpack Compose",
+      link: "https://developer.android.com/jetpack/compose",
+    },
+    {
+      name: "Kotlin",
+      link: "https://kotlinlang.org/",
+    },
+  ];
 
   return (
     <section
@@ -14,8 +37,18 @@ const ProjectsText = () => {
       className={styles.projectsTextContainer}
     >
       <h2 className={styles.header2}>projects</h2>
-      <p>{projectsText.p1}</p>
       <Cards />
+      <div className={styles.skillsListContainer}>
+        <h3>Technologies I have been working with lately:</h3>
+        <div className={styles.skillsList}>
+          {latelyTechnologiesWorkedWith &&
+            latelyTechnologiesWorkedWith.map((skill, index) => (
+              <a key={index} href={skill.link} target={"_blank"}>
+                {skill.name}
+              </a>
+            ))}
+        </div>
+      </div>
     </section>
   );
 };

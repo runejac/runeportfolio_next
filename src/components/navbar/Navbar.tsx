@@ -48,15 +48,6 @@ const Navbar = () => {
           <motion.li
             variants={navBarItemsMotion}
             initial={"hidden"}
-            animate={"show2"}
-          >
-            <Link href={"#projects"} scroll={false}>
-              projects
-            </Link>
-          </motion.li>
-          <motion.li
-            variants={navBarItemsMotion}
-            initial={"hidden"}
             animate={"show1"}
             aria-label={"scroll down to about section"}
           >
@@ -67,16 +58,25 @@ const Navbar = () => {
           <motion.li
             variants={navBarItemsMotion}
             initial={"hidden"}
+            animate={"show2"}
+          >
+            <Link href={"#projects"} scroll={false}>
+              projects
+            </Link>
+          </motion.li>
+          <motion.li
+            variants={navBarItemsMotion}
+            initial={"hidden"}
             animate={"show3"}
             className={"navbar-item resume"}
           >
             <Link
               className={styles.resume}
-              href={"/CV_Oliveira.pdf"}
+              href={"/resume.pdf"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              resume
+              résumé
             </Link>
           </motion.li>
         </motion.ol>
@@ -121,16 +121,6 @@ const Navbar = () => {
           <ul className={styles.navMenuItems}>
             <li className={styles.navbarChild}>
               <Link
-                href={"#projects"}
-                scroll={false}
-                aria-label={"projects section"}
-                onClick={() => showSidebar()}
-              >
-                projects
-              </Link>
-            </li>
-            <li className={styles.navbarChild}>
-              <Link
                 href={"#about"}
                 scroll={false}
                 aria-label={"about section"}
@@ -141,11 +131,21 @@ const Navbar = () => {
             </li>
             <li className={styles.navbarChild}>
               <Link
-                href={"/CV_Oliveira.pdf"}
+                href={"#projects"}
+                scroll={false}
+                aria-label={"projects section"}
+                onClick={() => showSidebar()}
+              >
+                projects
+              </Link>
+            </li>
+            <li className={styles.navbarChild}>
+              <Link
+                href={"/resume.pdf"}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
               >
-                resume
+                résumé
               </Link>
             </li>
             <li className={styles.navbarChild}>

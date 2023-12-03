@@ -45,14 +45,17 @@
   border-radius: 0 0 var(--border-radius-modal) var(--border-radius-modal);
 
   h1 {
+    font-family: "Messapia Bold", sans-serif;
     font-size: 1.5rem;
     background: transparent;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   p,
   a {
     font-size: 1rem;
-    font-family: "Intel One Mono", sans-serif;
+    font-family: "Source Serif Pro", serif;
     background: none;
   }
 }
@@ -151,7 +154,7 @@
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 

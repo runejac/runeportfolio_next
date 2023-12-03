@@ -16,7 +16,7 @@ const ParticleEffect = () => {
       loaded={particlesLoaded}
       options={{
         background: {
-          color: "none",
+          color: "#000",
         },
         fpsLimit: 120,
         interactivity: {

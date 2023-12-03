@@ -10,12 +10,15 @@
   background: rgba(0, 0, 0, 0.28);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  font-family: "Intel One Mono", sans-serif;
   font-weight: normal;
   color: var(--text-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -32,89 +35,29 @@
     var(--background) 4px 8px;
 }
 
-p {
-  color: var(--text-light);
-}
-
 ::-webkit-scrollbar {
   width: 0;
 }
 
 @font-face {
-  font-family: "Intel One Mono";
-  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Regular.woff")
-      format("woff"),
-    url("../../public/fonts/Intel One Mono/IntelOneMono-Regular.woff2")
-      format("woff2");
+  font-family: "Messapia Bold";
+  src: url("../../public/fonts/Messapia/Messapia-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: url("../../public/fonts/Source Serif Pro/SourceSerif4Display-Regular.ttf.woff2")
+    format("woff2");
 }
 
 @font-face {
   font-family: "Intel One Mono Medium";
-  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff")
-      format("woff"),
-    url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff2")
-      format("woff2");
-}
-
-@font-face {
-  font-family: "Intel One Mono Light";
-  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Light.woff")
-      format("woff"),
-    url("../../public/fonts/Intel One Mono/IntelOneMono-Light.woff2")
-      format("woff2");
-}
-
-@font-face {
-  font-family: "SF Mono";
-  src: url("../../public/fonts/SF Mono/sf-mono-regularitalic.woff")
-      format("woff"),
-    url("../../public/fonts/SF Mono/sf-mono-regularitalic.woff2")
-      format("woff2");
-}
-
-@font-face {
-  font-family: "Montserrat Light";
-  src: url("../../public/fonts/Montserrat/Montserrat-Light.woff") format("woff"),
-    url("../../public/fonts/Montserrat/Montserrat-Light.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Montserrat Thin";
-  src: url("../../public/fonts/Montserrat/Montserrat-Thin.woff") format("woff"),
-    url("../../public/fonts/Montserrat/Montserrat-Thin.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Montserrat Regular";
-  src: url("../../public/fonts/Montserrat/Montserrat-Regular.woff")
-      format("woff"),
-    url("../../public/fonts/Montserrat/Montserrat-Regular.woff2")
-      format("woff2");
-}
-
-@font-face {
-  font-family: "Montserrat Bold";
-  src: url("../../public/fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
-    url("../../public/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Montserrat SemiBold";
-  src: url("../../public/fonts/Montserrat/Montserrat-SemiBold.woff")
-      format("woff"),
-    url("../../public/fonts/Montserrat/Montserrat-SemiBold.woff2")
-      format("woff2");
-}
-
-@font-face {
-  font-family: "Montserrat ExtraBold";
-  src: url("../../public/fonts/Montserrat/Montserrat-ExtraBold.woff")
-      format("woff"),
-    url("../../public/fonts/Montserrat/Montserrat-ExtraBold.woff2")
-      format("woff2");
+  src: url("../../public/fonts/Intel One Mono/IntelOneMono-Medium.woff2")
+    format("woff2");
 }
 
 :root {
+  // colors
   --main-orange: #ff7a18;
   --main-red: #af002d;
   --main-cyan: #319197;
@@ -137,7 +80,8 @@ p {
   --linkedin-color: #0a66c2;
   --github-color: #f0f6fc;
   --text-gray: #ffffff;
-  --text-light: #d9d9d9;
+  --text-light: #ececec;
+
   --border-radius: 12px;
   --border-radius-card-color: 8px;
   --border-radius-modal: 10px;

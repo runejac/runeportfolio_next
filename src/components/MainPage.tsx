@@ -35,8 +35,8 @@ export default function MainPage() {
         <IntroText />
         <section className={styles.projectsAndAboutSection}>
           <div className={styles.divContainer}>
-            <ProjectsText />
             <AboutText />
+            <ProjectsText />
           </div>
         </section>
       </main>

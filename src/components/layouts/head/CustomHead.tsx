@@ -18,7 +18,7 @@ const CustomHead = ({ title, content }: CustomHeadProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={content} />
       <meta property="og:url" content="https://runeoliveira.com/" />
-      <meta property="og:image" content="https://runeoliveira.com/og.png" />
+      <meta property="og:image" content="https://runeoliveira.com/og.jpg" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
   );

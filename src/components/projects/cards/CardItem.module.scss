@@ -72,9 +72,10 @@
 }
 
 .app-title-h2 {
-  font-size: 1.6rem;
-  font-family: "Intel One Mono", sans-serif;
-  text-shadow: 0 0 0 #fff, 0 0 3px #fff;
+  font-size: 1.2rem;
+  font-family: "Messapia Bold", sans-serif;
+  text-shadow: 0 0 0 #fff, 0 0 2px #fff;
+  text-transform: uppercase;
   background: none;
 }
 
@@ -92,6 +93,7 @@
   li {
     width: fit-content;
     font-weight: normal;
+    font-family: "Intel One Mono Light", sans-serif;
     font-size: 1rem;
     position: relative;
     opacity: 1;

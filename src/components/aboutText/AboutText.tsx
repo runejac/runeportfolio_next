@@ -6,29 +6,6 @@ const AboutText = () => {
   const { aboutText } = useContext(DataContext);
   const aboutSectionRef = useRef<null | HTMLElement>(null);
 
-  const latelyTechnologiesWorkedWith = [
-    {
-      name: "React.js",
-      link: "https://react.dev/",
-    },
-    {
-      name: "Vue.js",
-      link: "https://vuejs.org/",
-    },
-    {
-      name: "TypeScript",
-      link: "https://www.typescriptlang.org/",
-    },
-    {
-      name: "Jetpack Compose",
-      link: "https://developer.android.com/jetpack/compose",
-    },
-    {
-      name: "Kotlin",
-      link: "https://kotlinlang.org/",
-    },
-  ];
-
   return (
     <section
       id={"about"}
@@ -52,17 +29,6 @@ const AboutText = () => {
           {aboutText.p2a}
         </p>
         <p>{aboutText.p3}</p>
-        <div className={styles.skillsListContainer}>
-          <h3>Technologies I have been working with lately:</h3>
-          <div className={styles.skillsList}>
-            {latelyTechnologiesWorkedWith &&
-              latelyTechnologiesWorkedWith.map((skill, index) => (
-                <a key={index} href={skill.link} target={"_blank"}>
-                  {skill.name}
-                </a>
-              ))}
-          </div>
-        </div>
       </div>
     </section>
   );

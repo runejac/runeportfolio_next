@@ -53,10 +53,12 @@
   }
 }
 
-.github-link,
+/*.github-link,
 .linkedin {
-  font-size: 2rem;
-}
+  path {
+    color: #fff;
+  }
+}*/
 
 .designed-by-container {
   background: none;
@@ -67,7 +69,6 @@
   font-family: "Intel One Mono Medium", sans-serif;
   font-size: 0.8rem;
   position: relative;
-  color: whitesmoke;
   transition: var(--transition);
 
   &:hover {
@@ -86,7 +87,6 @@
   font-family: "Intel One Mono Medium", sans-serif;
   font-size: 0.8rem;
   position: relative;
-  color: whitesmoke;
 }
 
 @media (min-width: 50em) {
