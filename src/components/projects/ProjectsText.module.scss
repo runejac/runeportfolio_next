@@ -55,11 +55,10 @@
 .skills-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  grid-gap: 0 1rem;
   padding: 0;
   margin: 20px 0 0 0;
   list-style: none;
-  background: transparent;
+  background: none;
 
   a {
     position: relative;
@@ -88,7 +87,7 @@
     }
 
     @media (min-width: 50em) {
-      font-size: 1.728rem;
+      font-size: 1.3rem;
     }
   }
 }
