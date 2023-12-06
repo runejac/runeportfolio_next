@@ -22,17 +22,13 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
-  text-shadow: var(--background) 2px 6px, var(--background) 1px 3px,
-    var(--background) 4px 8px;
+  background: var(--text-selection);
+  color: #000000;
 }
 
 ::-moz-selection {
-  background: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
-  text-shadow: var(--background) 2px 6px, var(--background) 1px 3px,
-    var(--background) 4px 8px;
+  background: var(--text-selection);
+  color: #000000;
 }
 
 ::-webkit-scrollbar {
@@ -69,10 +65,7 @@ body {
   --pink-shadow: #791f4d;
   --background: #dadada;
   --brown: #cc8446;
-  --text-shadow: rgba(0, 255, 170, 0.78);
-  --green: #94cc46;
-  --mustard: #ccae46;
-  --footer: #c674e5;
+  --text-selection: rgb(36, 255, 0);
 
   --smokey-black: hsl(41, 100%, 3%);
   --smokey-black-active: hsl(41, 100%, 3%);
