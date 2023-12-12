@@ -16,12 +16,12 @@ export default function App({
 
   return (
     <PrimaryLayout>
-      <Component {...pageProps} />
       <Script
-        async
-        src="https://eu.umami.is/script.js"
+        strategy="afterInteractive"
+        src={process.env.UMAMI_SRC}
         data-website-id={process.env.DATA_WEBSITE_ID}
       />
+      <Component {...pageProps} />
       <SpeedInsights />
     </PrimaryLayout>
   );
