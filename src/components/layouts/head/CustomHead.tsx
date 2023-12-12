@@ -20,11 +20,6 @@ const CustomHead = ({ title, content }: CustomHeadProps) => {
       <meta property="og:url" content="https://runeoliveira.com/" />
       <meta property="og:image" content="https://runeoliveira.com/og.jpg" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <script
-        async
-        src="https://eu.umami.is/script.js"
-        data-website-id="9e3daab4-9492-41da-8572-c942a55cc23d"
-      ></script>
     </Head>
   );
 };
