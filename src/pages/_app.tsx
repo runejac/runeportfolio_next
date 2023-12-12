@@ -18,8 +18,8 @@ export default function App({
     <PrimaryLayout>
       <Script
         async={true}
-        src={"af0f7ea3-8943-4667-a00c-9e83057f2341"}
-        data-website-id={"https://umami-runes-team.vercel.app/script.js"}
+        src={"9e3daab4-9492-41da-8572-c942a55cc23d"}
+        data-website-id={"https://eu.umami.is/script.js"}
       />
       <Component {...pageProps} />
       <SpeedInsights />

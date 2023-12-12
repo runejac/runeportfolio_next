@@ -55,7 +55,6 @@ const CardItem = () => {
               event.key === "Enter" && openModal();
               handleClick(index);
             }}
-            data-umami-event={`Card: ${cardItem.appTitle} opened`}
             title={`Click to open ${cardItem.appTitle} project window`}
             aria-label={`Click to open ${cardItem.appTitle} project window`}
             tabIndex={0}
