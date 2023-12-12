@@ -18,8 +18,8 @@ export default function App({
     <PrimaryLayout>
       <Script
         async={true}
-        src={process.env.UMAMI_SRC}
-        data-website-id={process.env.DATA_WEBSITE_ID}
+        src={"af0f7ea3-8943-4667-a00c-9e83057f2341"}
+        data-website-id={"https://umami-runes-team.vercel.app/script.js"}
       />
       <Component {...pageProps} />
       <SpeedInsights />
