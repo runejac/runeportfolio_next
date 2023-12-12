@@ -3,7 +3,6 @@ import styles from "./CardItem.module.scss";
 import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
 import { WindowWidthContext } from "@/context/WindowWidthContext";
-import { track } from "@vercel/analytics";
 import { OpenModalContext } from "@/context/OpenModalContext";
 
 export let indexClicked: number;
@@ -51,13 +50,12 @@ const CardItem = () => {
             onMouseUp={() => {
               openModal();
               handleClick(index);
-              track(`${cardItem.appTitle} project opened`);
             }}
             onKeyDown={(event) => {
               event.key === "Enter" && openModal();
               handleClick(index);
-              track(`${cardItem.appTitle} project opened with keyboard`);
             }}
+            data-umami-event={`Card: ${cardItem.appTitle} opened`}
             title={`Click to open ${cardItem.appTitle} project window`}
             aria-label={`Click to open ${cardItem.appTitle} project window`}
             tabIndex={0}

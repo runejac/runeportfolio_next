@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ParticleEffect from "@/components/particles/ParticleEffect";
-import { track } from "@vercel/analytics";
 
 const EASTEREGGWORD = "egg";
 
@@ -37,7 +36,6 @@ const EasterEgg = () => {
       setClickCount(0);
       message = easterEggMessages[clickCount % easterEggMessages.length];
     }
-    track(`Message: ${message} - Click count: ${clickCount}`);
 
     alert(message);
     setClickCount(clickCount + 1);
@@ -57,7 +55,7 @@ const EasterEgg = () => {
             "🥚. Instant 5/5!! 🎆"
         );
         setHasFiguredEasterEgg(true);
-        track("User found easter egg, awesome feature unlocked");
+
         setTyped("");
       } else {
         setTyped(updatedTyped);
