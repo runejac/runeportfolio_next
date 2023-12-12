@@ -17,7 +17,7 @@ export default function App({
   return (
     <PrimaryLayout>
       <Script
-        strategy="afterInteractive"
+        async={true}
         src={process.env.UMAMI_SRC}
         data-website-id={process.env.DATA_WEBSITE_ID}
       />
