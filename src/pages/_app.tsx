@@ -6,7 +6,7 @@ import { polyfill } from "seamless-scroll-polyfill";
 import React, { useEffect } from "react";
 import Script from "next/script";
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const DATA_WEBSITE_ID = process.env.DATA_WEBSITE_ID;
 
 export default function App({
   Component,
@@ -18,14 +18,7 @@ export default function App({
 
   return (
     <PrimaryLayout>
-      <Script
-        id={"google-tag-manager"}
-        strategy="afterInteractive"
-      >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','${GA_MEASUREMENT_ID}')`}</Script>
+      <Script strategy={"afterInteractive"} data-website-id={DATA_WEBSITE_ID} />
       <Component {...pageProps} />
       <SpeedInsights />
     </PrimaryLayout>
