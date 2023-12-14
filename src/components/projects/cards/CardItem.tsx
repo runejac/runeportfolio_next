@@ -60,6 +60,7 @@ const CardItem = () => {
             tabIndex={0}
             role={"button"}
             key={index}
+            data-umami-event={`${cardItem.appTitle} opened`}
             className={styles.card}
           >
             <div className={styles.imageWrapper}>

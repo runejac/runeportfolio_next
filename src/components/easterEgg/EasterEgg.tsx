@@ -29,9 +29,9 @@ const EasterEgg = () => {
     "That was a nice hint, wasn't it? 4/5 points.",
     "Restarting...",
   ];
-  const handleClick = () => {
-    let message = easterEggMessages[clickCount % easterEggMessages.length];
 
+  let message = easterEggMessages[clickCount % easterEggMessages.length];
+  const handleClick = () => {
     if (clickCount === 18) {
       setClickCount(0);
       message = easterEggMessages[clickCount % easterEggMessages.length];
@@ -55,7 +55,6 @@ const EasterEgg = () => {
             "🥚. Instant 5/5!! 🎆"
         );
         setHasFiguredEasterEgg(true);
-
         setTyped("");
       } else {
         setTyped(updatedTyped);
@@ -68,6 +67,12 @@ const EasterEgg = () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
   }, [typed]);
+
+  useEffect(() => {
+    if (hasFiguredEasterEgg && window.umami) {
+      window.umami.trackEvent("Easter egg unlocked", "SPECIAL EVENT OCCURRED");
+    }
+  }, [hasFiguredEasterEgg]);
 
   // feature below has not been released yet
   /*  useEffect(() => {
@@ -85,7 +90,7 @@ const EasterEgg = () => {
   return (
     <>
       {!hasFiguredEasterEgg ? (
-        <p onClick={handleClick}>
+        <p onClick={handleClick} data-umami-event={message}>
           🪄super cool content missing, coming soon near you🪄
         </p>
       ) : (
