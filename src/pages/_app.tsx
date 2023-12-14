@@ -18,7 +18,10 @@ export default function App({
 
   return (
     <PrimaryLayout>
-      <Script strategy={"afterInteractive"} data-website-id={DATA_WEBSITE_ID} />
+      <Script
+        src={"https://umami-seven-sigma.vercel.app/script.js"}
+        data-website-id={DATA_WEBSITE_ID}
+      />
       <Component {...pageProps} />
       <SpeedInsights />
     </PrimaryLayout>
