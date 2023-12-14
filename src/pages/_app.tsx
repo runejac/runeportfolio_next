@@ -6,12 +6,11 @@ import { polyfill } from "seamless-scroll-polyfill";
 import React, { useEffect } from "react";
 import Script from "next/script";
 
-const DATA_WEBSITE_ID = process.env.DATA_WEBSITE_ID;
-
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
+  const DATA_WEBSITE_ID = process.env.DATA_WEBSITE_ID;
   useEffect(() => {
     polyfill();
   }, []);
