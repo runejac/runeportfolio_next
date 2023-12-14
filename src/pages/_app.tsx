@@ -18,10 +18,9 @@ export default function App({
   return (
     <PrimaryLayout>
       <Script
-        async
-        defer
-        src={"/stats/script.js"}
+        src="https://umami-seven-sigma.vercel.app/script.js"
         data-website-id={DATA_WEBSITE_ID}
+        strategy="afterInteractive"
       />
       <Component {...pageProps} />
       <SpeedInsights />
