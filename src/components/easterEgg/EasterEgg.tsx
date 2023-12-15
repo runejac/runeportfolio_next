@@ -3,41 +3,45 @@ import ParticleEffect from "@/components/particles/ParticleEffect";
 
 const EasterEgg = () => {
   const EASTEREGGWORD = process.env.NEXT_PUBLIC_EASTER_EGG_WORD!;
+  const hurrayMessage = `Nice work! You found the easter egg! Click 'OK' to see it 🎆`;
   const [clickCount, setClickCount] = useState(0);
   const [typed, setTyped] = useState("");
   const [hasFiguredEasterEgg, setHasFiguredEasterEgg] = useState(false);
 
   const easterEggMessages = [
-    "Woah, easter EGG found, 1/9 points so far",
+    "Woah, can this be an easter egg?, 1/9 points so far. Try it again!",
     "Nice, you found it again! 2/9 points.",
-    "Ok, now you have to stop, or do you want to continue? 3/5 points.",
-    "You're getting close to the end now, soon empty of points here. 4/5 points.",
-    "Nope, big nope 4/5 points.",
+    "You clicked again... Hm ok, giving you 3/5 points.",
+    "You're getting close to the end now, soon empty of points here. Or? 4/5 points.",
+    "Still 4/5 points.",
     "Nope, you got it right in front of you. 4/5 points.",
-    "Nope. 4/5 points.",
     "Nope, a hint was shown in the first message. 4/5 points.",
-    "Nope, try something different... 4/5 points.",
-    "Nope. 4/5 points.",
     "Nope, try something different... In front of you. 4/5 points.",
-    "Nope. 4/5 points.",
     "Nope, probably a couple of centimeters away from you. 4/5 points.",
-    "Nope, try something different... 4/5 points.",
-    "Nope, a hint was shown in the very first message. ⌨️ 4/5 points.",
-    "Nope, did you come up with something now? 4/5 points.",
-    "⌨️⌨️⌨️ 🍳 4/5 points.",
-    "That was a nice hint, wasn't it? 4/5 points.",
+    "Still not getting more than 4/5 points.",
+    "A hint was shown in the very first message. New hint: ⌨️ ",
+    "Did you get something out of that hint? 4/5 points.",
+    "New hint: ⌨️⌨️⌨️ 🍳 ",
+    "That was a nice hint, wasn't it? Still 4/5 points though.",
     "Restarting...",
   ];
 
-  let message = easterEggMessages[clickCount % easterEggMessages.length];
   const handleClick = () => {
-    if (clickCount === 18) {
-      setClickCount(0);
-      message = easterEggMessages[clickCount % easterEggMessages.length];
-    }
+    let nextMessage = easterEggMessages[clickCount % easterEggMessages.length];
 
-    alert(message);
-    setClickCount(clickCount + 1);
+    if (clickCount === 15) {
+      setClickCount(0);
+      nextMessage = easterEggMessages[0];
+    } else {
+      setClickCount(clickCount + 1);
+    }
+    alert(nextMessage);
+    window.umami.track(
+      `Egg tracker at index: ${clickCount}/${easterEggMessages.length - 1}`,
+      {
+        name: nextMessage,
+      }
+    );
   };
 
   useEffect(() => {
@@ -47,12 +51,7 @@ const EasterEgg = () => {
       const updatedTyped = typed + key;
 
       if (updatedTyped.endsWith(EASTEREGGWORD)) {
-        alert(
-          "Wow, nice job, you actually typed in " +
-            "🥚" +
-            EASTEREGGWORD +
-            "🥚. Instant 5/5!! 🎆"
-        );
+        alert(hurrayMessage);
         setHasFiguredEasterEgg(true);
         setTyped("");
       } else {
@@ -69,7 +68,7 @@ const EasterEgg = () => {
 
   useEffect(() => {
     if (hasFiguredEasterEgg) {
-      window.umami.track("🥚🥚🥚");
+      window.umami.track("🥚🥚🥚", { name: hurrayMessage, id: 69 });
     }
   }, [hasFiguredEasterEgg]);
 
@@ -89,7 +88,7 @@ const EasterEgg = () => {
   return (
     <>
       {!hasFiguredEasterEgg ? (
-        <p onClick={handleClick} data-umami-event={message}>
+        <p onClick={handleClick}>
           🪄super cool content missing, coming soon near you🪄
         </p>
       ) : (
