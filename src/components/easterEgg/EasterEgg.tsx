@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ParticleEffect from "@/components/particles/ParticleEffect";
 
-const EASTEREGGWORD = "egg";
-
 const EasterEgg = () => {
+  const EASTEREGGWORD = process.env.NEXT_PUBLIC_EASTER_EGG_WORD!;
   const [clickCount, setClickCount] = useState(0);
   const [typed, setTyped] = useState("");
   const [hasFiguredEasterEgg, setHasFiguredEasterEgg] = useState(false);
@@ -70,7 +69,7 @@ const EasterEgg = () => {
 
   useEffect(() => {
     if (hasFiguredEasterEgg) {
-      window.umami.track("🥚🥚");
+      window.umami.track("🥚🥚🥚");
     }
   }, [hasFiguredEasterEgg]);
 
