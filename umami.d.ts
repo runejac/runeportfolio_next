@@ -1,5 +1,6 @@
+// for the Window object, finding the umami instance in browser
 interface Window {
   umami: {
-    trackEvent: (eventName: string, eventType: string) => void;
+    track: (name: string) => void;
   };
 }

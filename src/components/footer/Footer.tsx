@@ -16,6 +16,9 @@ const Footer = () => {
                 target={"_blank"}
                 rel={"noopener noreferrer"}
                 aria-label={"open linkedin profile"}
+                onClick={() => {
+                  window.umami.track("linkedin opened");
+                }}
               >
                 <BsLinkedin
                   className={`${styles.iconLink} ${styles.linkedin}`}
@@ -28,6 +31,9 @@ const Footer = () => {
                 target={"_blank"}
                 rel={"noopener noreferrer"}
                 aria-label={"open github profile"}
+                onClick={() => {
+                  window.umami.track("github opened");
+                }}
               >
                 <FiGithub
                   className={`${styles.iconLink} ${styles.githubLink}`}
@@ -37,14 +43,17 @@ const Footer = () => {
           </ul>
         </div>
         <div className={styles.designedByContainer}>
-          <a
+          <Link
             href="https://github.com/runejac/runeportfolio_next"
             target={"_blank"}
             rel={"noopener noreferrer"}
             aria-label={"open this website's github source code"}
+            onClick={() => {
+              window.umami.track("website github opened");
+            }}
           >
             Designed & built by Rune Oliveira
-          </a>
+          </Link>
         </div>
         <div className={styles.copyrightContainer}>
           <p>© {new Date().getFullYear()} - Rune Oliveira</p>

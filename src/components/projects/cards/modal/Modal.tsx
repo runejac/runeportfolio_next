@@ -102,6 +102,11 @@ const Modal = () => {
                             aria-label={"GitHub link"}
                             target={"_blank"}
                             ref={firstFocusableElementRef}
+                            onClick={() => {
+                              window.umami.track(
+                                `${cardData.appTitle} github opened`
+                              );
+                            }}
                           >
                             <RiGithubLine className={styles.icon} />
                           </Link>

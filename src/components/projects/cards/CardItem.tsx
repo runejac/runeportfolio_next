@@ -50,17 +50,18 @@ const CardItem = () => {
             onMouseUp={() => {
               openModal();
               handleClick(index);
+              window.umami.track(`${cardItem.appTitle} opened`);
             }}
             onKeyDown={(event) => {
               event.key === "Enter" && openModal();
               handleClick(index);
+              window.umami.track(`${cardItem.appTitle} opened`);
             }}
             title={`Click to open ${cardItem.appTitle} project window`}
             aria-label={`Click to open ${cardItem.appTitle} project window`}
             tabIndex={0}
             role={"button"}
             key={index}
-            data-umami-event={`${cardItem.appTitle} opened`}
             className={styles.card}
           >
             <div className={styles.imageWrapper}>

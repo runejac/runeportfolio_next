@@ -69,8 +69,8 @@ const EasterEgg = () => {
   }, [typed]);
 
   useEffect(() => {
-    if (hasFiguredEasterEgg && window.umami) {
-      window.umami.trackEvent("Easter egg unlocked", "SPECIAL EVENT OCCURRED");
+    if (hasFiguredEasterEgg) {
+      window.umami.track("🥚🥚");
     }
   }, [hasFiguredEasterEgg]);
 

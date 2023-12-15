@@ -51,7 +51,13 @@ const Navbar = () => {
             animate={"show1"}
             aria-label={"scroll down to about section"}
           >
-            <Link href={"#about"} scroll={false}>
+            <Link
+              href={"#about"}
+              scroll={false}
+              onClick={() => {
+                window.umami.track("navbar 'about' clicked");
+              }}
+            >
               about
             </Link>
           </motion.li>
@@ -60,7 +66,13 @@ const Navbar = () => {
             initial={"hidden"}
             animate={"show2"}
           >
-            <Link href={"#projects"} scroll={false}>
+            <Link
+              href={"#projects"}
+              scroll={false}
+              onClick={() => {
+                window.umami.track("navbar 'projects' clicked");
+              }}
+            >
               projects
             </Link>
           </motion.li>
@@ -75,6 +87,9 @@ const Navbar = () => {
               href={"/resume.pdf"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              onClick={() => {
+                window.umami.track("navbar 'resume' opened");
+              }}
             >
               résumé
             </Link>
@@ -92,6 +107,7 @@ const Navbar = () => {
             onClick={(e) => {
               window.location.href = "mailto:runedanielj@gmail.com";
               e.preventDefault();
+              window.umami.track("navbar 'concact' clicked");
             }}
           >
             contact
@@ -124,7 +140,10 @@ const Navbar = () => {
                 href={"#about"}
                 scroll={false}
                 aria-label={"about section"}
-                onClick={() => showSidebar()}
+                onClick={() => {
+                  showSidebar();
+                  window.umami.track("sidenav 'about' clicked");
+                }}
               >
                 about
               </Link>
@@ -134,7 +153,10 @@ const Navbar = () => {
                 href={"#projects"}
                 scroll={false}
                 aria-label={"projects section"}
-                onClick={() => showSidebar()}
+                onClick={() => {
+                  showSidebar();
+                  window.umami.track("sidenav 'projects' clicked");
+                }}
               >
                 projects
               </Link>
@@ -144,6 +166,9 @@ const Navbar = () => {
                 href={"/resume.pdf"}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
+                onClick={() => {
+                  window.umami.track("sidenav 'resume' opened");
+                }}
               >
                 résumé
               </Link>
@@ -155,6 +180,7 @@ const Navbar = () => {
                 onClick={(e) => {
                   window.location.href = "mailto:runedanielj@gmail.com";
                   e.preventDefault();
+                  window.umami.track("sidenav 'concact' clicked");
                 }}
               >
                 contact
