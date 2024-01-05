@@ -18,7 +18,8 @@ const IntroText = () => {
         </div>
         <div>
           <h3>
-            Front-end focused full-stack developer based in Oslo <br />
+            Front-end Engineer based in Oslo, coding for the media industry
+            <br />
             {/*Fly fishing and brazilian jiu-jitsu is my jam.*/}
           </h3>
         </div>

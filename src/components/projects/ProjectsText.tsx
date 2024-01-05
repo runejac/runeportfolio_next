@@ -1,20 +1,18 @@
-import React, { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./ProjectsText.module.scss";
 import Cards from "@/components/projects/cards/Cards";
-import { DataContext } from "@/context/DataContext";
 
 const ProjectsText = () => {
-  //const { projectsText } = useContext(DataContext);
   const projectsRef = useRef<null | HTMLElement>(null);
 
   const latelyTechnologiesWorkedWith = [
     {
-      name: "React.js",
-      link: "https://react.dev/",
+      name: "Next.js",
+      link: "https://nextjs.org/",
     },
     {
-      name: "Vue.js",
-      link: "https://vuejs.org/",
+      name: "Tailwind CSS",
+      link: "https://tailwindcss.com/",
     },
     {
       name: "TypeScript",
