@@ -14,11 +14,11 @@ const IntroText = () => {
           <h1>{h1}</h1>
         </div>
         <div className={styles.special}>
-          <h2>developer</h2>
+          <h2>front-end engineer</h2>
         </div>
         <div>
           <h3>
-            Front-end Engineer based in Oslo, coding for the media industry
+            - based in Oslo, coding for the media industry
             <br />
             {/*Fly fishing and brazilian jiu-jitsu is my jam.*/}
           </h3>
