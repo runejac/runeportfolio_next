@@ -1,7 +1,7 @@
 import styles from "./IntroText.module.scss";
 import { useContext } from "react";
 import { DataContext } from "@/context/DataContext";
-import EasterEgg from "@/components/easterEgg/EasterEgg";
+import ParticleEffect from "../particles/ParticleEffect";
 
 const IntroText = () => {
   const data = useContext(DataContext);
@@ -25,7 +25,7 @@ const IntroText = () => {
         </div>
       </div>
       <div className={styles.awesomeContent}>
-        <EasterEgg />
+        <ParticleEffect />
       </div>
     </section>
   );
