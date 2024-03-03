@@ -8,7 +8,7 @@ const ParticleEffect = () => {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {}, []);
+  const particlesLoaded = useCallback(async () => {}, []);
   return (
     <Particles
       id="tsparticles"
