@@ -9,10 +9,8 @@ export default function Home(props: Readonly<DataContextProps>) {
   return (
     <>
       <CustomHead
-        title={"Rune Oliveira, developer"}
-        content={
-          "Rune Oliveira is a front-end engineer based in Oslo, Norway, focusing on user-centric development. Explore his personal website of projects and personal adventures."
-        }
+        title="Rune Oliveira, developer"
+        content="Rune Oliveira is a Front-End Engineer based in Oslo, Norway, focusing on user-centric development. Explore his personal website of projects and personal adventures."
       />
       <WindowWidthProvider>
         <DataProvider data={props}>

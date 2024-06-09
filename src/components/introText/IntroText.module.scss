@@ -16,7 +16,7 @@
     flex-direction: column;
     background: none;
     justify-content: space-between;
-    padding-left: 3px;
+    padding-left: 0.5rem;
 
     div {
       background: none;
@@ -34,7 +34,7 @@
     }
 
     h2 {
-      font-family: "Source Serif Pro", serif;
+      font-family: "Satoshi Light", serif;
       font-size: 3rem;
       letter-spacing: 0.04em;
       -webkit-background-clip: text !important;
@@ -83,7 +83,7 @@
     }
 
     h3 {
-      font-family: "Source Serif Pro", serif;
+      font-family: "Satoshi Light", serif;
       background: none;
       font-size: 2.3rem;
     }
@@ -115,27 +115,6 @@
 
       h3 {
         font-size: 3.5rem;
-      }
-    }
-    .awesomeContent {
-      height: 100vh;
-      display: flex;
-      position: absolute;
-      background: none;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-
-      p {
-        background: none;
-        font-size: 1.5rem;
-        font-family: "Source Serif Pro", serif;
-        color: rgba(217, 217, 217, 0.07);
-        width: fit-content;
-
-        &:hover {
-          cursor: pointer;
-        }
       }
     }
   }
