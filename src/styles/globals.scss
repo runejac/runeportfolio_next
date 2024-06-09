@@ -21,16 +21,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-::selection {
-  background: var(--text-selection);
-  color: #000000;
-}
-
-::-moz-selection {
-  background: var(--text-selection);
-  color: #000000;
-}
-
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -65,7 +55,6 @@ body {
   --pink-shadow: #791f4d;
   --background: #dadada;
   --brown: #cc8446;
-  --text-selection: rgb(36, 255, 0);
 
   --smokey-black: hsl(41, 100%, 3%);
   --smokey-black-active: hsl(41, 100%, 3%);

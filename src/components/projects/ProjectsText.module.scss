@@ -1,4 +1,4 @@
-.projects-text-container {
+.projectsTextContainer {
   display: flex;
   gap: 2rem;
   flex-direction: column;
@@ -36,7 +36,7 @@
   }
 }
 
-.skills-list-container {
+.skillsListContainer {
   z-index: 1;
   margin-top: 1.7rem;
   background: none;
@@ -52,7 +52,7 @@
   }
 }
 
-.skills-list {
+.skillsList {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
   padding: 0;

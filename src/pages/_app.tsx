@@ -5,18 +5,18 @@ import "../styles/globals.scss";
 import Script from "next/script";
 
 export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
+	Component,
+	pageProps: { session, ...pageProps },
 }: AppProps) {
-  return (
-    <PrimaryLayout>
-      <Script
-        src={"https://umami-seven-sigma.vercel.app/script.js"}
-        data-website-id={process.env.NEXT_PUBLIC_DATA_WEBSITE_ID}
-        strategy="afterInteractive"
-      />
-      <Component {...pageProps} />
-      <SpeedInsights />
-    </PrimaryLayout>
-  );
+	return (
+		<PrimaryLayout>
+			<Script
+				src={"https://umami-seven-sigma.vercel.app/script.js"}
+				data-website-id={process.env.NEXT_PUBLIC_DATA_WEBSITE_ID}
+				strategy="afterInteractive"
+			/>
+			<Component {...pageProps} />
+			<SpeedInsights />
+		</PrimaryLayout>
+	);
 }

@@ -1,11 +1,11 @@
 import CustomHead from "@/components/layouts/head/CustomHead";
 import React from "react";
 import MainPage from "@/components/MainPage";
-import DataProvider, { DataContextProps } from "@/context/DataContext";
-import WindowWidthProvider from "@/context/WindowWidthContext";
 import OpenModalProvider from "@/context/OpenModalContext";
+import DataProvider, { type DataContextProps } from "@/context/DataContext";
+import WindowWidthProvider from "@/context/WindowWidthContext";
 
-export default function Home(props: DataContextProps) {
+export default function Home(props: Readonly<DataContextProps>) {
   return (
     <>
       <CustomHead

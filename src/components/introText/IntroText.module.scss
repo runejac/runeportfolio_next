@@ -1,4 +1,4 @@
-.intro-text-container {
+.introTextContainer {
   display: flex;
   background: none;
   height: 100svh;
@@ -6,12 +6,12 @@
   margin-bottom: 2.5rem;
   padding-bottom: 3rem;
 
-  .awesome-content {
+  .awesomeContent {
     z-index: 1;
     display: none;
   }
 
-  .intro-text-box {
+  .introTextBox {
     display: flex;
     flex-direction: column;
     background: none;
@@ -104,7 +104,7 @@
   }
 
   @media (min-width: 70em) {
-    .intro-text-box {
+    .introTextBox {
       h1 {
         font-size: 7.6rem;
       }
@@ -117,7 +117,7 @@
         font-size: 3.5rem;
       }
     }
-    .awesome-content {
+    .awesomeContent {
       height: 100vh;
       display: flex;
       position: absolute;
@@ -140,3 +140,4 @@
     }
   }
 }
+

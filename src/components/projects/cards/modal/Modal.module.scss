@@ -1,4 +1,4 @@
-.motion-div {
+.motionDiv {
   width: auto;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.11);
@@ -64,7 +64,7 @@
   font-style: italic;
 }
 
-.modal-close {
+.modalClose {
   cursor: pointer;
   position: absolute;
   top: 5px;
@@ -89,7 +89,7 @@
   border-radius: var(--border-radius-modal);
 }
 
-.icon-container {
+.iconContainer {
   display: flex;
   justify-content: flex-end;
   background: none;
@@ -109,7 +109,7 @@
 }
 
 @media (min-width: 66em) {
-  .motion-div {
+  .motionDiv {
     width: 70%;
   }
 
@@ -120,7 +120,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .icon-container {
+  .iconContainer {
     display: flex;
     width: fit-content;
     justify-content: center;
@@ -168,7 +168,7 @@
     border-radius: var(--border-radius-modal) 0 0 var(--border-radius-modal);
   }
 
-  .modal-close {
+  .modalClose {
     position: absolute;
     top: 20px;
     right: 20px;

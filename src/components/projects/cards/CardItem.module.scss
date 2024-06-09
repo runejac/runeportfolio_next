@@ -18,7 +18,7 @@
   //box-shadow: inset 0 0 1px #000000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  .technologies-container {
+  .technologiesContainer {
     li {
       text-shadow: 0 0 0 #fff, 0 0 2px #fff;
     }
@@ -30,7 +30,7 @@
       0 12px 40px 0 rgba(0, 0, 0, 0.24);
 
     @media (min-width: 50em) {
-      .modal-img {
+      .modalImg {
         filter: contrast(200%) brightness(70%) blur(1px);
         opacity: 1;
         transition: opacity 0.17s ease;
@@ -39,17 +39,17 @@
   }
 }
 
-.hide-img-on-mount {
+.hideImgOnMount {
   visibility: hidden;
 }
 
-.image-wrapper {
+.imageWrapper {
   background: none;
   position: relative;
   width: 100%;
 }
 
-.modal-img {
+.modalImg {
   position: fixed;
   width: 100%;
   opacity: 1;
@@ -64,14 +64,14 @@
   }
 }
 
-.circular-border {
+.circularBorder {
   background-color: transparent;
   position: relative;
   text-align: center;
   min-height: 70px;
 }
 
-.app-title-h2 {
+.appTitleH2 {
   font-size: 1.2rem;
   font-family: "Messapia Bold", sans-serif;
   text-shadow: 0 0 0 #fff, 0 0 2px #fff;
@@ -79,7 +79,7 @@
   background: none;
 }
 
-.technologies-container {
+.technologiesContainer {
   background: none;
 
   ul {

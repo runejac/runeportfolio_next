@@ -11,36 +11,36 @@ import { WindowWidthContext } from "@/context/WindowWidthContext";
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 
 export default function MainPage() {
-  const windowWidth = useContext(WindowWidthContext);
-  const visible = useScrollVisibility();
+	const windowWidth = useContext(WindowWidthContext);
+	const visible = useScrollVisibility();
 
-  const handleHeader = () => {
-    return windowWidth! >= 800 && !visible ? "relative" : "sticky";
-  };
+	const handleHeader = () => {
+		return windowWidth! >= 800 && !visible ? "relative" : "sticky";
+	};
 
-  return (
-    <>
-      <Background />
-      <Modal />
-      <header
-        id={"header-tag"}
-        style={{
-          position: handleHeader(),
-        }}
-        className={styles.headerTag}
-      >
-        <Navbar />
-      </header>
-      <main className={styles.mainTag}>
-        <IntroText />
-        <section className={styles.projectsAndAboutSection}>
-          <div className={styles.divContainer}>
-            <AboutText />
-            <ProjectsText />
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Background />
+			<Modal />
+			<header
+				id={"header-tag"}
+				style={{
+					position: handleHeader(),
+				}}
+				className={styles.headerTag}
+			>
+				<Navbar />
+			</header>
+			<main className={styles.mainTag}>
+				<IntroText />
+				<section className={styles.projectsAndAboutSection}>
+					<div className={styles.divContainer}>
+						<AboutText />
+						<ProjectsText />
+					</div>
+				</section>
+			</main>
+			<Footer />
+		</>
+	);
 }

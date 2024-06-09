@@ -24,9 +24,9 @@ const IntroText = () => {
           </h3>
         </div>
       </div>
-      <div className={styles.awesomeContent}>
-        <ParticleEffect />
-      </div>
+      {/* <div className={styles.awesomeContent}>
+				<ParticleEffect />
+			</div> */}
     </section>
   );
 };
